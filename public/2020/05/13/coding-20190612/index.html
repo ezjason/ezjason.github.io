@@ -1,0 +1,1461 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="webpack4.0+加vue2.0+从零开始搭设vue项目, 王一诺">
+    <meta name="description" content="@TOC
+本地环境
+
+node -v    // v9.1.0npm -v  // 6.5.0webpack -v   // 4.32.2webpack-cli -v // 3.3.2
+
+这里需要注意的是webpack4+以后需要单独安装w">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>webpack4.0+加vue2.0+从零开始搭设vue项目 | 王一诺</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="/medias/avatar.jpg" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">王一诺</span>
+                    </a>
+                </div>
+                
+
+<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/coding" class="waves-effect waves-light">
+            
+            <span>编程</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <span>时间轴</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/avatar.jpg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">王一诺</div>
+        <div class="logo-desc">
+            
+            哪有什么岁月静好，只是有人为你负重前行zzZ
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/coding" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                编程
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                时间轴
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-link"></i>
+                
+                关于
+            </a>
+        </li>
+        
+    </ul>
+
+    <div class="social-link">
+
+     <a href="https://github.com/wLove-c" class="tooltipped" target="_blank" data-tooltip="GitHub" data-position="top" data-delay="50">
+                    <i class="fa fa-github fa-lg"></i>
+                </a>
+                <a href="mailto:wLove_c@163.com" class="tooltipped" target="_blank" data-tooltip="邮件call我" data-position="top" data-delay="50">
+                    <i class="fa fa-envelope fa-lg"></i>
+                </a>
+                <a href="https://blog.csdn.net/weixin_40755688" class="tooltipped" target="_blank" data-tooltip="CSDN" data-position="top" data-delay="50">
+                    <i class="fa fa-lg fa-lg">博</i>
+                </a>
+                <a href="https://www.jianshu.com/u/486396b2fbdf" class="tooltipped" target="_blank" data-tooltip="简书主页" data-position="top" data-delay="50">
+                    <i class="fa fa-lg">简</i>
+                </a>
+                <a href="https://juejin.im/user/5a3b55205188251fbd33cac0" class="tooltipped" target="_blank" data-tooltip="掘金主页" data-position="top" data-delay="50">
+                    <i class="fa fa-lg">掘</i>
+                </a>
+    </div>
+</div>
+
+
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        webpack4.0+加vue2.0+从零开始搭设vue项目
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/vue/" target="_blank">
+                                <span class="chip bg-color">vue</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="post-info">
+                                <div class="post-date info-break-policy">
+                                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                                    2020-05-13
+                                </div>
+
+                                
+
+                								
+                														<div id="busuanzi_container_page_pv" class="info-break-policy">
+                																<i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                																<span id="busuanzi_value_page_pv"></span>
+                														</div>
+                								
+                            </div>
+            </div>
+
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>@<a href="webpack4+加vue2+从零开始搭设vue项目">TOC</a></p>
+<p>本地环境</p>
+<blockquote>
+<p>node -v    // v9.1.0<br>npm -v  // 6.5.0<br>webpack -v   // 4.32.2<br>webpack-cli -v // 3.3.2</p>
+</blockquote>
+<p><em>这里需要注意的是webpack4+以后需要单独安装webpack-cli</em></p>
+<h3 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h3><h4 id="1-初始化项目"><a href="#1-初始化项目" class="headerlink" title="1.初始化项目"></a>1.初始化项目</h4><pre><code>npm init
+</code></pre><p>一直enter生成package.json文件（小技巧:npm init -y 可以免去繁琐的enter）</p>
+<h4 id="2-安装依赖"><a href="#2-安装依赖" class="headerlink" title="2.安装依赖"></a>2.安装依赖</h4><pre><code>npm i webpack webpack-cli webpack-dev-server --save-dev
+</code></pre><blockquote>
+<p>想要深入上述依赖请转<a href="https://webpack.js.org/configuration" target="_blank" rel="noopener">webpack文档</a></p>
+</blockquote>
+<p>依赖安装成功接下来就开始动手吧</p>
+<h4 id="3-目录文件配置"><a href="#3-目录文件配置" class="headerlink" title="3.目录文件配置"></a>3.目录文件配置</h4><p>根目录鼠标右键新建index.html    webpack.config.js  src文件夹或：</p>
+<pre><code>// window
+type &gt;webpcak.config.js
+type &gt;index.html
+md src
+
+//mac 土豪玩家
+touch webpcak.config.js
+touch index.html
+mkdir src
+</code></pre><p>src目录下面新建 main.js</p>
+<p>此时目录如下</p>
+<pre><code>project/
+        src/
+            main.js
+        webpack.config.js
+        index.html
+        package.json
+
+</code></pre><p>内容如下：</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//index.html</span>
+<span class="token operator">&lt;</span><span class="token operator">!</span>DOCTYPE html<span class="token operator">></span>
+<span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">"en"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>head<span class="token operator">></span>
+    <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>title<span class="token operator">></span>webpack从零搭设<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span>
+<span class="token operator">&lt;</span>body<span class="token operator">></span>
+<span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span>
+
+</code></pre>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// webpack.config.js</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> webpack <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+modul<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre>
+<h4 id="4-配置index-html及webpack-config-js"><a href="#4-配置index-html及webpack-config-js" class="headerlink" title="4.配置index.html及webpack.config.js"></a>4.配置index.html及webpack.config.js</h4><p>首先<br>main.js修改如下:</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// src/main.js</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello world'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<p>webpack.config.js修改如下:</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// webpack.config.js</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> webpack <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>  <span class="token comment" spellcheck="true">// module.exports commonjs规范</span>
+  entry<span class="token punctuation">:</span> <span class="token string">'./src/main.js'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 项目入口文件，webpack将从main.js开始，把所有依赖的js都打包</span>
+  output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'./dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 项目的打包后的输出路径 可修改</span>
+    publicPath<span class="token punctuation">:</span> <span class="token string">'/dist/'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 通过devServer访问路径 可修改</span>
+    filename<span class="token punctuation">:</span> <span class="token string">'build.js'</span> <span class="token comment" spellcheck="true">// 打包后的文件名 可修改</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  devServer<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    historyApiFallback<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// When using the HTML5 History API, the `index.html` page will likely have to be served in place of any `404` responses</span>
+    overlay<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token comment" spellcheck="true">//Shows a full-screen overlay in the browser when there are compiler errors or warnings. Disabled by default. If you want to show only compiler errors</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+</code></pre>
+<p>index.html 修改如下 <em>增加引入打包后的js</em></p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// index.html</span>
+<span class="token operator">&lt;</span><span class="token operator">!</span>DOCTYPE html<span class="token operator">></span>
+<span class="token operator">&lt;</span>html lang<span class="token operator">=</span><span class="token string">"en"</span><span class="token operator">></span>
+<span class="token operator">&lt;</span>head<span class="token operator">></span>
+    <span class="token operator">&lt;</span>meta charset<span class="token operator">=</span><span class="token string">"UTF-8"</span><span class="token operator">></span>
+    <span class="token operator">&lt;</span>title<span class="token operator">></span>webpack从零搭设<span class="token operator">&lt;</span><span class="token operator">/</span>title<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>head<span class="token operator">></span>
+<span class="token operator">&lt;</span>body<span class="token operator">></span>
+<span class="token operator">&lt;</span>div id<span class="token operator">=</span><span class="token string">"app"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>body<span class="token operator">></span>
+<span class="token operator">&lt;</span>script src<span class="token operator">=</span><span class="token string">"/dist/build.js"</span><span class="token operator">></span><span class="token operator">&lt;</span><span class="token operator">/</span>script<span class="token operator">></span>
+<span class="token operator">&lt;</span><span class="token operator">/</span>html<span class="token operator">></span>
+
+</code></pre>
+<p>package.json修改如下：</p>
+<pre class=" language-json"><code class="language-json"><span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">"dev"</span><span class="token operator">:</span> <span class="token string">"webpack-dev-server --open --hot"</span><span class="token punctuation">,</span>
+    <span class="token property">"build"</span><span class="token operator">:</span> <span class="token string">"webpack --progress --hide-modules"</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+</code></pre>
+<blockquote>
+<p>webpack-dev-server会启动一个静态资源web服务器 –hot参数表示启动热更新</p>
+</blockquote>
+<p>重新启动服务</p>
+<pre><code>npm run dev
+</code></pre><p>打开控制台可以看到 有输出hello world<br><img src="https://upload-images.jianshu.io/upload_images/11447772-436a3617acf0b57a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="控制台输出hello world"></p>
+<h4 id="5-vue的起步"><a href="#5-vue的起步" class="headerlink" title="5.vue的起步"></a>5.vue的起步</h4><p>安装vue</p>
+<pre class=" language-javascript"><code class="language-javascript">npm install vue <span class="token operator">--</span>save
+</code></pre>
+<p>修改main.js如下</p>
+<pre><code>// src/main.js
+import Vue from &#39;vue&#39;;
+// import Vue from &#39;vue/dist/vue.esm.js&#39;  // 解决You are using the runtime-only build of Vue where the template compiler is not available. Either pre-compile the templates into render functions, or use the compiler-included build
+
+// console.log(&#39;hello world&#39;);
+
+var app = new Vue({
+  el: &#39;#app&#39;,
+  data: {
+    mess: &#39;Hello Vue@2.0!&#39;
+  }
+})
+
+</code></pre><p>此时 修改index.html如下:</p>
+<pre class=" language-JavaScript"><code class="language-JavaScript">// index.html
+<!DOCTYPE html>
+<html lang="en">
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="UTF-8">
+    <title>webpack从零搭设</title>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+<body>
+<div id="app">
+    {{ mess }}
+</div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"live2d-widget-model-shizuku"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"live2d-widget-model-shizuku"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"live2d-widget-model-shizuku"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/dist/build.js"></script>
+</html>
+
+</code></pre>
+<p>重新启动服务</p>
+<pre class=" language-JavaScript"><code class="language-JavaScript">npm run build
+npm run dev
+</code></pre>
+<p>此时<br><img src="https://upload-images.jianshu.io/upload_images/11447772-d32d4812803e8fc7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="控制台报错，页面也未显示hello Vue！"></p>
+<p>查阅资料发现:<br><strong>vue有两种形式的代码 compiler（模板）模式和runtime模式（运行）<br>vue模块的package.json的main字段默认为runtime模式， 指向”dist/vue.runtime.common.js”位置。这是vue升级到2.0之后就有的特点。</strong></p>
+<p>但此时我们main.js的写法是</p>
+<pre><code>// src/main.js
+import Vue from &#39;vue&#39;;
+// import Vue from &#39;vue/dist/vue.esm.js&#39;  // 解决You are using the runtime-only build of Vue where the template compiler is not available. Either pre-compile the templates into render functions, or use the compiler-included build
+
+// console.log(&#39;hello world&#39;);
+
+var app = new Vue({
+  el: &#39;#app&#39;,
+  data: {
+    mess: &#39;Hello Vue@2.0!&#39;
+  }
+})
+
+</code></pre><h5 id="解决方案-一"><a href="#解决方案-一" class="headerlink" title="解决方案 一"></a>解决方案 一</h5><pre><code>// src/main.js
+//import Vue from &#39;vue&#39;;
+ import Vue from &#39;vue/dist/vue.esm.js&#39;  // 解决You are using the runtime-only build of Vue where the template compiler is not available. Either pre-compile the templates into render functions, or use the compiler-included build
+
+// console.log(&#39;hello world&#39;);
+
+var app = new Vue({
+  el: &#39;#app&#39;,
+  data: {
+    mess: &#39;Hello Vue@2.0!&#39;
+  }
+})
+
+</code></pre><p>因为vue2.0默认的是runtime模式，需要借助如 webpack 的 vue-loader 工具把 .vue 文件编译成 JavaScript代码；</p>
+<h5 id="解决方案-二-常规操作"><a href="#解决方案-二-常规操作" class="headerlink" title="解决方案 二(常规操作)"></a>解决方案 二(常规操作)</h5><pre><code>// webpack.config.js
+const path = require(&#39;path&#39;);
+const webpack = require(&#39;webpack&#39;);
+
+module.exports = {  //module.exports commonjs规范
+  entry: &#39;./src/main.js&#39;, // 项目的入口文件，webpack会从main.js开始，把所有依赖的js都加载打包
+  output: {
+    path: path.resolve(__dirname, &#39;./dist&#39;), // 项目的打包文件路径
+    publicPath: &#39;/dist/&#39;, // 通过devServer访问路径
+    filename: &#39;build.js&#39; // 打包后的文件名
+  },
+  devServer: {
+    historyApiFallback: true,
+    overlay: true
+  },
+  resolve: { // 修改别名，import Vue from ‘vue’ 这行代码被解析为 import Vue from ‘vue/dist/vue.esm.js
+    alias: {
+      &#39;vue$&#39;: &#39;vue/dist/vue.esm.js&#39;
+    }
+  },
+};
+
+</code></pre><blockquote>
+<p>这个修改和上次是一样的意思，不过相对雅观很多…</p>
+</blockquote>
+<h4 id="解决方案-三"><a href="#解决方案-三" class="headerlink" title="解决方案 三"></a>解决方案 三</h4><p>修改main.js的模式</p>
+<ol>
+<li>compiler 模式<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// src/main.js</span>
+<span class="token comment" spellcheck="true">// compiler 模式</span>
+<span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre>
+2.runtime 模式<pre><code>//runtime模式
+new Vue({
+render: h =&gt; h(App)  // App.vue
+}).$mount(&quot;#app&quot;)
+</code></pre>将1换成2，但我们推荐使用方案二；</li>
+</ol>
+<p>最后 页面展示如下:<br><img src="https://upload-images.jianshu.io/upload_images/11447772-4470400cac4db5f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="hello Vue@2.0"></p>
+<h3 id="引入css和scss"><a href="#引入css和scss" class="headerlink" title="引入css和scss"></a>引入css和scss</h3><blockquote>
+<p><strong>webpack默认支持的是js的模块化，如果需要其他类型文件也支持模块化开发，则需要引入相应的loader用以解析!</strong></p>
+</blockquote>
+<p>安装相关依赖</p>
+<pre class=" language-javascript"><code class="language-javascript">npm i node<span class="token operator">-</span>sass css<span class="token operator">-</span>loader vue<span class="token operator">-</span>style<span class="token operator">-</span>loader sass<span class="token operator">-</span>loader <span class="token operator">--</span>save<span class="token operator">-</span>dev
+</code></pre>
+<p> webpack.config.js 修改如下</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// webpack.config.js</span>
+<span class="token keyword">const</span> path <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'path'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> webpack <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'webpack'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>  <span class="token comment" spellcheck="true">//module.exports commonjs规范</span>
+  entry<span class="token punctuation">:</span> <span class="token string">'./src/main.js'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 项目的入口文件，webpack会从main.js开始，把所有依赖的js都加载打包</span>
+  output<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    path<span class="token punctuation">:</span> path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">'./dist'</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 项目的打包文件路径</span>
+    publicPath<span class="token punctuation">:</span> <span class="token string">'/dist/'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">// 通过devServer访问路径</span>
+    filename<span class="token punctuation">:</span> <span class="token string">'build.js'</span> <span class="token comment" spellcheck="true">// 打包后的文件名</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  devServer<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    historyApiFallback<span class="token punctuation">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    overlay<span class="token punctuation">:</span> <span class="token boolean">true</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  resolve<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    alias<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+      <span class="token string">'vue$'</span><span class="token punctuation">:</span> <span class="token string">'vue/dist/vue.esm.js'</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+   module<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+     rules<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+       <span class="token punctuation">{</span>
+         test<span class="token punctuation">:</span> <span class="token regex">/\.css$/</span><span class="token punctuation">,</span>
+         use<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+           <span class="token string">'vue-style-loader'</span><span class="token punctuation">,</span>
+           <span class="token string">'css-loader'</span>
+         <span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">}</span><span class="token punctuation">,</span>
+       <span class="token punctuation">{</span> <span class="token comment" spellcheck="true">// scss</span>
+         test<span class="token punctuation">:</span> <span class="token regex">/\.scss$/</span><span class="token punctuation">,</span>
+         use<span class="token punctuation">:</span> <span class="token punctuation">[</span>
+           <span class="token string">'vue-style-loader'</span><span class="token punctuation">,</span>
+           <span class="token string">'css-loader'</span><span class="token punctuation">,</span>
+           <span class="token string">'sass-loader'</span>
+         <span class="token punctuation">]</span><span class="token punctuation">,</span>
+       <span class="token punctuation">}</span>
+     <span class="token punctuation">]</span>
+   <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+</code></pre>
+<p>此时scss 及 css都能在开发中使用并且模块化引入了</p>
+<h3 id="语法转译-ES6-gt-ES5"><a href="#语法转译-ES6-gt-ES5" class="headerlink" title="语法转译 ES6 =&gt; ES5"></a>语法转译 ES6 =&gt; ES5</h3><p>引入相关依赖 利用bable转译</p>
+<pre class=" language-javascript"><code class="language-javascript">npm i babel<span class="token operator">-</span>core babel<span class="token operator">-</span>loader babel<span class="token operator">-</span>preset<span class="token operator">-</span>env babel<span class="token operator">-</span>preset<span class="token operator">-</span>stage<span class="token number">-3</span> <span class="token operator">--</span>save<span class="token operator">-</span>dev
+</code></pre>
+<p><strong>其中  babel-preset-stage是不同阶段语法提案的转码规则（共有4个阶段），选装一个,其中0最厉害</strong></p>
+<blockquote>
+<p>npm install –save-dev babel-preset-stage-0<br>npm install –save-dev babel-preset-stage-1<br>npm install –save-dev babel-preset-stage-2<br>npm install –save-dev babel-preset-stage-3<br><code>`</code><br>// .babelrc<br>{<br>  “presets”: [<br>    [“env”, { “modules”: false }],<br>    “stage-3”<br>  ]<br>}</p>
+</blockquote>
+<pre><code>同时修改 webpack.config.js
+```javascript
+// webpack.config.js
+const path = require(&#39;path&#39;);
+const webpack = require(&#39;webpack&#39;);
+
+module.exports = {  //module.exports commonjs规范
+  entry: &#39;./src/main.js&#39;, // 项目的入口文件，webpack会从main.js开始，把所有依赖的js都加载打包
+  output: {
+    path: path.resolve(__dirname, &#39;./dist&#39;), // 项目的打包文件路径
+    publicPath: &#39;/dist/&#39;, // 通过devServer访问路径
+    filename: &#39;build.js&#39; // 打包后的文件名
+  },
+  devServer: {
+    historyApiFallback: true,
+    overlay: true
+  },
+  resolve: {
+    alias: {
+      &#39;vue$&#39;: &#39;vue/dist/vue.esm.js&#39;
+    }
+  },
+   module: {
+     rules: [
+       {
+         test: /\.css$/,
+         use: [
+           &#39;vue-style-loader&#39;,
+           &#39;css-loader&#39;
+         ],
+       },
+       { // scss
+         test: /\.scss$/,
+         use: [
+           &#39;vue-style-loader&#39;,
+           &#39;css-loader&#39;,
+           &#39;sass-loader&#39;
+         ],
+       },
+       { // 添加解析js的loader
+         test: /\.js$/,
+         loader: &#39;babel-loader&#39;,
+         exclude: /node_modules/
+       }
+     ]
+   }
+};
+
+</code></pre><p>此时我们修改main.js尝试使用es6语法</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// src/main.js</span>
+<span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">// import Vue from 'vue/dist/vue.esm.js'  // 解决You are using the runtime-only build of Vue where the template compiler is not available. Either pre-compile the templates into render functions, or use the compiler-included build</span>
+
+
+<span class="token comment" spellcheck="true">// console.log('hello world');</span>
+
+<span class="token keyword">const</span> say <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span>resolve<span class="token punctuation">,</span> reject<span class="token punctuation">)</span> <span class="token operator">=</span><span class="token operator">></span> <span class="token punctuation">{</span>
+    <span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">'I am es6'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+
+
+<span class="token keyword">var</span> app <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Vue</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  el<span class="token punctuation">:</span> <span class="token string">'#app'</span><span class="token punctuation">,</span>
+  data<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    mess<span class="token punctuation">:</span> <span class="token string">'Hello Vue@2.0!'</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  methods<span class="token punctuation">:</span> <span class="token punctuation">{</span>
+    <span class="token function">updateData</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token function">say</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>mess <span class="token operator">=</span> res<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">created</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">updateData</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+</code></pre>
+<p>此时页面输出效果如下<br><img src="https://upload-images.jianshu.io/upload_images/11447772-b3232207a960b915.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="I am es6"><br>虽然满足我们使用了，那么接下来我们尝试一下ES7支持与否<br>main.js修改如下:</p>
+<pre class=" language-JavaScript"><code class="language-JavaScript">import Vue from 'vue';
+// import Vue from 'vue/dist/vue.esm.js'  // 解决You are using the runtime-only build of Vue where the template compiler is not available. Either pre-compile the templates into render functions, or use the compiler-included build
+
+
+// console.log('hello world');
+
+const say = function () {
+  return new Promise((resolve, reject) => {
+    resolve('I am es7');
+  })
+}
+
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    mess: 'Hello Vue@2.0!'
+  },
+  methods: {
+    /*updateData() {
+      say().then((res)=>{
+        this.mess = res;
+      });
+    },*/
+    async updateData() {
+      const mess = await say();
+      this.mess = mess;
+    }
+  },
+  created() {
+    this.updateData();
+  }
+})
+
+</code></pre>
+<p>页面展示如下:<br><img src="https://upload-images.jianshu.io/upload_images/11447772-b1ef12f2c2f7effb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ES7测试"><br>此时看到控制台报错</p>
+<blockquote>
+<p>“ReferenceError: regeneratorRuntime is not defined”</p>
+</blockquote>
+<p>查阅相关文章发现， 要想对es7语法进行支持，还需要安装相关依赖进行转译；</p>
+<h5 id="这里有两种方案"><a href="#这里有两种方案" class="headerlink" title="这里有两种方案"></a>这里有两种方案</h5><h5 id="方案一"><a href="#方案一" class="headerlink" title="方案一"></a>方案一</h5><pre class=" language-javascript"><code class="language-javascript">npm i <span class="token operator">--</span>save<span class="token operator">-</span>dev babel<span class="token operator">-</span>plugin<span class="token operator">-</span>transform<span class="token operator">-</span>runtime
+</code></pre>
+<p>修改.babelrc文件</p>
+<pre><code>// .babelrc
+{
+    &quot;presets&quot;: [
+        [&quot;env&quot;, { &quot;modules&quot;: false }],
+        &quot;stage-3&quot;
+    ],
+    &quot;plugins&quot;: [[  //  参考 https://www.jianshu.com/p/7a7f7abcddb5
+        &quot;transform-runtime&quot;,
+        {
+            &quot;helpers&quot;: false,
+            &quot;polyfill&quot;: false,
+            &quot;regenerator&quot;: true,
+            &quot;moduleName&quot;: &quot;babel-runtime&quot;
+        }
+    ]]
+}
+</code></pre><p>这里顺带解释一下preset与babel的关系:</p>
+<ul>
+<li>preset中已经包含了一组用来转换ES6+的语法的插件,如果只使用少数新特性而非大多数新特性,可以不使用preset而只使用对应的转换插件</li>
+<li>babel默认只转换语法,而不转换新的API,如需使用新的API,还需要使用对应的转换插件或者polyfill<blockquote>
+<p>例如，默认情况下babel可以将箭头函数，class等语法转换为ES5兼容的形式，但是却不能转换Map，Set，Promise等新的全局对象，这时候就需要使用polyfill去模拟这些新特性</p>
+</blockquote>
+</li>
+</ul>
+<p>此时看到页面输出正常:<br><img src="https://upload-images.jianshu.io/upload_images/11447772-0bd3c3d1769d22ee.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ES7正常"></p>
+<h5 id="方案二"><a href="#方案二" class="headerlink" title="方案二"></a>方案二</h5><p>全局babel-polyfill</p>
+<pre><code>npm i babel-polyfill --save-dev
+</code></pre><p> webpack.config.js修改如下 <strong>注意看注释</strong></p>
+<pre class=" language-JavaScript"><code class="language-JavaScript">// webpack.config.js
+  // entry: './src/main.js', // 项目的入口文件，webpack会从main.js开始，把所有依赖的js都加载打包
+  entry: ['babel-polyfill', './src/main.js'], // 项目的入口文件，webpack会从main.js开始，把所有依赖的js都加载打包 参考 https://www.jianshu.com/p/3b27dfc6785c
+</code></pre>
+<p>此时重新跑项目npm run dev 结果方案一</p>
+<blockquote>
+<p>es6与es7转译部分参考文章<br><a href="https://www.jianshu.com/p/3b27dfc6785c" target="_blank" rel="noopener">babel-polyfill的几种使用方式
+</a><a href="https://www.jianshu.com/p/7a7f7abcddb5" target="_blank" rel="noopener">babel的使用</a></p>
+</blockquote>
+<h3 id="文章最后"><a href="#文章最后" class="headerlink" title="文章最后"></a>文章最后</h3><blockquote>
+<p>项目搭建，缺啥补啥！！ 项目完整地址查看@王一诺<a href="[https://github.com/wLove-c/webpack4-vue2](https://github.com/wLove-c/webpack4-vue2">wlove_c/webpack4.0+vue2.0</a><br>)</p>
+</blockquote>
+
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff;
+        background-color: #22AB38;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff;
+        background-color: #019FE8;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a class="reward-link btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs">
+                        <li class="tab wechat-tab waves-effect waves-light"><a class="active" href="#wechat">微信</a></li>
+                        <li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#reward .reward-link').on('click', function () {
+            $('#rewardModal').openModal();
+        });
+
+        $('#rewardModal .close').on('click', function () {
+            $('#rewardModal').closeModal();
+        });
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="http://wLove_c.github.io" class="b-link-green">王一诺</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2020/05/13/coding-20190612/" class="b-link-green">webpack4.0+加vue2.0+从零开始搭设vue项目</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '0RRQs3jYloHs0Y6sgwNbDJay-gzGzoHsz',
+        appKey: 'chrGtlTHYCWv13KJAgD0e8s7',
+        notify: 'true 新留言是否需要通知 https://github.com/xCss/Valine/wiki' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '请输入您的留言'
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/05/13/coding-20190329/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="IDEA、 JetBrains、webstorm、 pycharm 破解教程">
+                        
+                        <span class="card-title">IDEA、 JetBrains、webstorm、 pycharm 破解教程</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">@TOC
+第一步 下载IDEA 2018年2月前版本)       ！！！注意 一定要2018年2月前的版本 最新版本不确定能否使用
+第二步 打开破解包网址 下图所示 点击下载点击下载
+第三步 把下载好的jar包放到IDEA安装目录的/bi</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-13
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/编程/" class="post-category" target="_blank">
+                                    编程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/工具类/" target="_blank">
+                        <span class="chip bg-color">工具类</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/05/13/coding-20190629/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="js基础数组Array的一些特性及方法">
+                        
+                        <span class="card-title">js基础数组Array的一些特性及方法</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">@toc
+
+前言: 工作业务数据乱，数据转换用得繁，对接交流竟无语，全靠数组方法换；
+
+数据的了解js数据类型
+在js基础中，我都们知道数据类型有两大类:原始类型(基本类型)、引用类型
+
+基本类型js有5 种原始类型，即 Undefined</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/编程/" class="post-category" target="_blank">
+                                    编程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/javaScript/" target="_blank">
+                        <span class="chip bg-color">javaScript</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('20')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 王一诺<br />'
+            + '作者: 王一诺<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>
+    
+
+</main>
+
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m12 l8 copy-right">
+            本站由 &copy;<a href="http://blinkfox.com" target="_blank">Blinkfox </a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 搭建
+        </div>
+        <div class="col s12 m12 l4 social-link hide-on-med-and-down">
+            <a href="https://github.com/wLove-c" class="tooltipped" target="_blank" data-tooltip="GitHub" data-position="top" data-delay="50">
+                <i class="fa fa-github fa-lg"></i>
+            </a>
+            <a href="mailto:wLove_c@163.com" class="tooltipped" target="_blank" data-tooltip="邮件call我" data-position="top" data-delay="50">
+                <i class="fa fa-envelope fa-lg"></i>
+            </a>
+            <a href="https://blog.csdn.net/weixin_40755688" class="tooltipped" target="_blank" data-tooltip="CSDN" data-position="top" data-delay="50">
+                <i class="fa fa-lg fa-lg">博</i>
+            </a>
+            <a href="https://www.jianshu.com/u/486396b2fbdf" class="tooltipped" target="_blank" data-tooltip="简书主页" data-position="top" data-delay="50">
+                <i class="fa fa-lg">简</i>
+            </a>
+            <a href="https://juejin.im/user/5a3b55205188251fbd33cac0" class="tooltipped" target="_blank" data-tooltip="掘金主页" data-position="top" data-delay="50">
+                <i class="fa fa-lg">掘</i>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/search.js"></script>
+
+<script type="text/javascript">
+  (function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"live2d-widget-model-shizuku"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

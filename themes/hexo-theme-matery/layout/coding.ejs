@@ -1,0 +1,84 @@
+<%- partial('_partial/bg-cover') %>
+
+<main class="content">
+    <div id="codings" class="container">
+        <div>
+            <%
+            var hashCode = function(str) {
+                if (!str && str.length === 0) {
+                    return 0;
+                }
+
+                var hash = 0;
+                for (var i = 0, len = str.length; i < len; i++) {
+                    hash = ((hash << 5) - hash) + str.charCodeAt(i);
+                    hash |= 0;
+                }
+                return hash;
+            };
+            %>
+            <article data-aos="zoom-in">
+                <div class="card">
+                    <ul id="article-lists">
+                        <% site.posts.sort('date').reverse().forEach(post => {
+                        if (post.categories && post.categories.length > 0) {
+                        post.categories.forEach(category => {
+                        if (category.name.indexOf('编程') !== -1) {
+                        %>
+                        <li>
+                            <div class="article-list">
+                                <a href="<%- url_for(post.path) %>">
+                                    <div class="row">
+                                        <div class="col s9 m9 l9">
+                                            <div class="article-content">
+                                                <div style="display: inline-block;">
+                                                    <div class="article-title"><%- post.title %></div>
+                                                    <div class="summary">
+                                                        <%- strip_html(post.content).substring(0, 100) %>
+                                                    </div>
+                                                    <div class="publish-info">
+                                                        <span class="publish-date">
+                                                            <i class="fa fa-calendar fa-fw"></i>
+                                                            <%= date(post.date, config.date_format) %>
+                                                        </span>
+                                                        <span class="publish-author">
+                                                            <i class="fa fa-user fa-fw"></i>
+                                                            <% if(post.author && post.author.length > 0) { %>
+                                                            <%= post.author %>
+                                                            <% } else { %>
+                                                            <%= config.author %>
+                                                            <% } %>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col s3 m3 l3 article-img">
+                                            <%
+                                                var src = '';
+                                                if (post.img) {
+                                                    src = post.img
+                                                } else {
+                                                    var len = theme.featureImages.length;
+                                                    var num = Math.abs(hashCode(post.title) % len);
+                                                    src = theme.featureImages[num];
+                                                }
+                                            %>
+                                            <div class="article-image" style="background-image: url('<%= src %>');"></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        <%
+                        }
+                        });
+                        }
+                        });
+                        %>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </div>
+</main>

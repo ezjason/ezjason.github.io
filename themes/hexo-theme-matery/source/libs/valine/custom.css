@@ -1,0 +1,62 @@
+#valine-comments {
+  margin-top: 30px;
+}
+
+#valine-comments .v .vwrap {
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 10px 35px 2px rgba(0, 0, 0, .15), 0 5px 15px rgba(0, 0, 0, .07), 0 2px 5px -5px rgba(0, 0, 0, .1)
+}
+
+#valine-comments #comments-notice {
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  color: #fff;
+  background: linear-gradient(60deg, #2ca1f9, #0088ff);
+}
+
+#valine-comments .v .vwrap .vheader .vinput {
+  width: 33.33%;
+  font-size: 0.85rem;
+  padding: 0;
+  border-bottom: 1px dashed #bbb;
+}
+
+#valine-comments .v .vwrap .vheader .vinput:focus {
+  border-bottom: 1px dashed #49b1f5;
+}
+
+#valine-comments .v .vwrap .vinput::-webkit-input-placeholder {
+  color: #aaa;
+}
+#valine-comments .v .vwrap .vinput:-moz-placeholder {
+  color: #aaa;
+}
+#valine-comments .v .vwrap .vinput:-ms-input-placeholder {
+  color: #aaa;
+}
+
+#valine-comments .vedit {
+  border: 1px solid #ddd;
+}
+
+#valine-comments #veditor {
+  font-size: 1rem;
+}
+
+#valine-comments .v .vwrap .vcontrol .vbtn:hover {
+  color: #fff;
+  border: 1px solid #49b1f5;
+  background: #49b1f5;
+}
+
+#valine-comments .v .vwrap .vcontrol .vbtn:active {
+  border: 1px solid #0088ff;
+  background: #0088ff;
+}
+
+#valine-comments .power a,
+#valine-comments .power a:before {
+  color: #0088ff;
+}

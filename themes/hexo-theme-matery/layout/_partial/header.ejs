@@ -1,0 +1,17 @@
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="<%- url_for() %>" class="waves-effect waves-light">
+                        <% if (theme.avatar !== undefined && theme.avatar.length > 0) { %>
+                        <img src="<%= theme.avatar %>" class="logo-img hide-on-small-only">
+                        <% } %>
+                        <span class="logo-span"><%- config.title %></span>
+                    </a>
+                </div>
+                <%- partial('_partial/navigation') %>
+            </div>
+        </div>
+    </nav>
+</header>

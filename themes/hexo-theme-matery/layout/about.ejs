@@ -1,0 +1,67 @@
+<style type="text/css">
+    /* don't remove. */
+    .about-cover {
+        height: 60vh;
+    }
+</style>
+
+<%- partial('_partial/about-cover') %>
+
+<main class="content">
+
+    <div id="aboutme" class="container about-container">
+        <div class="card">
+            <div class="card-content">
+                <div class="row">
+                    <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
+                        <%- partial('_partial/post-statis') %>
+                    </div>
+                    <div class="col s12 m12 l4">
+                        <div class="profile center-align">
+                            <div class="avatar">
+                                <img src="<%- theme.profile.avatar %>" alt="<%- config.author %>"
+                                     class="circle responsive-img avatar-img" style="border-radius:80px">
+                            </div>
+                            <div class="author">
+                                <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
+                                    <%- partial('_partial/post-statis') %>
+                                </div>
+                                <div class="title titlecolor"><%- config.authorName %></div>
+                                <div class="career"><%- theme.profile.career %></div>
+                            </div>
+                        </div>
+                    </div>
+                    <%- partial('_partial/social-link') %>
+                </div>
+
+                <div class="introduction left-align" data-aos="fade-up">
+                <%= theme.profile.introduction %>
+                <p>技术技能:  主流框架vue/react/react-native/jquery/egg.js/nodejs等; CSS3、HTML5、弹性布局都熟悉; 熟悉权限管理;小程序均有涉及;</p>
+                <p></p>
+                <p>构建工具:  模块化构建工具webpack、自动化构建工具gulpjs</p>
+                     <p></p>
+                <p>沟通交流:  对开发流程比较了解，能换位思考，沟通问题，解决矛盾;合理安排工作； </p>
+                     <p></p>
+                <p>经验积累:  一年半网页开发，一年混合APP开发，一年Sass系统开发; 可以快速定位解决问题，新领域能快速适应;</p>
+                     <p></p>
+                <p>管理能力:  善于调节各角色关系，分配任务与监督和审核代码，带过五人前端团队；</p>
+                </div>
+
+                <%- partial('_widget/post-charts') %>
+
+                <% if (theme.myProjects && theme.myProjects.enable) { %>
+                <%- partial('_widget/my-projects') %>
+                <% } %>
+
+                <% if (theme.mySkills && theme.mySkills.enable) { %>
+                <%- partial('_widget/my-skills') %>
+                <% } %>
+
+                <% if (theme.myGallery && theme.myGallery.enable) { %>
+                <%- partial('_widget/my-gallery') %>
+                <% } %>
+
+            </div>
+        </div>
+    </div>
+</main>
