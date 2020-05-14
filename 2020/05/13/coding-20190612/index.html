@@ -58,6 +58,8 @@ node -v    // v9.1.0npm -v  // 6.5.0webpack -v   // 4.32.2webpack-cli -v // 3.3.
     <li class="hide-on-med-and-down">
         <a href="/" class="waves-effect waves-light">
             
+            <i class="fa fa-home"></i>
+            
             <span>首页</span>
         </a>
     </li>
@@ -72,6 +74,8 @@ node -v    // v9.1.0npm -v  // 6.5.0webpack -v   // 4.32.2webpack-cli -v // 3.3.
     <li class="hide-on-med-and-down">
         <a href="/tags" class="waves-effect waves-light">
             
+            <i class="fa fa-tags"></i>
+            
             <span>标签</span>
         </a>
     </li>
@@ -79,12 +83,16 @@ node -v    // v9.1.0npm -v  // 6.5.0webpack -v   // 4.32.2webpack-cli -v // 3.3.
     <li class="hide-on-med-and-down">
         <a href="/archives" class="waves-effect waves-light">
             
+            <i class="fa fa-archive"></i>
+            
             <span>时间轴</span>
         </a>
     </li>
     
     <li class="hide-on-med-and-down">
         <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
             
             <span>关于</span>
         </a>
@@ -119,7 +127,7 @@ node -v    // v9.1.0npm -v  // 6.5.0webpack -v   // 4.32.2webpack-cli -v // 3.3.
         <li>
             <a href="/" class="waves-effect waves-light">
                 
-                <i class="fa fa-fw fa-link"></i>
+                <i class="fa fa-fw fa-home"></i>
                 
                 首页
             </a>
@@ -137,7 +145,7 @@ node -v    // v9.1.0npm -v  // 6.5.0webpack -v   // 4.32.2webpack-cli -v // 3.3.
         <li>
             <a href="/tags" class="waves-effect waves-light">
                 
-                <i class="fa fa-fw fa-link"></i>
+                <i class="fa fa-fw fa-tags"></i>
                 
                 标签
             </a>
@@ -146,7 +154,7 @@ node -v    // v9.1.0npm -v  // 6.5.0webpack -v   // 4.32.2webpack-cli -v // 3.3.
         <li>
             <a href="/archives" class="waves-effect waves-light">
                 
-                <i class="fa fa-fw fa-link"></i>
+                <i class="fa fa-fw fa-archive"></i>
                 
                 时间轴
             </a>
@@ -155,7 +163,7 @@ node -v    // v9.1.0npm -v  // 6.5.0webpack -v   // 4.32.2webpack-cli -v // 3.3.
         <li>
             <a href="/about" class="waves-effect waves-light">
                 
-                <i class="fa fa-fw fa-link"></i>
+                <i class="fa fa-fw fa-user-circle-o"></i>
                 
                 关于
             </a>
@@ -450,7 +458,7 @@ var app = new Vue({
 <div id="app">
     {{ mess }}
 </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"right","width":260,"height":500},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"tagMode":false});</script><script>
+<script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 processImages: null,
@@ -465,7 +473,7 @@ var app = new Vue({
                 isSPA: false,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"right","width":260,"height":500},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"tagMode":false});</script></body>
 <script src="/dist/build.js"></script>
 </html>
 
@@ -1191,24 +1199,20 @@ var app = new Vue({
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/13/coding-20190629/">
+                <a href="/2020/05/13/coding-20190329/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/9.jpg" class="responsive-img" alt="js基础数组Array的一些特性及方法">
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/16.jpg" class="responsive-img" alt="IDEA、 JetBrains、webstorm、 pycharm 破解教程">
                         
-                        <span class="card-title">js基础数组Array的一些特性及方法</span>
+                        <span class="card-title">IDEA、 JetBrains、webstorm、 pycharm 破解教程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">@toc
-
-前言: 工作业务数据乱，数据转换用得繁，对接交流竟无语，全靠数组方法换；
-
-数据的了解js数据类型
-在js基础中，我都们知道数据类型有两大类:原始类型(基本类型)、引用类型
-
-基本类型js有5 种原始类型，即 Undefined</div>
+                    <div class="summary">@TOC
+第一步 下载IDEA 2018年2月前版本)       ！！！注意 一定要2018年2月前的版本 最新版本不确定能否使用
+第二步 打开破解包网址 下图所示 点击下载点击下载
+第三步 把下载好的jar包放到IDEA安装目录的/bi</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-13
@@ -1228,8 +1232,8 @@ var app = new Vue({
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/javaScript/" target="_blank">
-                        <span class="chip bg-color">javaScript</span>
+                    <a href="/tags/工具类/" target="_blank">
+                        <span class="chip bg-color">工具类</span>
                     </a>
                     
                 </div>
@@ -1243,24 +1247,24 @@ var app = new Vue({
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/13/coding-20190916/">
+                <a href="/2020/05/13/coding-20190629/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/18.jpg" class="responsive-img" alt="css实现超出几行省略并...">
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/9.jpg" class="responsive-img" alt="js基础数组Array的一些特性及方法">
                         
-                        <span class="card-title">css实现超出几行省略并...</span>
+                        <span class="card-title">js基础数组Array的一些特性及方法</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">@TOC
+                    <div class="summary">@toc
 
+前言: 工作业务数据乱，数据转换用得繁，对接交流竟无语，全靠数组方法换；
 
-单行
-word-break: break-all;
-overflow:hidden; // 超出的文本隐藏
-text-overflow:ellipsis; // 溢出用省略号显示
-white-space:nowrap; // </div>
+数据的了解js数据类型
+在js基础中，我都们知道数据类型有两大类:原始类型(基本类型)、引用类型
+
+基本类型js有5 种原始类型，即 Undefined</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-13
@@ -1280,8 +1284,8 @@ white-space:nowrap; // </div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CSS/" target="_blank">
-                        <span class="chip bg-color">CSS</span>
+                    <a href="/tags/javaScript/" target="_blank">
+                        <span class="chip bg-color">javaScript</span>
                     </a>
                     
                 </div>
@@ -1476,10 +1480,10 @@ white-space:nowrap; // </div>
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"right","width":260,"height":500},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"tagMode":false});</script><script>
+<script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"right","width":260,"height":500},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"tagMode":false});</script></body>
 </html>

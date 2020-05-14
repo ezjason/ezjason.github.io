@@ -57,6 +57,8 @@
     <li class="hide-on-med-and-down">
         <a href="/" class="waves-effect waves-light">
             
+            <i class="fa fa-home"></i>
+            
             <span>首页</span>
         </a>
     </li>
@@ -71,6 +73,8 @@
     <li class="hide-on-med-and-down">
         <a href="/tags" class="waves-effect waves-light">
             
+            <i class="fa fa-tags"></i>
+            
             <span>标签</span>
         </a>
     </li>
@@ -78,12 +82,16 @@
     <li class="hide-on-med-and-down">
         <a href="/archives" class="waves-effect waves-light">
             
+            <i class="fa fa-archive"></i>
+            
             <span>时间轴</span>
         </a>
     </li>
     
     <li class="hide-on-med-and-down">
         <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
             
             <span>关于</span>
         </a>
@@ -118,7 +126,7 @@
         <li>
             <a href="/" class="waves-effect waves-light">
                 
-                <i class="fa fa-fw fa-link"></i>
+                <i class="fa fa-fw fa-home"></i>
                 
                 首页
             </a>
@@ -136,7 +144,7 @@
         <li>
             <a href="/tags" class="waves-effect waves-light">
                 
-                <i class="fa fa-fw fa-link"></i>
+                <i class="fa fa-fw fa-tags"></i>
                 
                 标签
             </a>
@@ -145,7 +153,7 @@
         <li>
             <a href="/archives" class="waves-effect waves-light">
                 
-                <i class="fa fa-fw fa-link"></i>
+                <i class="fa fa-fw fa-archive"></i>
                 
                 时间轴
             </a>
@@ -154,7 +162,7 @@
         <li>
             <a href="/about" class="waves-effect waves-light">
                 
-                <i class="fa fa-fw fa-link"></i>
+                <i class="fa fa-fw fa-user-circle-o"></i>
                 
                 关于
             </a>
@@ -1123,25 +1131,23 @@ some():方法用于检测数组中的元素是否有满足指定条件的，若�
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/13/macnginx-20190603/">
+                <a href="/2020/05/13/nginx-20190603/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/5.jpg" class="responsive-img" alt="mac/nginx/nginx部署/代理/跨域">
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/4.jpg" class="responsive-img" alt="nginx部署/代理的基础">
                         
-                        <span class="card-title">mac/nginx/nginx部署/代理/跨域</span>
+                        <span class="card-title">nginx部署/代理的基础</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">上篇文章我们说到了nginx的一些入门功能使用，但Mac book下的nginx如何配置呢？这将是本篇文章的重点；
-安装nginx
-打开终端Terminal
+                    <div class="summary">关于nginx,咱们先了解nginx在开发过程中的主要作用
+nginx解决跨域
+nginx负载均衡
 
-安装brew
+一、nginx解决跨域如果要理解什么是跨域
 
-
-
-ruby -e “$(curl -fsSL https://</div>
+广义上的跨域是指一个域下的文档或脚本试图去请求另一个域下的资源。即浏览器的同源策略/SOP限</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-13
@@ -1357,10 +1363,10 @@ ruby -e “$(curl -fsSL https://</div>
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"right","width":260,"height":500},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"tagMode":false});</script><script>
+<script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"right","width":260,"height":500},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"tagMode":false});</script></body>
 </html>

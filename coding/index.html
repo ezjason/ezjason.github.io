@@ -53,6 +53,8 @@
     <li class="hide-on-med-and-down">
         <a href="/" class="waves-effect waves-light">
             
+            <i class="fa fa-home"></i>
+            
             <span>首页</span>
         </a>
     </li>
@@ -67,6 +69,8 @@
     <li class="hide-on-med-and-down">
         <a href="/tags" class="waves-effect waves-light">
             
+            <i class="fa fa-tags"></i>
+            
             <span>标签</span>
         </a>
     </li>
@@ -74,12 +78,16 @@
     <li class="hide-on-med-and-down">
         <a href="/archives" class="waves-effect waves-light">
             
+            <i class="fa fa-archive"></i>
+            
             <span>时间轴</span>
         </a>
     </li>
     
     <li class="hide-on-med-and-down">
         <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
             
             <span>关于</span>
         </a>
@@ -114,7 +122,7 @@
         <li>
             <a href="/" class="waves-effect waves-light">
                 
-                <i class="fa fa-fw fa-link"></i>
+                <i class="fa fa-fw fa-home"></i>
                 
                 首页
             </a>
@@ -132,7 +140,7 @@
         <li>
             <a href="/tags" class="waves-effect waves-light">
                 
-                <i class="fa fa-fw fa-link"></i>
+                <i class="fa fa-fw fa-tags"></i>
                 
                 标签
             </a>
@@ -141,7 +149,7 @@
         <li>
             <a href="/archives" class="waves-effect waves-light">
                 
-                <i class="fa fa-fw fa-link"></i>
+                <i class="fa fa-fw fa-archive"></i>
                 
                 时间轴
             </a>
@@ -150,7 +158,7 @@
         <li>
             <a href="/about" class="waves-effect waves-light">
                 
-                <i class="fa fa-fw fa-link"></i>
+                <i class="fa fa-fw fa-user-circle-o"></i>
                 
                 关于
             </a>
@@ -222,6 +230,46 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                         
                         <li>
                             <div class="article-list">
+                                <a href="/2020/05/14/coding-1/">
+                                    <div class="row">
+                                        <div class="col s9 m9 l9">
+                                            <div class="article-content">
+                                                <div style="display: inline-block;">
+                                                    <div class="article-title">CSS垂直居中的几种方法</div>
+                                                    <div class="summary">
+                                                        CSS垂直居中的几种方法
+@TOC
+假设HTML如下:&lt;body>
+    &lt;div id="box">
+        &lt;div id="content">&lt;/div>
+  
+                                                    </div>
+                                                    <div class="publish-info">
+                                                        <span class="publish-date">
+                                                            <i class="fa fa-calendar fa-fw"></i>
+                                                            2020-05-14
+                                                        </span>
+                                                        <span class="publish-author">
+                                                            <i class="fa fa-user fa-fw"></i>
+                                                            
+                                                            Jason
+                                                            
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col s3 m3 l3 article-img">
+                                            
+                                            <div class="article-image" style="background-image: url('/medias/featureimages/8.jpg');"></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <div class="article-list">
                                 <a href="/2020/05/13/coding-5/">
                                     <div class="row">
                                         <div class="col s9 m9 l9">
@@ -250,47 +298,6 @@ websocketWebsocket同http一样都是是基于tcp的,可靠性的双向通信协
                                         <div class="col s3 m3 l3 article-img">
                                             
                                             <div class="article-image" style="background-image: url('/medias/featureimages/23.jpg');"></div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        
-                        <li>
-                            <div class="article-list">
-                                <a href="/2020/05/13/nginx-20190603/">
-                                    <div class="row">
-                                        <div class="col s9 m9 l9">
-                                            <div class="article-content">
-                                                <div style="display: inline-block;">
-                                                    <div class="article-title">nginx部署/代理的基础</div>
-                                                    <div class="summary">
-                                                        关于nginx,咱们先了解nginx在开发过程中的主要作用
-nginx解决跨域
-nginx负载均衡
-
-一、nginx解决跨域如果要理解什么是跨域
-
-广义上的跨域是指一个域下的文档或脚本试图去请求另一个
-                                                    </div>
-                                                    <div class="publish-info">
-                                                        <span class="publish-date">
-                                                            <i class="fa fa-calendar fa-fw"></i>
-                                                            2020-05-13
-                                                        </span>
-                                                        <span class="publish-author">
-                                                            <i class="fa fa-user fa-fw"></i>
-                                                            
-                                                            Jason
-                                                            
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col s3 m3 l3 article-img">
-                                            
-                                            <div class="article-image" style="background-image: url('/medias/featureimages/4.jpg');"></div>
                                         </div>
                                     </div>
                                 </a>
@@ -334,6 +341,47 @@ ruby -e “$
                                         <div class="col s3 m3 l3 article-img">
                                             
                                             <div class="article-image" style="background-image: url('/medias/featureimages/5.jpg');"></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <div class="article-list">
+                                <a href="/2020/05/13/nginx-20190603/">
+                                    <div class="row">
+                                        <div class="col s9 m9 l9">
+                                            <div class="article-content">
+                                                <div style="display: inline-block;">
+                                                    <div class="article-title">nginx部署/代理的基础</div>
+                                                    <div class="summary">
+                                                        关于nginx,咱们先了解nginx在开发过程中的主要作用
+nginx解决跨域
+nginx负载均衡
+
+一、nginx解决跨域如果要理解什么是跨域
+
+广义上的跨域是指一个域下的文档或脚本试图去请求另一个
+                                                    </div>
+                                                    <div class="publish-info">
+                                                        <span class="publish-date">
+                                                            <i class="fa fa-calendar fa-fw"></i>
+                                                            2020-05-13
+                                                        </span>
+                                                        <span class="publish-author">
+                                                            <i class="fa fa-user fa-fw"></i>
+                                                            
+                                                            Jason
+                                                            
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col s3 m3 l3 article-img">
+                                            
+                                            <div class="article-image" style="background-image: url('/medias/featureimages/4.jpg');"></div>
                                         </div>
                                     </div>
                                 </a>
@@ -419,42 +467,6 @@ some():方法用于检测数组
                         
                         <li>
                             <div class="article-list">
-                                <a href="/2020/05/13/coding-20190614/">
-                                    <div class="row">
-                                        <div class="col s9 m9 l9">
-                                            <div class="article-content">
-                                                <div style="display: inline-block;">
-                                                    <div class="article-title">js通过开始时间和结束时间计算出中间的所有日期</div>
-                                                    <div class="summary">
-                                                        @TOC
-写在前面实际开发过程中，我们有许许多多的产品都设计到了时间，也有时候需要自己转化时间格式，这里推荐一个日期时间处理类库momentjs，但很多时候，我们仅仅是转化个别时间，还没必要安装这么一
-                                                    </div>
-                                                    <div class="publish-info">
-                                                        <span class="publish-date">
-                                                            <i class="fa fa-calendar fa-fw"></i>
-                                                            2020-05-13
-                                                        </span>
-                                                        <span class="publish-author">
-                                                            <i class="fa fa-user fa-fw"></i>
-                                                            
-                                                            Jason
-                                                            
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col s3 m3 l3 article-img">
-                                            
-                                            <div class="article-image" style="background-image: url('/medias/featureimages/13.jpg');"></div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        
-                        <li>
-                            <div class="article-list">
                                 <a href="/2020/05/13/coding-20190916/">
                                     <div class="row">
                                         <div class="col s9 m9 l9">
@@ -497,19 +509,15 @@ whi
                         
                         <li>
                             <div class="article-list">
-                                <a href="/2020/05/13/coding-20190612/">
+                                <a href="/2020/05/13/coding-20190614/">
                                     <div class="row">
                                         <div class="col s9 m9 l9">
                                             <div class="article-content">
                                                 <div style="display: inline-block;">
-                                                    <div class="article-title">webpack4.0+加vue2.0+从零开始搭设vue项目</div>
+                                                    <div class="article-title">js通过开始时间和结束时间计算出中间的所有日期</div>
                                                     <div class="summary">
                                                         @TOC
-本地环境
-
-node -v    // v9.1.0npm -v  // 6.5.0webpack -v   // 4.32.2webpack-cli -v // 3.3.2
-
-这里需要注意
+写在前面实际开发过程中，我们有许许多多的产品都设计到了时间，也有时候需要自己转化时间格式，这里推荐一个日期时间处理类库momentjs，但很多时候，我们仅仅是转化个别时间，还没必要安装这么一
                                                     </div>
                                                     <div class="publish-info">
                                                         <span class="publish-date">
@@ -528,7 +536,7 @@ node -v    // v9.1.0npm -v  // 6.5.0webpack -v   // 4.32.2webpack-cli -v // 3.3.
                                         </div>
                                         <div class="col s3 m3 l3 article-img">
                                             
-                                            <div class="article-image" style="background-image: url('/medias/featureimages/8.jpg');"></div>
+                                            <div class="article-image" style="background-image: url('/medias/featureimages/13.jpg');"></div>
                                         </div>
                                     </div>
                                 </a>
@@ -579,6 +587,46 @@ node -v    // v9.1.0npm -v  // 6.5.0webpack -v   // 4.32.2webpack-cli -v // 3.3.
                         
                         <li>
                             <div class="article-list">
+                                <a href="/2020/05/13/coding-20190612/">
+                                    <div class="row">
+                                        <div class="col s9 m9 l9">
+                                            <div class="article-content">
+                                                <div style="display: inline-block;">
+                                                    <div class="article-title">webpack4.0+加vue2.0+从零开始搭设vue项目</div>
+                                                    <div class="summary">
+                                                        @TOC
+本地环境
+
+node -v    // v9.1.0npm -v  // 6.5.0webpack -v   // 4.32.2webpack-cli -v // 3.3.2
+
+这里需要注意
+                                                    </div>
+                                                    <div class="publish-info">
+                                                        <span class="publish-date">
+                                                            <i class="fa fa-calendar fa-fw"></i>
+                                                            2020-05-13
+                                                        </span>
+                                                        <span class="publish-author">
+                                                            <i class="fa fa-user fa-fw"></i>
+                                                            
+                                                            Jason
+                                                            
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col s3 m3 l3 article-img">
+                                            
+                                            <div class="article-image" style="background-image: url('/medias/featureimages/8.jpg');"></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <div class="article-list">
                                 <a href="/2020/05/13/coding-20190329/">
                                     <div class="row">
                                         <div class="col s9 m9 l9">
@@ -609,84 +657,6 @@ node -v    // v9.1.0npm -v  // 6.5.0webpack -v   // 4.32.2webpack-cli -v // 3.3.
                                         <div class="col s3 m3 l3 article-img">
                                             
                                             <div class="article-image" style="background-image: url('/medias/featureimages/16.jpg');"></div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        
-                        <li>
-                            <div class="article-list">
-                                <a href="/2020/05/13/coding-2/">
-                                    <div class="row">
-                                        <div class="col s9 m9 l9">
-                                            <div class="article-content">
-                                                <div style="display: inline-block;">
-                                                    <div class="article-title">vue中watch不触发、不生效的解决办法及原理</div>
-                                                    <div class="summary">
-                                                        vue中watch不触发、不生效的解决办法及原理@TOC
-遇到的问题vue中watch不触发、不生效的解决办法及原理
-@TOC
-遇到的问题 在深层props过程中，props的数据传到了目标文件 但却
-                                                    </div>
-                                                    <div class="publish-info">
-                                                        <span class="publish-date">
-                                                            <i class="fa fa-calendar fa-fw"></i>
-                                                            2020-05-13
-                                                        </span>
-                                                        <span class="publish-author">
-                                                            <i class="fa fa-user fa-fw"></i>
-                                                            
-                                                            Jason
-                                                            
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col s3 m3 l3 article-img">
-                                            
-                                            <div class="article-image" style="background-image: url('/medias/featureimages/13.jpg');"></div>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                        </li>
-                        
-                        <li>
-                            <div class="article-list">
-                                <a href="/2020/05/13/coding-1/">
-                                    <div class="row">
-                                        <div class="col s9 m9 l9">
-                                            <div class="article-content">
-                                                <div style="display: inline-block;">
-                                                    <div class="article-title">CSS垂直居中的几种方法</div>
-                                                    <div class="summary">
-                                                        CSS垂直居中的几种方法
-@TOC
-假设HTML如下:&lt;body>
-    &lt;div id="box">
-        &lt;div id="content">&lt;/div>
-  
-                                                    </div>
-                                                    <div class="publish-info">
-                                                        <span class="publish-date">
-                                                            <i class="fa fa-calendar fa-fw"></i>
-                                                            2020-05-13
-                                                        </span>
-                                                        <span class="publish-author">
-                                                            <i class="fa fa-user fa-fw"></i>
-                                                            
-                                                            Jason
-                                                            
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col s3 m3 l3 article-img">
-                                            
-                                            <div class="article-image" style="background-image: url('/medias/featureimages/8.jpg');"></div>
                                         </div>
                                     </div>
                                 </a>
@@ -730,6 +700,44 @@ node -v    // v9.1.0npm -v  // 6.5.0webpack -v   // 4.32.2webpack-cli -v // 3.3.
                                         <div class="col s3 m3 l3 article-img">
                                             
                                             <div class="article-image" style="background-image: url('/medias/featureimages/4.jpg');"></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </li>
+                        
+                        <li>
+                            <div class="article-list">
+                                <a href="/2020/05/13/coding-2/">
+                                    <div class="row">
+                                        <div class="col s9 m9 l9">
+                                            <div class="article-content">
+                                                <div style="display: inline-block;">
+                                                    <div class="article-title">vue中watch不触发、不生效的解决办法及原理</div>
+                                                    <div class="summary">
+                                                        vue中watch不触发、不生效的解决办法及原理@TOC
+遇到的问题vue中watch不触发、不生效的解决办法及原理
+@TOC
+遇到的问题 在深层props过程中，props的数据传到了目标文件 但却
+                                                    </div>
+                                                    <div class="publish-info">
+                                                        <span class="publish-date">
+                                                            <i class="fa fa-calendar fa-fw"></i>
+                                                            2020-05-13
+                                                        </span>
+                                                        <span class="publish-author">
+                                                            <i class="fa fa-user fa-fw"></i>
+                                                            
+                                                            Jason
+                                                            
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col s3 m3 l3 article-img">
+                                            
+                                            <div class="article-image" style="background-image: url('/medias/featureimages/13.jpg');"></div>
                                         </div>
                                     </div>
                                 </a>
@@ -874,10 +882,10 @@ node -v    // v9.1.0npm -v  // 6.5.0webpack -v   // 4.32.2webpack-cli -v // 3.3.
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"right","width":260,"height":500},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"tagMode":false});</script><script>
+<script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"right","width":260,"height":500},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"tagMode":false});</script></body>
 </html>
