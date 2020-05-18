@@ -1,4 +1,7 @@
 ---
 title: {{ title }}
-tags:
+tags: 
+- nodejs
+- npm
+- nvm
 ---

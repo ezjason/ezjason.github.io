@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="前端构建工具Gulp.js 知多少, 王一诺">
+    <meta name="keywords" content="前端构建工具Gulp.js 知多少, Jason">
     <meta name="description" content="@TOC
 写在前面
 前几天在更新webpack知识的时候，想起来三年前用过的前端构建工具gulp/grunt,遂写个笔记总结一下，出来混总是要还的，忘得七七八八了…
@@ -17,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>前端构建工具Gulp.js 知多少 | 王一诺</title>
+    <title>前端构建工具Gulp.js 知多少 | Jason</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -44,9 +44,9 @@
                 <div class="brand-logo">
                     <a href="/" class="waves-effect waves-light">
                         
-                        <img src="/medias/avatar.jpg" class="logo-img hide-on-small-only">
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/avatar.jpg" class="logo-img hide-on-small-only">
                         
-                        <span class="logo-span">王一诺</span>
+                        <span class="logo-span">Jason</span>
                     </a>
                 </div>
                 
@@ -57,12 +57,16 @@
     <li class="hide-on-med-and-down">
         <a href="/" class="waves-effect waves-light">
             
+            <i class="fa fa-home"></i>
+            
             <span>首页</span>
         </a>
     </li>
     
     <li class="hide-on-med-and-down">
         <a href="/coding" class="waves-effect waves-light">
+            
+            <i class="fa fas fa-bookmark"></i>
             
             <span>编程</span>
         </a>
@@ -71,6 +75,8 @@
     <li class="hide-on-med-and-down">
         <a href="/tags" class="waves-effect waves-light">
             
+            <i class="fa fa-tags"></i>
+            
             <span>标签</span>
         </a>
     </li>
@@ -78,12 +84,16 @@
     <li class="hide-on-med-and-down">
         <a href="/archives" class="waves-effect waves-light">
             
+            <i class="fa fa-archive"></i>
+            
             <span>时间轴</span>
         </a>
     </li>
     
     <li class="hide-on-med-and-down">
-        <a href="/about" class="waves-effect waves-light">
+        <a href class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
             
             <span>关于</span>
         </a>
@@ -101,9 +111,9 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/avatar.jpg" class="logo-img circle responsive-img">
+        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/avatar.jpg" class="logo-img circle responsive-img">
         
-        <div class="logo-name">王一诺</div>
+        <div class="logo-name">Jason</div>
         <div class="logo-desc">
             
             哪有什么岁月静好，只是有人为你负重前行zzZ
@@ -118,7 +128,7 @@
         <li>
             <a href="/" class="waves-effect waves-light">
                 
-                <i class="fa fa-fw fa-link"></i>
+                <i class="fa fa-fw fa-home"></i>
                 
                 首页
             </a>
@@ -127,7 +137,7 @@
         <li>
             <a href="/coding" class="waves-effect waves-light">
                 
-                <i class="fa fa-fw fa-link"></i>
+                <i class="fa fa-fw fas fa-bookmark"></i>
                 
                 编程
             </a>
@@ -136,7 +146,7 @@
         <li>
             <a href="/tags" class="waves-effect waves-light">
                 
-                <i class="fa fa-fw fa-link"></i>
+                <i class="fa fa-fw fa-tags"></i>
                 
                 标签
             </a>
@@ -145,16 +155,16 @@
         <li>
             <a href="/archives" class="waves-effect waves-light">
                 
-                <i class="fa fa-fw fa-link"></i>
+                <i class="fa fa-fw fa-archive"></i>
                 
                 时间轴
             </a>
         </li>
         
         <li>
-            <a href="/about" class="waves-effect waves-light">
+            <a href class="waves-effect waves-light">
                 
-                <i class="fa fa-fw fa-link"></i>
+                <i class="fa fa-fw fa-user-circle-o"></i>
                 
                 关于
             </a>
@@ -304,6 +314,20 @@
                                 </div>
 
                                 
+                                    
+                                    <div class="info-break-policy">
+                                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                                        2.4k
+                                    </div>
+                                    
+
+                                    
+                                    <div class="info-break-policy">
+                                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                                        11 分
+                                    </div>
+                                    
+                                
 
                 								
                 														<div id="busuanzi_container_page_pv" class="info-break-policy">
@@ -324,155 +348,28 @@
 <p>前几天在更新webpack知识的时候，想起来三年前用过的前端构建工具gulp/grunt,遂写个笔记总结一下，出来混总是要还的，忘得七七八八了…</p>
 </blockquote>
 <p>阅读本文章之前，相信你已经对前端构建工具(webpack、gulp、grunt)有一定的认知和了解了，那么他们之间究竟有什么区别呢？</p>
-<h3 id="什么是gulp？"><a href="#什么是gulp？" class="headerlink" title="什么是gulp？"></a>什么是gulp？</h3><p>gulp文档上面有这么一句话$\color{blue} {用自动化构建工具增强你的工作流程！} $ ，也就是说 gulp是一个自动化构建工具；<br>gulp的一些功能如下(包括但不限于):<br><img src="https://upload-images.jianshu.io/upload_images/11447772-631953087e459269.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="自动化构建工具gulp"></p>
+<h3 id="什么是gulp？"><a href="#什么是gulp？" class="headerlink" title="什么是gulp？"></a>什么是gulp？</h3><p>gulp文档上面有这么一句话$\color{blue} {用自动化构建工具增强你的工作流程！} $ ，也就是说 gulp是一个自动化构建工具；<br>gulp的一些功能如下(包括但不限于):<br><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://upload-images.jianshu.io/upload_images/11447772-631953087e459269.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="自动化构建工具gulp"></p>
 <h3 id="gulp或grunt和webpack的区别"><a href="#gulp或grunt和webpack的区别" class="headerlink" title="gulp或grunt和webpack的区别"></a>gulp或grunt和webpack的区别</h3><p>其实Webpack和另外两个并没有太多的可比性</p>
 <ul>
 <li><p>Gulp/Grunt是一种能够优化前端的开发流程的工具，而WebPack是一种模块化的解决方案，不过Webpack的优点使得Webpack在很多场景下可以替代Gulp/Grunt类的工具。</p>
 </li>
-<li><p>Grunt和Gulp的工作方式是：在一个配置文件中，指明对某些文件进行类似编译，组合，压缩等任务的具体步骤，工具之后可以自动替你完成这些任务。<br><img src="https://upload-images.jianshu.io/upload_images/11447772-d87610855f28fd9c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Grunt和Gulp的工作流程"></p>
+<li><p>Grunt和Gulp的工作方式是：在一个配置文件中，指明对某些文件进行类似编译，组合，压缩等任务的具体步骤，工具之后可以自动替你完成这些任务。<br><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://upload-images.jianshu.io/upload_images/11447772-d87610855f28fd9c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Grunt和Gulp的工作流程"></p>
 </li>
-<li><p>Webpack的工作方式是：把你的项目当做一个整体，通过一个给定的主文件（如：index.js），Webpack将从这个文件开始找到你的项目的所有依赖文件，使用loaders处理它们，最后打包为一个（或多个）浏览器可识别的JavaScript文件。<br><img src="https://upload-images.jianshu.io/upload_images/11447772-cdea13333a46b8f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Webpack的工作方式"><br><strong>上述内容转自@zhangwang的<a href="https://www.jianshu.com/p/42e11515c10f" target="_blank" rel="noopener">入门Webpack，看这篇就够了</a></strong></p>
+<li><p>Webpack的工作方式是：把你的项目当做一个整体，通过一个给定的主文件（如：index.js），Webpack将从这个文件开始找到你的项目的所有依赖文件，使用loaders处理它们，最后打包为一个（或多个）浏览器可识别的JavaScript文件。<br><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://upload-images.jianshu.io/upload_images/11447772-cdea13333a46b8f2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Webpack的工作方式"><br><strong>上述内容转自@zhangwang的<a href="https://www.jianshu.com/p/42e11515c10f" target="_blank" rel="noopener">入门Webpack，看这篇就够了</a></strong></p>
 </li>
 </ul>
-<h3 id="gulp起步"><a href="#gulp起步" class="headerlink" title="gulp起步"></a>gulp起步</h3><p>傻瓜式起步照搬官网文档<br>1.安装</p>
-<pre><code>// 全局安装
-$ npm install -g gulp
-或者
-$ npm install --global gulp
-
-// 作为项目的开发依赖（devDependencies）安装：
-$ npm install --save-dev gulp
-</code></pre><p>2.在项目根目录下创建一个名为 gulpfile.js 的文件：</p>
-<pre><code>var gulp = require(&#39;gulp&#39;);
-
-gulp.task(&#39;default&#39;, function() {
-  // 将你的默认的任务代码放在这
-});
-</code></pre><p>3.运行 gulp：</p>
-<pre><code>$ gulp
-</code></pre><p>默认的名为 default 的任务（task）将会被运行，在这里，这个任务并未做任何事情。<br>具体详情可以查看<a href="https://www.gulpjs.com.cn/docs/" target="_blank" rel="noopener">gulpjs.com文档</a></p>
-<h3 id="项目搭建"><a href="#项目搭建" class="headerlink" title="项目搭建"></a>项目搭建</h3><p>新建一个项目gulp-test<br>环境:</p>
-<pre><code>$ node -v // v9.1.0
-$ npm -v // 6.5.0
-</code></pre><p>1.新建文件以下文件如下</p>
-<pre><code>gulp-test/
-          css/
-               index.scss
-           js/
-               helloworld.js
-           index.html
-           gulpfile.js
-</code></pre><p>其中 <strong>gulpfile.js</strong> 是我们gulp的配置文件，启动gulp默认会找个这个文件并执行；<br>2.接下来安装依赖</p>
-<pre><code>$ npm init
-</code></pre><p>一直按回车Enter初始化package.json文件(小技巧: <strong>npm iniy -y</strong> 可以免去繁琐的enter步骤)<br>此时我们的目录结构是这样了</p>
-<pre><code>gulp-test/
-          css/
-               index.scss
-           js/
-               helloworld.js
-           index.html
-           gulpfile.js
-           package.json
-</code></pre><p>安装依赖</p>
-<pre><code>npm i --save-dev gulp        // gulp自动化构建工具
-npm i --save-dev gulp-uglify //js压缩
-npm i --save-dev gulp-concat //文件合并
-npm i --save-dev gulp-jshint //js语法检测
-npm i --save-dev gulp-rename //文件重命名
-npm i --save-dev gulp-sass //sass编译工具
-npm i --save-dev gulp-minify-css //css压缩
-npm i --save-dev del       //文件删除
-// 以下三选一
-npm i --save-dev gulp-connect       // 自动刷新页面
-npm i --save-dev  browser-sync       // 自动刷新页面
-npm i --save-dev gulp-livereload       // 自动刷新页面
-</code></pre><p>这里页面实时刷新只讲这个<strong>gulp-connect</strong> ，其他详情可以参照<a href="http://www.browsersync.cn/docs/gulp/" target="_blank" rel="noopener">Browsersync</a>和文章<a href="http://www.ydcss.com/archives/702" target="_blank" rel="noopener">gulp-livereload</a></p>
-<p>安装完依赖后配置gulpfile.js如下:</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// 定义依赖项和插件</span>
-<span class="token keyword">const</span> gulp<span class="token operator">=</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'gulp'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span>  uglify<span class="token operator">=</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'gulp-uglify'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//js压缩</span>
-<span class="token keyword">const</span>  concat<span class="token operator">=</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'gulp-concat'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//文件合并</span>
-<span class="token keyword">const</span> jshint <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'gulp-jshint'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//js语法检测</span>
-<span class="token keyword">const</span> rename <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'gulp-rename'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 重命名</span>
-<span class="token keyword">const</span> sass <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'gulp-sass'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 编译scss</span>
-<span class="token keyword">const</span>  minifycss <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'gulp-minify-css'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 压缩css</span>
-<span class="token comment" spellcheck="true">// const livereload = require('gulp-livereload'); // 自动刷新页面</span>
-<span class="token keyword">const</span>  del <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'del'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">//文件删除</span>
-<span class="token keyword">const</span> connect <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'gulp-connect'</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 自动刷新页面</span>
-
-gulp<span class="token punctuation">.</span><span class="token function">task</span><span class="token punctuation">(</span><span class="token string">'server'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  connect<span class="token punctuation">.</span><span class="token function">server</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-    port<span class="token punctuation">:</span> <span class="token number">8080</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">//指定端口号，在浏览器中输入localhost:8080就可以直接访问生成的html页面</span>
-    root<span class="token punctuation">:</span> <span class="token string">'./'</span><span class="token punctuation">,</span> <span class="token comment" spellcheck="true">//指定html文件起始的根目录</span>
-    livereload<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token comment" spellcheck="true">//启动实时刷新功能（配合上边的connect.reload()方法同步使用）</span>
-  <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token comment" spellcheck="true">// 定义名为 "my-task" 的任务压缩js</span>
-gulp<span class="token punctuation">.</span><span class="token function">task</span><span class="token punctuation">(</span><span class="token string">'my-task-js'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  gulp<span class="token punctuation">.</span><span class="token function">src</span><span class="token punctuation">(</span><span class="token string">'./js/*.js'</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">jshint</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">uglify</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token string">'all.js'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">rename</span><span class="token punctuation">(</span><span class="token punctuation">{</span>suffix<span class="token punctuation">:</span> <span class="token string">'.min'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>gulp<span class="token punctuation">.</span><span class="token function">dest</span><span class="token punctuation">(</span><span class="token string">'./dist/js'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>connect<span class="token punctuation">.</span><span class="token function">reload</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-
-<span class="token comment" spellcheck="true">// 定义名为 "my-task-css" 的任务编译scss压缩css</span>
-gulp<span class="token punctuation">.</span><span class="token function">task</span><span class="token punctuation">(</span><span class="token string">'my-task-css'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  gulp<span class="token punctuation">.</span><span class="token function">src</span><span class="token punctuation">(</span><span class="token string">'./css/*.scss'</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">sass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">on</span><span class="token punctuation">(</span><span class="token string">'error'</span><span class="token punctuation">,</span> sass<span class="token punctuation">.</span>logError<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token string">'all.css'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">rename</span><span class="token punctuation">(</span><span class="token punctuation">{</span>suffix<span class="token punctuation">:</span> <span class="token string">'.min'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">minifycss</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>connect<span class="token punctuation">.</span><span class="token function">reload</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>gulp<span class="token punctuation">.</span><span class="token function">dest</span><span class="token punctuation">(</span><span class="token string">'./dist/css'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-gulp<span class="token punctuation">.</span><span class="token function">task</span><span class="token punctuation">(</span><span class="token string">'html'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  gulp<span class="token punctuation">.</span><span class="token function">src</span><span class="token punctuation">(</span><span class="token string">'*.html'</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>gulp<span class="token punctuation">.</span><span class="token function">dest</span><span class="token punctuation">(</span><span class="token string">'dist/html'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>connect<span class="token punctuation">.</span><span class="token function">reload</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span>
-<span class="token comment" spellcheck="true">//执行压缩前，先删除以前压缩的文件</span>
-gulp<span class="token punctuation">.</span><span class="token function">task</span><span class="token punctuation">(</span><span class="token string">'clean'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">return</span> <span class="token function">del</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'./dist/css/all.css'</span><span class="token punctuation">,</span> <span class="token string">'./dist/css/all.min.css'</span><span class="token punctuation">,</span> <span class="token string">'./dist/all.js'</span><span class="token punctuation">,</span><span class="token string">'./dist/all.min.js'</span><span class="token punctuation">,</span> <span class="token string">'./dist/html'</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 定义默认任务</span>
-
-gulp<span class="token punctuation">.</span><span class="token function">task</span><span class="token punctuation">(</span><span class="token string">'default'</span><span class="token punctuation">,</span><span class="token punctuation">[</span><span class="token string">'clean'</span><span class="token punctuation">]</span><span class="token punctuation">,</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  gulp<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token string">'my-task-js'</span><span class="token punctuation">,</span> <span class="token string">'my-task-css'</span><span class="token punctuation">,</span> <span class="token string">'watch'</span><span class="token punctuation">,</span> <span class="token string">'server'</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 任务监听</span>
-gulp<span class="token punctuation">.</span><span class="token function">task</span><span class="token punctuation">(</span><span class="token string">'watch'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token comment" spellcheck="true">// Watch.js files</span>
-  gulp<span class="token punctuation">.</span><span class="token function">watch</span><span class="token punctuation">(</span><span class="token string">'./js/*.js'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'my-task-js'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">// Watch .scss files</span>
-  gulp<span class="token punctuation">.</span><span class="token function">watch</span><span class="token punctuation">(</span><span class="token string">'./css/*.scss'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'my-task-css'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">// Watch .html files</span>
-  gulp<span class="token punctuation">.</span><span class="token function">watch</span><span class="token punctuation">(</span><span class="token string">'./*.html'</span><span class="token punctuation">,</span> <span class="token punctuation">[</span><span class="token string">'html'</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token comment" spellcheck="true">// Watch any files in dist/, reload on change</span>
-  <span class="token comment" spellcheck="true">// gulp.watch(['dist/!**']).on('change', livereload.changed);</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-</code></pre>
-<p>大概讲解一下gulpfile.js:</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// ...</span>
-<span class="token comment" spellcheck="true">// 定义名为 "my-task" 的任务压缩js</span>
-gulp<span class="token punctuation">.</span><span class="token function">task</span><span class="token punctuation">(</span><span class="token string">'my-task-js'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  gulp<span class="token punctuation">.</span><span class="token function">src</span><span class="token punctuation">(</span><span class="token string">'./js/*.js'</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">jshint</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//js检测</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">uglify</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//js压缩</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token string">'all.js'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//合并为all.js</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">rename</span><span class="token punctuation">(</span><span class="token punctuation">{</span>suffix<span class="token punctuation">:</span> <span class="token string">'.min'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 重命名为all.mim.js</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>gulp<span class="token punctuation">.</span><span class="token function">dest</span><span class="token punctuation">(</span><span class="token string">'./dist/js'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//输出到/dist/js目录</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>connect<span class="token punctuation">.</span><span class="token function">reload</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 更新页面</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// ...</span>
-</code></pre>
+<h3 id="gulp起步"><a href="#gulp起步" class="headerlink" title="gulp起步"></a>gulp起步</h3><p>傻瓜式起步照搬官网文档<br>1.安装<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 全局安装</span><br><span class="line">$ npm install -g gulp</span><br><span class="line">或者</span><br><span class="line">$ npm install --global gulp</span><br><span class="line"></span><br><span class="line">// 作为项目的开发依赖（devDependencies）安装：</span><br><span class="line">$ npm install --save-dev gulp</span><br></pre></td></tr></table></figure></p>
+<p>2.在项目根目录下创建一个名为 gulpfile.js 的文件：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var gulp = require(&apos;gulp&apos;);</span><br><span class="line"></span><br><span class="line">gulp.task(&apos;default&apos;, function() &#123;</span><br><span class="line">  // 将你的默认的任务代码放在这</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>3.运行 gulp：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gulp</span><br></pre></td></tr></table></figure></p>
+<p>默认的名为 default 的任务（task）将会被运行，在这里，这个任务并未做任何事情。<br>具体详情可以查看<a href="https://www.gulpjs.com.cn/docs/" target="_blank" rel="noopener">gulpjs.com文档</a></p>
+<h3 id="项目搭建"><a href="#项目搭建" class="headerlink" title="项目搭建"></a>项目搭建</h3><p>新建一个项目gulp-test<br>环境:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node -v // v9.1.0</span><br><span class="line">$ npm -v // 6.5.0</span><br></pre></td></tr></table></figure></p>
+<p>1.新建文件以下文件如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gulp-test/</span><br><span class="line">          css/</span><br><span class="line">               index.scss</span><br><span class="line">           js/</span><br><span class="line">               helloworld.js</span><br><span class="line">           index.html</span><br><span class="line">           gulpfile.js</span><br></pre></td></tr></table></figure></p>
+<p>其中 <strong>gulpfile.js</strong> 是我们gulp的配置文件，启动gulp默认会找个这个文件并执行；<br>2.接下来安装依赖<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm init</span><br></pre></td></tr></table></figure></p>
+<p>一直按回车Enter初始化package.json文件(小技巧: <strong>npm iniy -y</strong> 可以免去繁琐的enter步骤)<br>此时我们的目录结构是这样了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">gulp-test/</span><br><span class="line">          css/</span><br><span class="line">               index.scss</span><br><span class="line">           js/</span><br><span class="line">               helloworld.js</span><br><span class="line">           index.html</span><br><span class="line">           gulpfile.js</span><br><span class="line">           package.json</span><br></pre></td></tr></table></figure></p>
+<p>安装依赖<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">npm i --save-dev gulp        // gulp自动化构建工具</span><br><span class="line">npm i --save-dev gulp-uglify //js压缩</span><br><span class="line">npm i --save-dev gulp-concat //文件合并</span><br><span class="line">npm i --save-dev gulp-jshint //js语法检测</span><br><span class="line">npm i --save-dev gulp-rename //文件重命名</span><br><span class="line">npm i --save-dev gulp-sass //sass编译工具</span><br><span class="line">npm i --save-dev gulp-minify-css //css压缩</span><br><span class="line">npm i --save-dev del       //文件删除</span><br><span class="line">// 以下三选一</span><br><span class="line">npm i --save-dev gulp-connect       // 自动刷新页面</span><br><span class="line">npm i --save-dev  browser-sync       // 自动刷新页面</span><br><span class="line">npm i --save-dev gulp-livereload       // 自动刷新页面</span><br></pre></td></tr></table></figure></p>
+<p>这里页面实时刷新只讲这个<strong>gulp-connect</strong> ，其他详情可以参照<a href="http://www.browsersync.cn/docs/gulp/" target="_blank" rel="noopener">Browsersync</a>和文章<a href="http://www.ydcss.com/archives/702" target="_blank" rel="noopener">gulp-livereload</a></p>
+<p>安装完依赖后配置gulpfile.js如下:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义依赖项和插件</span></span><br><span class="line"><span class="keyword">const</span> gulp=<span class="built_in">require</span>(<span class="string">'gulp'</span>);</span><br><span class="line"><span class="keyword">const</span>  uglify=<span class="built_in">require</span>(<span class="string">'gulp-uglify'</span>); <span class="comment">//js压缩</span></span><br><span class="line"><span class="keyword">const</span>  concat=<span class="built_in">require</span>(<span class="string">'gulp-concat'</span>); <span class="comment">//文件合并</span></span><br><span class="line"><span class="keyword">const</span> jshint = <span class="built_in">require</span>(<span class="string">'gulp-jshint'</span>); <span class="comment">//js语法检测</span></span><br><span class="line"><span class="keyword">const</span> rename = <span class="built_in">require</span>(<span class="string">'gulp-rename'</span>); <span class="comment">// 重命名</span></span><br><span class="line"><span class="keyword">const</span> sass = <span class="built_in">require</span>(<span class="string">'gulp-sass'</span>); <span class="comment">// 编译scss</span></span><br><span class="line"><span class="keyword">const</span>  minifycss = <span class="built_in">require</span>(<span class="string">'gulp-minify-css'</span>); <span class="comment">// 压缩css</span></span><br><span class="line"><span class="comment">// const livereload = require('gulp-livereload'); // 自动刷新页面</span></span><br><span class="line"><span class="keyword">const</span>  del = <span class="built_in">require</span>(<span class="string">'del'</span>); <span class="comment">//文件删除</span></span><br><span class="line"><span class="keyword">const</span> connect = <span class="built_in">require</span>(<span class="string">'gulp-connect'</span>); <span class="comment">// 自动刷新页面</span></span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'server'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  connect.server(&#123;</span><br><span class="line">    port: <span class="number">8080</span>, <span class="comment">//指定端口号，在浏览器中输入localhost:8080就可以直接访问生成的html页面</span></span><br><span class="line">    root: <span class="string">'./'</span>, <span class="comment">//指定html文件起始的根目录</span></span><br><span class="line">    livereload: <span class="literal">true</span> <span class="comment">//启动实时刷新功能（配合上边的connect.reload()方法同步使用）</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义名为 "my-task" 的任务压缩js</span></span><br><span class="line">gulp.task(<span class="string">'my-task-js'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  gulp.src(<span class="string">'./js/*.js'</span>)</span><br><span class="line">    .pipe(jshint())</span><br><span class="line">    .pipe(uglify())</span><br><span class="line">    .pipe(concat(<span class="string">'all.js'</span>))</span><br><span class="line">    .pipe(rename(&#123;<span class="attr">suffix</span>: <span class="string">'.min'</span>&#125;))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./dist/js'</span>))</span><br><span class="line">    .pipe(connect.reload())</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义名为 "my-task-css" 的任务编译scss压缩css</span></span><br><span class="line">gulp.task(<span class="string">'my-task-css'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  gulp.src(<span class="string">'./css/*.scss'</span>)</span><br><span class="line">    .pipe(sass().on(<span class="string">'error'</span>, sass.logError))</span><br><span class="line">    .pipe(concat(<span class="string">'all.css'</span>))</span><br><span class="line">    .pipe(rename(&#123;<span class="attr">suffix</span>: <span class="string">'.min'</span>&#125;))</span><br><span class="line">    .pipe(minifycss())</span><br><span class="line">    .pipe(connect.reload())</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./dist/css'</span>))</span><br><span class="line"></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'html'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  gulp.src(<span class="string">'*.html'</span>)</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'dist/html'</span>))</span><br><span class="line">    .pipe(connect.reload())</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//执行压缩前，先删除以前压缩的文件</span></span><br><span class="line">gulp.task(<span class="string">'clean'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> del([<span class="string">'./dist/css/all.css'</span>, <span class="string">'./dist/css/all.min.css'</span>, <span class="string">'./dist/all.js'</span>,<span class="string">'./dist/all.min.js'</span>, <span class="string">'./dist/html'</span>])</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 定义默认任务</span></span><br><span class="line"></span><br><span class="line">gulp.task(<span class="string">'default'</span>,[<span class="string">'clean'</span>],<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  gulp.start(<span class="string">'my-task-js'</span>, <span class="string">'my-task-css'</span>, <span class="string">'watch'</span>, <span class="string">'server'</span> );</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 任务监听</span></span><br><span class="line">gulp.task(<span class="string">'watch'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Watch.js files</span></span><br><span class="line">  gulp.watch(<span class="string">'./js/*.js'</span>, [<span class="string">'my-task-js'</span>]);</span><br><span class="line">  <span class="comment">// Watch .scss files</span></span><br><span class="line">  gulp.watch(<span class="string">'./css/*.scss'</span>, [<span class="string">'my-task-css'</span>]);</span><br><span class="line">  <span class="comment">// Watch .html files</span></span><br><span class="line">  gulp.watch(<span class="string">'./*.html'</span>, [<span class="string">'html'</span>]);</span><br><span class="line">  <span class="comment">// Watch any files in dist/, reload on change</span></span><br><span class="line">  <span class="comment">// gulp.watch(['dist/!**']).on('change', livereload.changed);</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>大概讲解一下gulpfile.js:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="comment">// 定义名为 "my-task" 的任务压缩js</span></span><br><span class="line">gulp.task(<span class="string">'my-task-js'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  gulp.src(<span class="string">'./js/*.js'</span>)</span><br><span class="line">    .pipe(jshint()) <span class="comment">//js检测</span></span><br><span class="line">    .pipe(uglify()) <span class="comment">//js压缩</span></span><br><span class="line">    .pipe(concat(<span class="string">'all.js'</span>)) <span class="comment">//合并为all.js</span></span><br><span class="line">    .pipe(rename(&#123;<span class="attr">suffix</span>: <span class="string">'.min'</span>&#125;)) <span class="comment">// 重命名为all.mim.js</span></span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./dist/js'</span>)) <span class="comment">//输出到/dist/js目录</span></span><br><span class="line">    .pipe(connect.reload()) <span class="comment">// 更新页面</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// ...</span></span><br></pre></td></tr></table></figure></p>
 <p><strong>gulp.task</strong>是gulp的api 定义一个使用 <a href="https://github.com/robrich/orchestrator" target="_blank" rel="noopener">Orchestrator</a> 实现的任务（task）<br>如上我们定义了<strong>my-task-js</strong>，<strong>my-task-css</strong>，<strong>html</strong>，<strong>clean</strong>，<strong>default</strong>，<strong>watch</strong>，<strong>server</strong>等任务，其中:</p>
 <hr>
 <p><strong>my-task-js</strong> 是将 符合所提供的匹配模式的js 进行检测(gulp-jshint)、压缩(gulp-uglify)、合并(gulp-concat)、重命名(gulp-rename)、输出(gulp.dest)到/dist/js目录下；</p>
@@ -487,160 +384,32 @@ gulp<span class="token punctuation">.</span><span class="token function">task</s
 <hr>
 <p><strong>watch</strong> gulp的api 监视文件，并且可以在文件发生改动时候做一些事情。它总会返回一个 EventEmitter 来发射（emit） change 事件。</p>
 <hr>
-<p><strong>server</strong> 依赖gulp-connect启动一个服务器</p>
-<pre><code>gulp.task(&#39;server&#39;, function() {
-  connect.server({
-    port: 8080, //指定端口号，在浏览器中输入localhost:8080就可以直接访问生成的html页面
-    root: &#39;./&#39;, //指定html文件起始的根目录
-    livereload: true //启动实时刷新功能（配合上边的connect.reload()方法同步使用）
-  });
-});
-</code></pre><p>配置完gulpfile.js之后，我们给js和css及html加点东西:</p>
-<p>首先js/helloworld.js</p>
-<pre><code>// helloworld.js
-console.log(&#39;hello world&#39;)
-</code></pre><p>css/index.scss</p>
-<pre><code>// index.scss
-
-// 变量测试
-$fontColor:  #red;
-$backColor: aqua;
-// 嵌套类测试
-div {
-  p {
-    font-weight: bold;
-    font-size: 20px;
-    color: $fontColor;
-  }
-}
-
-div{
-  background: $backColor;
-}
-</code></pre><p>index.html</p>
-<pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;gulp-study&lt;/title&gt;
-    &lt;link href=/dist/css/all.min.css rel=stylesheet&gt;
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;div id=&quot;firstDiv&quot;&gt;
-        &lt;p&gt;我是gulp&lt;/p&gt;
-        &lt;p&gt;hello world&lt;/p&gt;
-    &lt;/div&gt;
-&lt;p&gt;我是p标签&lt;/p&gt;
-&lt;p&gt;我是p标签&lt;/p&gt;
-&lt;/body&gt;
-&lt;script src=&quot;/dist/js/all.min.js&quot;&gt;&lt;/script&gt;
-&lt;/html&gt;
-
-</code></pre><p>运行gulp</p>
-<pre><code>$ gulp
-</code></pre><p><img src="https://upload-images.jianshu.io/upload_images/11447772-658fdd8778eee60b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="运行输出"></p>
+<p><strong>server</strong> 依赖gulp-connect启动一个服务器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gulp.task(&apos;server&apos;, function() &#123;</span><br><span class="line">  connect.server(&#123;</span><br><span class="line">    port: 8080, //指定端口号，在浏览器中输入localhost:8080就可以直接访问生成的html页面</span><br><span class="line">    root: &apos;./&apos;, //指定html文件起始的根目录</span><br><span class="line">    livereload: true //启动实时刷新功能（配合上边的connect.reload()方法同步使用）</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>配置完gulpfile.js之后，我们给js和css及html加点东西:</p>
+<p>首先js/helloworld.js<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">// helloworld.js</span><br><span class="line">console.log(&apos;hello world&apos;)</span><br></pre></td></tr></table></figure></p>
+<p>css/index.scss<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// index.scss</span><br><span class="line"></span><br><span class="line">// 变量测试</span><br><span class="line">$fontColor:  #red;</span><br><span class="line">$backColor: aqua;</span><br><span class="line">// 嵌套类测试</span><br><span class="line">div &#123;</span><br><span class="line">  p &#123;</span><br><span class="line">    font-weight: bold;</span><br><span class="line">    font-size: 20px;</span><br><span class="line">    color: $fontColor;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">div&#123;</span><br><span class="line">  background: $backColor;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>index.html<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">	&lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">	&lt;title&gt;gulp-study&lt;/title&gt;</span><br><span class="line">	&lt;link href=/dist/css/all.min.css rel=stylesheet&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;div id=&quot;firstDiv&quot;&gt;</span><br><span class="line">		&lt;p&gt;我是gulp&lt;/p&gt;</span><br><span class="line">		&lt;p&gt;hello world&lt;/p&gt;</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;p&gt;我是p标签&lt;/p&gt;</span><br><span class="line">&lt;p&gt;我是p标签&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script src=&quot;/dist/js/all.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<p>运行gulp<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gulp</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://upload-images.jianshu.io/upload_images/11447772-658fdd8778eee60b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="运行输出"></p>
 <hr>
-<p>浏览器效果:<br><img src="https://upload-images.jianshu.io/upload_images/11447772-71e06d521d7296ff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"></p>
-<p>接下来我们修改helloworld.js来看看是否能实时刷新<br>修改如下:</p>
-<pre><code>// helloworld.js
-console.log(&#39;hello world&#39;);
-
-let firstDiv =  document.getElementById(&#39;firstDiv&#39;)
-
-console.log(firstDiv)
-
-</code></pre><p>按保存之后，终端给我们报了一个错:<br><img src="https://upload-images.jianshu.io/upload_images/11447772-ccc18ca2147541e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Unhandled &#39;error&#39; event"></p>
+<p>浏览器效果:<br><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://upload-images.jianshu.io/upload_images/11447772-71e06d521d7296ff.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"></p>
+<p>接下来我们修改helloworld.js来看看是否能实时刷新<br>修改如下:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// helloworld.js</span><br><span class="line">console.log(&apos;hello world&apos;);</span><br><span class="line"></span><br><span class="line">let firstDiv =  document.getElementById(&apos;firstDiv&apos;)</span><br><span class="line"></span><br><span class="line">console.log(firstDiv)</span><br></pre></td></tr></table></figure></p>
+<p>按保存之后，终端给我们报了一个错:<br><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://upload-images.jianshu.io/upload_images/11447772-ccc18ca2147541e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Unhandled &#39;error&#39; event"></p>
 <p>查看js发现我们用了es6语法的声明语句$\color{red}{let}$ 但当前gulp无法处理es6语法，有问题解决问题，es6=&gt;es5</p>
-<p>解决方案:<br>安装gulp-babel babel-core babel-preset-es2015</p>
-<pre><code>npm i  --save-dev  gulp-babel babel-core babel-preset-es2015
-</code></pre><p>gulpfile.js修改如下:</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// ...</span>
-<span class="token keyword">const</span> babel <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'gulp-babel'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// ...</span>
-<span class="token comment" spellcheck="true">// 定义名为 "my-task" 的任务压缩js</span>
-gulp<span class="token punctuation">.</span><span class="token function">task</span><span class="token punctuation">(</span><span class="token string">'my-task-js'</span><span class="token punctuation">,</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-  gulp<span class="token punctuation">.</span><span class="token function">src</span><span class="token punctuation">(</span><span class="token string">'./js/*.js'</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">babel</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">jshint</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">uglify</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">concat</span><span class="token punctuation">(</span><span class="token string">'all.js'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span><span class="token function">rename</span><span class="token punctuation">(</span><span class="token punctuation">{</span>suffix<span class="token punctuation">:</span> <span class="token string">'.min'</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>gulp<span class="token punctuation">.</span><span class="token function">dest</span><span class="token punctuation">(</span><span class="token string">'./dist/js'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token punctuation">.</span><span class="token function">pipe</span><span class="token punctuation">(</span>connect<span class="token punctuation">.</span><span class="token function">reload</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// ...</span>
-
-</code></pre>
-<p>运行</p>
-<pre><code>$ gulp
-</code></pre><p>依然报上面的错；找了一些原因发现，虽然安装了相关依赖，却没有配置.babelrc文件，即babel还没转化es6</p>
-<p>根目录添加.babelrc文件</p>
-<pre><code>{
-    &quot;presets&quot;: [&quot;es2015&quot;]
-}
-
-</code></pre><p>重新运行:</p>
-<pre><code>$ gulp
-</code></pre><p><img src="https://upload-images.jianshu.io/upload_images/11447772-ebca2eebe090db0a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="结果如下"></p>
-<p>查看dist下的js文件<br><img src="https://upload-images.jianshu.io/upload_images/11447772-d6e0cd882a9255d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="let已经转化成var"></p>
-<p>改变helloworld.js检查页面是否刷新</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// helloworld.js</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token string">'hello world'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-<span class="token keyword">let</span> firstDiv <span class="token operator">=</span>  document<span class="token punctuation">.</span><span class="token function">getElementById</span><span class="token punctuation">(</span><span class="token string">'firstDiv'</span><span class="token punctuation">)</span>
-
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>firstDiv<span class="token punctuation">)</span>
-firstDiv<span class="token punctuation">.</span>style<span class="token punctuation">.</span>backgroundColor <span class="token operator">=</span> <span class="token string">'yellow'</span><span class="token punctuation">;</span>
-
-</code></pre>
-<p>保存，页面的天空蓝换成你们喜欢的yellow颜色<br><img src="https://upload-images.jianshu.io/upload_images/11447772-b754da4517d86f46.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="页面的天空蓝换成你们喜欢的yellow颜色"></p>
-<p>修改index.scss 查看是否会刷新页面</p>
-<pre class=" language-scss"><code class="language-scss"><span class="token comment" spellcheck="true">// index.scss</span>
-
-<span class="token comment" spellcheck="true">// 变量测试</span>
-<span class="token property"><span class="token variable">$fontColor</span></span><span class="token punctuation">:</span>  #red<span class="token punctuation">;</span>
-<span class="token property"><span class="token variable">$backColor</span></span><span class="token punctuation">:</span> aqua<span class="token punctuation">;</span>
-<span class="token comment" spellcheck="true">// 嵌套类测试</span>
-<span class="token selector">div </span><span class="token punctuation">{</span>
-  <span class="token selector">p </span><span class="token punctuation">{</span>
-    <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
-    <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token number">20</span>px<span class="token punctuation">;</span>
-    <span class="token property">color</span><span class="token punctuation">:</span> <span class="token variable">$fontColor</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token selector">div</span><span class="token punctuation">{</span>
-  <span class="token property">background</span><span class="token punctuation">:</span> <span class="token variable">$backColor</span><span class="token punctuation">;</span>
-  <span class="token property">width</span><span class="token punctuation">:</span> <span class="token number">400</span>px<span class="token punctuation">;</span>
-  <span class="token property">height</span><span class="token punctuation">:</span> <span class="token number">400</span>px<span class="token punctuation">;</span>
-  <span class="token property">margin</span><span class="token punctuation">:</span> <span class="token number">0</span> auto<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-
-
-</code></pre>
-<p><img src="https://upload-images.jianshu.io/upload_images/11447772-2c4df6498e367b28.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="页面更新正常"></p>
-<p>最后修改index.html 查看是否会刷新页面</p>
-<pre class=" language-html"><code class="language-html"><span class="token doctype">&lt;!DOCTYPE html></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span> <span class="token attr-name">lang</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>en<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>meta</span> <span class="token attr-name">charset</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>UTF-8<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>title</span><span class="token punctuation">></span></span>gulp-study<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>title</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>link</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span>/dist/css/all.min.css</span> <span class="token attr-name">rel</span><span class="token attr-value"><span class="token punctuation">=</span>stylesheet</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>firstDiv<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>我是gulp<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>hello world<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>我是真的皮<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">src</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>/dist/js/all.min.js<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script language-javascript"></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span>
-
-</code></pre>
-<p><img src="https://upload-images.jianshu.io/upload_images/11447772-ffbb4620ab84a644.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="输出完美"></p>
+<p>解决方案:<br>安装gulp-babel babel-core babel-preset-es2015<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm i  --save-dev  gulp-babel babel-core babel-preset-es2015</span><br></pre></td></tr></table></figure></p>
+<p>gulpfile.js修改如下:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="keyword">const</span> babel = <span class="built_in">require</span>(<span class="string">'gulp-babel'</span>);</span><br><span class="line"><span class="comment">// ...</span></span><br><span class="line"><span class="comment">// 定义名为 "my-task" 的任务压缩js</span></span><br><span class="line">gulp.task(<span class="string">'my-task-js'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  gulp.src(<span class="string">'./js/*.js'</span>)</span><br><span class="line">    .pipe(babel())</span><br><span class="line">    .pipe(jshint())</span><br><span class="line">    .pipe(uglify())</span><br><span class="line">    .pipe(concat(<span class="string">'all.js'</span>))</span><br><span class="line">    .pipe(rename(&#123;<span class="attr">suffix</span>: <span class="string">'.min'</span>&#125;))</span><br><span class="line">    .pipe(gulp.dest(<span class="string">'./dist/js'</span>))</span><br><span class="line">    .pipe(connect.reload())</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// ...</span></span><br></pre></td></tr></table></figure></p>
+<p>运行<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gulp</span><br></pre></td></tr></table></figure></p>
+<p>依然报上面的错；找了一些原因发现，虽然安装了相关依赖，却没有配置.babelrc文件，即babel还没转化es6</p>
+<p>根目录添加.babelrc文件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	&quot;presets&quot;: [&quot;es2015&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>重新运行:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ gulp</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://upload-images.jianshu.io/upload_images/11447772-ebca2eebe090db0a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="结果如下"></p>
+<p>查看dist下的js文件<br><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://upload-images.jianshu.io/upload_images/11447772-d6e0cd882a9255d4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="let已经转化成var"></p>
+<p>改变helloworld.js检查页面是否刷新<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// helloworld.js</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'hello world'</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> firstDiv =  <span class="built_in">document</span>.getElementById(<span class="string">'firstDiv'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(firstDiv)</span><br><span class="line">firstDiv.style.backgroundColor = <span class="string">'yellow'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>保存，页面的天空蓝换成你们喜欢的yellow颜色<br><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://upload-images.jianshu.io/upload_images/11447772-b754da4517d86f46.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="页面的天空蓝换成你们喜欢的yellow颜色"></p>
+<p>修改index.scss 查看是否会刷新页面<br><figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// index.scss</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 变量测试</span></span><br><span class="line"><span class="variable">$fontColor</span>:  #red;</span><br><span class="line"><span class="variable">$backColor</span>: aqua;</span><br><span class="line"><span class="comment">// 嵌套类测试</span></span><br><span class="line"><span class="selector-tag">div</span> &#123;</span><br><span class="line">  <span class="selector-tag">p</span> &#123;</span><br><span class="line">    <span class="attribute">font-weight</span>: bold;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="variable">$fontColor</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">div</span>&#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="variable">$backColor</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">400px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://upload-images.jianshu.io/upload_images/11447772-2c4df6498e367b28.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="页面更新正常"></p>
+<p>最后修改index.html 查看是否会刷新页面<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">title</span>&gt;</span>gulp-study<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">/dist/css/all.min.css</span> <span class="attr">rel</span>=<span class="string">stylesheet</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"firstDiv"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">p</span>&gt;</span>我是gulp<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">p</span>&gt;</span>hello world<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>我是真的皮<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"/dist/js/all.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://upload-images.jianshu.io/upload_images/11447772-ffbb4620ab84a644.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="输出完美"></p>
 <h3 id="文章最后"><a href="#文章最后" class="headerlink" title="文章最后"></a>文章最后</h3><p>今天主要学习了gulp的简单项目搭建及实时更新配置；其实gulp类似于grunt的弱化版，但更简单好用，只是插件会少一些，目前主流的项目搭建工具主要是webpack，但依然有不少项目还用着gulp或者grunt</p>
 <p>扩展:</p>
 <blockquote>
@@ -750,10 +519,10 @@ firstDiv<span class="token punctuation">.</span>style<span class="token punctuat
                         <li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
                     </ul>
                     <div id="wechat">
-                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
                     </div>
                     <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
                     </div>
                 </div>
             </div>
@@ -789,7 +558,7 @@ firstDiv<span class="token punctuation">.</span>style<span class="token punctuat
                     <span class="reprint-tip">
                         <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
                     </span>
-                    <a href="http://wLove_c.github.io" class="b-link-green">王一诺</a>
+                    <a href="http:/ezjason.github.io" class="b-link-green">Jason</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
                     <a href="/2020/05/13/gulp-20190618/" class="b-link-green">前端构建工具Gulp.js 知多少</a>
                 </p>
@@ -1075,18 +844,20 @@ firstDiv<span class="token punctuation">.</span>style<span class="token punctuat
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/13/coding-5/">
+                <a href="/2020/05/13/coding-4/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="干货学习">
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/15.jpg" class="responsive-img" alt="数组方法的扩展:array.every()和array.some()">
                         
-                        <span class="card-title">干货学习</span>
+                        <span class="card-title">数组方法的扩展:array.every()和array.some()</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">websocket/JS的类型/S中的typeof能得到的那些类型/js中有哪些内置函数 9 种
-websocketWebsocket同http一样都是是基于tcp的,可靠性的双向通信协议，是建立在tcp之上的，并且是持久化的协议。webs</div>
+                    <div class="summary">从字面认知:every是每一个都，some是都有一些就~~即:
+
+every():方法用于检测数组中所有元素是否都符合指定条件，若符合返回true，否则返回false；
+some():方法用于检测数组中的元素是否有满足指定条件的，若满足返回</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-13
@@ -1125,7 +896,7 @@ websocketWebsocket同http一样都是是基于tcp的,可靠性的双向通信协
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="hexo 的介绍和使用">
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/5.jpg" class="responsive-img" alt="hexo 的介绍和使用">
                         
                         <span class="card-title">hexo 的介绍和使用</span>
                     </div>
@@ -1140,7 +911,7 @@ Quick StartC</div>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
-                            王一诺
+                            Jason
                             
                         </span>
                     </div>
@@ -1181,8 +952,8 @@ Quick StartC</div>
 
         var url = document.location.href;
         newdiv.innerHTML += '<br />'
-            + '来源: 王一诺<br />'
-            + '作者: 王一诺<br />'
+            + '来源: Jason<br />'
+            + '作者: Jason<br />'
             + '链接: <a href="' + url + '">' + url + '</a><br />'
             + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
 
@@ -1252,21 +1023,21 @@ Quick StartC</div>
             <a href="https://hexo.io/" target="_blank">Hexo</a> 搭建
         </div>
         <div class="col s12 m12 l4 social-link hide-on-med-and-down">
-            <a href="https://github.com/wLove-c" class="tooltipped" target="_blank" data-tooltip="GitHub" data-position="top" data-delay="50">
+            <a href="https://github.com/ezjason" class="tooltipped" target="_blank" data-tooltip="GitHub" data-position="top" data-delay="50">
                 <i class="fa fa-github fa-lg"></i>
             </a>
-            <a href="mailto:wLove_c@163.com" class="tooltipped" target="_blank" data-tooltip="邮件call我" data-position="top" data-delay="50">
-                <i class="fa fa-envelope fa-lg"></i>
-            </a>
-            <a href="https://blog.csdn.net/weixin_40755688" class="tooltipped" target="_blank" data-tooltip="CSDN" data-position="top" data-delay="50">
-                <i class="fa fa-lg fa-lg">博</i>
-            </a>
-            <a href="https://www.jianshu.com/u/486396b2fbdf" class="tooltipped" target="_blank" data-tooltip="简书主页" data-position="top" data-delay="50">
-                <i class="fa fa-lg">简</i>
-            </a>
-            <a href="https://juejin.im/user/5a3b55205188251fbd33cac0" class="tooltipped" target="_blank" data-tooltip="掘金主页" data-position="top" data-delay="50">
-                <i class="fa fa-lg">掘</i>
-            </a>
+<!--            <a href="mailto:wLove_c@163.com" class="tooltipped" target="_blank" data-tooltip="邮件call我" data-position="top" data-delay="50">-->
+<!--                <i class="fa fa-envelope fa-lg"></i>-->
+<!--            </a>-->
+<!--            <a href="https://blog.csdn.net/weixin_40755688" class="tooltipped" target="_blank" data-tooltip="CSDN" data-position="top" data-delay="50">-->
+<!--                <i class="fa fa-lg fa-lg">博</i>-->
+<!--            </a>-->
+<!--            <a href="https://www.jianshu.com/u/486396b2fbdf" class="tooltipped" target="_blank" data-tooltip="简书主页" data-position="top" data-delay="50">-->
+<!--                <i class="fa fa-lg">简</i>-->
+<!--            </a>-->
+<!--            <a href="https://juejin.im/user/5a3b55205188251fbd33cac0" class="tooltipped" target="_blank" data-tooltip="掘金主页" data-position="top" data-delay="50">-->
+<!--                <i class="fa fa-lg">掘</i>-->
+<!--            </a>-->
         </div>
     </div>
 </footer>
@@ -1325,6 +1096,27 @@ Quick StartC</div>
 <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
 <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="/js/matery.js"></script>
+<style>
+    #tp-weather-widget>div{
+        z-index: 99;
+        top:100px;
+    }
+</style>
+<div id="tp-weather-widget"></div>
+<script>
+    (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
+    window.SeniverseWeatherWidget('show', {
+        flavor: "bubble",
+        location: "WTMKQ069CCJ7",
+        geolocation: true,
+        language: "zh-Hans",
+        unit: "c",
+        theme: "dark",
+        token: "7fb00a61-4997-4de9-86ed-0b1794a2c353",
+        hover: "enabled",
+        container: "tp-weather-widget"
+    })
+</script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
@@ -1336,5 +1128,10 @@ Quick StartC</div>
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
 
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginModelPath":"assets/","model":{"jsonPath":"live2d-widget-model-shizuku"},"display":{"position":"left","width":300,"height":600},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"pluginJsPath":"lib/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"left","width":260,"height":500},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"tagMode":false});</script><script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>

@@ -32,7 +32,7 @@ code_dir: downloads/code
 i18n_dir: :lang
 skip_render:
 
- # ###ADD### prettify代码高亮插件
+  # ###ADD### prettify代码高亮插件
   ## 告诉hexo对plugins目录下的所有文件跳过解析渲染，因为测试时发现如果不配置，加载prettify的相关js会报脚本错误，猜测hexo渲染造成的编码问题
   - "theme/matery/source/libs/prettify/**"
 # Writing
@@ -47,7 +47,7 @@ relative_link: false
 future: true
 
 highlight:
-  enable: false
+  enable: true
 
 prism_plugin:
   mode: 'preprocess'    # realtime/preprocess
@@ -92,20 +92,22 @@ theme: hexo-theme-matery
 # live2d人偶使用
 live2d:
   enable: true
+  pluginRootPath: live2dw/
+  pluginJsPath: lib/
   pluginModelPath: assets/
   model:
-#    use: live2d-widget-model-epsilon2_1  #模板目录，在node_modules里
-    use: live2d-widget-model-shizuku  #模板目录，在node_modules里
-#    use: live2d-widget-model-tororo  #模板目录，在node_modules里
+    #    use: live2d-widget-model-epsilon2_1  #模板目录，在node_modules里
+    use: live2d-widget-model-epsilon2_1  #模板目录，在node_modules里
+  #    use: live2d-widget-model-tororo  #模板目录，在node_modules里
   display:
     position: left
-    width: 300
-    height: 600
+    width: 260
+    height: 500
   mobile:
     show: true  #是否在手机进行显示
     scale: 0.3
   react:
-     opacity: 0.7 # 透明度设置
+    opacity: 0.7 # 透明度设置
 #    opacityDefault: 0.7
 #    opacityOnHover: 0.2
 
@@ -121,6 +123,10 @@ social:
   hub:
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
+lazyload:
+  enable: true
+  onlypost: false  # 是否只对文章的图片做懒加载
+  loadingImg: https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif # eg ./images/loading.gif
 deploy:
   type: git
   repo: https://github.com/ezjason/ezjason.github.io.git

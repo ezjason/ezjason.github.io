@@ -190,6 +190,6 @@ data () {
 
 > 解释:handler是watch的高级用法,里面有一个属性 deep，默认值是 false，代表是否深度监听, 还有一个属性 immediate，默认值也是 false ，但immediate:true代表如果在 wacth 里声明了之后，就会立即先去执行里面的handler方法，如果为 false就跟我们以前的效果一样，不会在绑定的时候就执行。**deep深度监听会影响性能；** 两者可以同时存在；
 
-> 此次代码演示demo请转 [王一诺watchDemo.vue](https://github.com/wLove-c/vue-study-demo/blob/master/src/components/watchDemo.vue)
+> 此次代码演示demo请转 [Jason watchDemo.vue](https://github.com/wLove-c/vue-study-demo/blob/master/src/components/watchDemo.vue)
 
 如果对你有帮助麻烦点个赞👍
