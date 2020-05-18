@@ -70,6 +70,8 @@ ruby -e “$(curl -fsSL https://">
     <li class="hide-on-med-and-down">
         <a href="/coding" class="waves-effect waves-light">
             
+            <i class="fa fas fa-bookmark"></i>
+            
             <span>编程</span>
         </a>
     </li>
@@ -93,7 +95,7 @@ ruby -e “$(curl -fsSL https://">
     </li>
     
     <li class="hide-on-med-and-down">
-        <a href="/about" class="waves-effect waves-light">
+        <a href class="waves-effect waves-light">
             
             <i class="fa fa-user-circle-o"></i>
             
@@ -139,7 +141,7 @@ ruby -e “$(curl -fsSL https://">
         <li>
             <a href="/coding" class="waves-effect waves-light">
                 
-                <i class="fa fa-fw fa-link"></i>
+                <i class="fa fa-fw fas fa-bookmark"></i>
                 
                 编程
             </a>
@@ -164,7 +166,7 @@ ruby -e “$(curl -fsSL https://">
         </li>
         
         <li>
-            <a href="/about" class="waves-effect waves-light">
+            <a href class="waves-effect waves-light">
                 
                 <i class="fa fa-fw fa-user-circle-o"></i>
                 
@@ -316,6 +318,20 @@ ruby -e “$(curl -fsSL https://">
                                 </div>
 
                                 
+                                    
+                                    <div class="info-break-policy">
+                                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                                        299
+                                    </div>
+                                    
+
+                                    
+                                    <div class="info-break-policy">
+                                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                                        1 分
+                                    </div>
+                                    
+                                
 
                 								
                 														<div id="busuanzi_container_page_pv" class="info-break-policy">
@@ -348,44 +364,30 @@ ruby -e “$(curl -fsSL https://">
 <ol start="4">
 <li>检查是否安装成功</li>
 </ol>
-<pre><code>nginx -v
-
-</code></pre><p>输出版本</p>
-<pre><code>nginx version: nginx/1.15.6  //我的是这个
-
-</code></pre><p>如上输出 则安装成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -v</span><br></pre></td></tr></table></figure>
+<p>输出版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx version: nginx/1.15.6  //我的是这个</span><br></pre></td></tr></table></figure>
+<p>如上输出 则安装成功</p>
 <ol start="5">
 <li>nginx默认下载路径</li>
 </ol>
 <blockquote>
 <p>/usr/local/etc/nginx/nginx.conf （配置文件路径）<br>/usr/local/var/www （服务器默认路径）<br>/usr/local/Cellar/nginx/1.12.0 （安装路径）</p>
 </blockquote>
-<p>修改配置文件 推荐使用vim</p>
-<pre><code>brew install vim // 安装
-
-</code></pre><blockquote>
+<p>修改配置文件 推荐使用vim<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install vim // 安装</span><br></pre></td></tr></table></figure></p>
+<blockquote>
 <p>vim使用方法 转<a href="https://www.runoob.com/linux/linux-vim.html" target="_blank" rel="noopener">菜鸟教程vim/vi</a></p>
 </blockquote>
 <ol start="6">
 <li>启动nginx</li>
 </ol>
-<pre><code>// 在终端输入
-
-nginx // 启动
-
-// 如果报无权限 则加上管理权限启动
-
-sudo nginx
-
-</code></pre><p>启动成功之后访问 localhost:8080 如果网页输出Welcome to nginx! 则启动成功</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 在终端输入</span><br><span class="line"></span><br><span class="line">nginx // 启动</span><br><span class="line"></span><br><span class="line">// 如果报无权限 则加上管理权限启动</span><br><span class="line"></span><br><span class="line">sudo nginx</span><br></pre></td></tr></table></figure>
+<p>启动成功之后访问 localhost:8080 如果网页输出Welcome to nginx! 则启动成功</p>
 <ol start="7">
 <li>nginx的 常用命令</li>
 </ol>
-<pre><code>nginx -s quit    // 退出
-nginx -s reload  // 重新加载
-nginx -t         //测试nginx.conf配置
-
-</code></pre><p>关于nginx的配置 可以查看<a href="https://wlove-c.github.io/2019/06/03/nginx-20190603/" target="_blank" rel="noopener">安静Eno | nginx配置/部署/代理</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nginx -s quit    // 退出</span><br><span class="line">nginx -s reload  // 重新加载</span><br><span class="line">nginx -t         //测试nginx.conf配置</span><br></pre></td></tr></table></figure>
+<p>关于nginx的配置 可以查看<a href="https://wlove-c.github.io/2019/06/03/nginx-20190603/" target="_blank" rel="noopener">安静Eno | nginx配置/部署/代理</a></p>
 <p>最后，如果文章对您有帮助，别忘记点赞喔，创作不易，转载请注明出处</p>
 
             </div>
@@ -811,6 +813,40 @@ nginx -t         //测试nginx.conf配置
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2020/05/13/hello-world/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/5.jpg" class="responsive-img" alt="hexo 的介绍和使用">
+                        
+                        <span class="card-title">hexo 的介绍和使用</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">欢迎来到 Hexo! 这是我的第一个发布. 通过观看 hexo文档 获取更多信息. 如果你在使用hexo的过程中遇到什么问题, 你可以从这里找到一些答案 问题解决 或者你也可以在github寻求帮助 GitHub.
+Quick StartC</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-13
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            Jason
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2020/05/13/nginx-20190603/">
                     <div class="card-image">
                         
@@ -828,52 +864,6 @@ nginx负载均衡
 一、nginx解决跨域如果要理解什么是跨域
 
 广义上的跨域是指一个域下的文档或脚本试图去请求另一个域下的资源。即浏览器的同源策略/SOP限</div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-13
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/编程/" class="post-category" target="_blank">
-                                    编程
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/代理/" target="_blank">
-                        <span class="chip bg-color">代理</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/05/13/coding-5/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/23.jpg" class="responsive-img" alt="干货学习">
-                        
-                        <span class="card-title">干货学习</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">websocket/JS的类型/S中的typeof能得到的那些类型/js中有哪些内置函数 9 种
-websocketWebsocket同http一样都是是基于tcp的,可靠性的双向通信协议，是建立在tcp之上的，并且是持久化的协议。webs</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-13
@@ -893,8 +883,8 @@ websocketWebsocket同http一样都是是基于tcp的,可靠性的双向通信协
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/javaScript/" target="_blank">
-                        <span class="chip bg-color">javaScript</span>
+                    <a href="/tags/代理/" target="_blank">
+                        <span class="chip bg-color">代理</span>
                     </a>
                     
                 </div>
@@ -1078,6 +1068,27 @@ websocketWebsocket同http一样都是是基于tcp的,可靠性的双向通信协
 <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
 <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="/js/matery.js"></script>
+<style>
+    #tp-weather-widget>div{
+        z-index: 99;
+        top:100px;
+    }
+</style>
+<div id="tp-weather-widget"></div>
+<script>
+    (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
+    window.SeniverseWeatherWidget('show', {
+        flavor: "bubble",
+        location: "WTMKQ069CCJ7",
+        geolocation: true,
+        language: "zh-Hans",
+        unit: "c",
+        theme: "dark",
+        token: "7fb00a61-4997-4de9-86ed-0b1794a2c353",
+        hover: "enabled",
+        container: "tp-weather-widget"
+    })
+</script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
@@ -1089,10 +1100,10 @@ websocketWebsocket同http一样都是是基于tcp的,可靠性的双向通信协
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
 
 
-<script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"left","width":260,"height":500},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"tagMode":false});</script><script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"right","width":260,"height":500},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"tagMode":false});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>

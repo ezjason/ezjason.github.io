@@ -65,6 +65,8 @@ some():方法用于检测数组中的元素是否有满足指定条件的，若�
     <li class="hide-on-med-and-down">
         <a href="/coding" class="waves-effect waves-light">
             
+            <i class="fa fas fa-bookmark"></i>
+            
             <span>编程</span>
         </a>
     </li>
@@ -88,7 +90,7 @@ some():方法用于检测数组中的元素是否有满足指定条件的，若�
     </li>
     
     <li class="hide-on-med-and-down">
-        <a href="/about" class="waves-effect waves-light">
+        <a href class="waves-effect waves-light">
             
             <i class="fa fa-user-circle-o"></i>
             
@@ -134,7 +136,7 @@ some():方法用于检测数组中的元素是否有满足指定条件的，若�
         <li>
             <a href="/coding" class="waves-effect waves-light">
                 
-                <i class="fa fa-fw fa-link"></i>
+                <i class="fa fa-fw fas fa-bookmark"></i>
                 
                 编程
             </a>
@@ -159,7 +161,7 @@ some():方法用于检测数组中的元素是否有满足指定条件的，若�
         </li>
         
         <li>
-            <a href="/about" class="waves-effect waves-light">
+            <a href class="waves-effect waves-light">
                 
                 <i class="fa fa-fw fa-user-circle-o"></i>
                 
@@ -311,6 +313,20 @@ some():方法用于检测数组中的元素是否有满足指定条件的，若�
                                 </div>
 
                                 
+                                    
+                                    <div class="info-break-policy">
+                                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                                        407
+                                    </div>
+                                    
+
+                                    
+                                    <div class="info-break-policy">
+                                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                                        1 分
+                                    </div>
+                                    
+                                
 
                 								
                 														<div id="busuanzi_container_page_pv" class="info-break-policy">
@@ -331,66 +347,10 @@ some():方法用于检测数组中的元素是否有满足指定条件的，若�
 <li>every():方法用于检测数组中所有元素是否都符合指定条件，若符合返回true，否则返回false；</li>
 <li>some():方法用于检测数组中的元素是否有满足指定条件的，若满足返回true，否则返回false；</li>
 </ol>
-<h2 id="every"><a href="#every" class="headerlink" title="every()"></a>every()</h2><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// every():方法用于检测数组中所有元素是否都符合指定条件，若符合返回true，否则返回false,且程序不会继续往下执行；</span>
-array<span class="token punctuation">.</span><span class="token function">every</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span>index<span class="token punctuation">,</span>array）<span class="token punctuation">{</span>
-                 <span class="token comment" spellcheck="true">// item:当前元素的值；</span>
-
-                 <span class="token comment" spellcheck="true">// index:当前元素的索引；</span>
-
-                 <span class="token comment" spellcheck="true">// array:当前元素的数组对象；</span>
-
-         <span class="token punctuation">}</span><span class="token punctuation">)</span>
-
-</code></pre>
-<h4 id="例子"><a href="#例子" class="headerlink" title="例子:"></a>例子:</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//es6</span>
-<span class="token keyword">let</span> age <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">40</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">,</span><span class="token number">26</span><span class="token punctuation">]</span>
- <span class="token comment" spellcheck="true">// 所有都满足才会返回true,否则返回false;</span>
- <span class="token keyword">let</span> result <span class="token operator">=</span> age<span class="token punctuation">.</span><span class="token function">every</span><span class="token punctuation">(</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span>index<span class="token punctuation">,</span>array<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
- console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 10</span>
- console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 0</span>
- console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//[10,20,30,40,50,22,26]</span>
-
-     <span class="token keyword">return</span> item <span class="token operator">></span> <span class="token number">22</span><span class="token punctuation">;</span>
-     <span class="token punctuation">}</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true">// es5</span>
-<span class="token comment" spellcheck="true">// let result = age.every(function(item,index,array){</span>
-<span class="token comment" spellcheck="true">//     return item > 22;</span>
-<span class="token comment" spellcheck="true">//     })</span>
-     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// false</span>
-
-</code></pre>
-<h2 id="some"><a href="#some" class="headerlink" title="some()"></a>some()</h2><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// some():方法用于检测数组中是否有元素符合指定条件，若有符合的返回true，且程序不会继续往下执行；否则返回false；</span>
-array<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span>index<span class="token punctuation">,</span>array）<span class="token punctuation">{</span>
-                 <span class="token comment" spellcheck="true">// item:当前元素的值；</span>
-
-                 <span class="token comment" spellcheck="true">// index:当前元素的索引；</span>
-
-                 <span class="token comment" spellcheck="true">// array:当前元素的数组对象；</span>
-
-         <span class="token punctuation">}</span><span class="token punctuation">)</span>
-
-</code></pre>
-<h4 id="例子-1"><a href="#例子-1" class="headerlink" title="例子:"></a>例子:</h4><pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">//es6</span>
-<span class="token keyword">let</span> age <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">20</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">40</span><span class="token punctuation">,</span><span class="token number">50</span><span class="token punctuation">,</span><span class="token number">22</span><span class="token punctuation">,</span><span class="token number">26</span><span class="token punctuation">]</span>
- <span class="token comment" spellcheck="true">// 所有都满足才会返回true,否则返回false;</span>
- <span class="token keyword">let</span> result <span class="token operator">=</span> age<span class="token punctuation">.</span><span class="token function">some</span><span class="token punctuation">(</span><span class="token punctuation">(</span>item<span class="token punctuation">,</span>index<span class="token punctuation">,</span>array<span class="token punctuation">)</span><span class="token operator">=</span><span class="token operator">></span><span class="token punctuation">{</span>
-
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 10 20 30</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>index<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 0 1 2</span>
-  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>array<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//[10,20,30,40,50,22,26]</span>
-
-
-     <span class="token keyword">return</span> item <span class="token operator">></span> <span class="token number">22</span><span class="token punctuation">;</span>
-     <span class="token punctuation">}</span><span class="token punctuation">)</span>
-
-<span class="token comment" spellcheck="true">// es5</span>
-<span class="token comment" spellcheck="true">// let result = age.some(function(item,index,array){</span>
-<span class="token comment" spellcheck="true">//     return item > 22;</span>
-<span class="token comment" spellcheck="true">//     })</span>
-     console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>result<span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// true</span>
-
-</code></pre>
+<h2 id="every"><a href="#every" class="headerlink" title="every()"></a>every()</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// every():方法用于检测数组中所有元素是否都符合指定条件，若符合返回true，否则返回false,且程序不会继续往下执行；</span></span><br><span class="line">array.every(<span class="function"><span class="keyword">function</span>(<span class="params">item,index,array）&#123;</span></span></span><br><span class="line"><span class="function"><span class="params">                 <span class="regexp">//</span> item:当前元素的值；</span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">                 <span class="regexp">//</span> index:当前元素的索引；</span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">                 <span class="regexp">//</span> array:当前元素的数组对象；</span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">         &#125;</span>)</span></span><br></pre></td></tr></table></figure>
+<h4 id="例子"><a href="#例子" class="headerlink" title="例子:"></a>例子:</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//es6</span></span><br><span class="line"><span class="keyword">let</span> age = [<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>,<span class="number">50</span>,<span class="number">22</span>,<span class="number">26</span>]</span><br><span class="line"> <span class="comment">// 所有都满足才会返回true,否则返回false;</span></span><br><span class="line"> <span class="keyword">let</span> result = age.every(<span class="function">(<span class="params">item,index,array</span>)=&gt;</span>&#123;</span><br><span class="line"> <span class="built_in">console</span>.log(item) <span class="comment">// 10</span></span><br><span class="line"> <span class="built_in">console</span>.log(index) <span class="comment">// 0</span></span><br><span class="line"> <span class="built_in">console</span>.log(array) <span class="comment">//[10,20,30,40,50,22,26]</span></span><br><span class="line"></span><br><span class="line">     <span class="keyword">return</span> item &gt; <span class="number">22</span>;</span><br><span class="line"> 	&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// es5</span></span><br><span class="line"><span class="comment">// let result = age.every(function(item,index,array)&#123;</span></span><br><span class="line"><span class="comment">//     return item &gt; 22;</span></span><br><span class="line"><span class="comment">// 	&#125;)</span></span><br><span class="line"> 	<span class="built_in">console</span>.log(result) <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h2 id="some"><a href="#some" class="headerlink" title="some()"></a>some()</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// some():方法用于检测数组中是否有元素符合指定条件，若有符合的返回true，且程序不会继续往下执行；否则返回false；</span></span><br><span class="line">array.some(<span class="function"><span class="keyword">function</span>(<span class="params">item,index,array）&#123;</span></span></span><br><span class="line"><span class="function"><span class="params">                 <span class="regexp">//</span> item:当前元素的值；</span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">                 <span class="regexp">//</span> index:当前元素的索引；</span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">                 <span class="regexp">//</span> array:当前元素的数组对象；</span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">         &#125;</span>)</span></span><br></pre></td></tr></table></figure>
+<h4 id="例子-1"><a href="#例子-1" class="headerlink" title="例子:"></a>例子:</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//es6</span></span><br><span class="line"><span class="keyword">let</span> age = [<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>,<span class="number">50</span>,<span class="number">22</span>,<span class="number">26</span>]</span><br><span class="line"> <span class="comment">// 所有都满足才会返回true,否则返回false;</span></span><br><span class="line"> <span class="keyword">let</span> result = age.some(<span class="function">(<span class="params">item,index,array</span>)=&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(item) <span class="comment">// 10 20 30</span></span><br><span class="line">  <span class="built_in">console</span>.log(index) <span class="comment">// 0 1 2</span></span><br><span class="line">  <span class="built_in">console</span>.log(array) <span class="comment">//[10,20,30,40,50,22,26]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     <span class="keyword">return</span> item &gt; <span class="number">22</span>;</span><br><span class="line"> 	&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// es5</span></span><br><span class="line"><span class="comment">// let result = age.some(function(item,index,array)&#123;</span></span><br><span class="line"><span class="comment">//     return item &gt; 22;</span></span><br><span class="line"><span class="comment">// 	&#125;)</span></span><br><span class="line"> 	<span class="built_in">console</span>.log(result) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 
             </div>
             <hr>
@@ -827,11 +787,7 @@ array<span class="token punctuation">.</span><span class="token function">some</
                 <div class="card-content article-content">
                     <div class="summary">CSS垂直居中的几种方法
 @TOC
-假设HTML如下:&lt;body>
-    &lt;div id="box">
-        &lt;div id="content">&lt;/div>
-    &lt;/div>
-&lt;/bod</div>
+假设HTML如下:12345&lt;body&gt;    &lt;div id="box"&gt;        &lt;div id="content"&gt;&lt;/div&gt;    &lt;</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-14
@@ -1085,6 +1041,27 @@ array<span class="token punctuation">.</span><span class="token function">some</
 <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
 <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="/js/matery.js"></script>
+<style>
+    #tp-weather-widget>div{
+        z-index: 99;
+        top:100px;
+    }
+</style>
+<div id="tp-weather-widget"></div>
+<script>
+    (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
+    window.SeniverseWeatherWidget('show', {
+        flavor: "bubble",
+        location: "WTMKQ069CCJ7",
+        geolocation: true,
+        language: "zh-Hans",
+        unit: "c",
+        theme: "dark",
+        token: "7fb00a61-4997-4de9-86ed-0b1794a2c353",
+        hover: "enabled",
+        container: "tp-weather-widget"
+    })
+</script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
@@ -1096,10 +1073,10 @@ array<span class="token punctuation">.</span><span class="token function">some</
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
 
 
-<script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"left","width":260,"height":500},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"tagMode":false});</script><script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"right","width":260,"height":500},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"tagMode":false});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>

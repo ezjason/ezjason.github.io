@@ -7,11 +7,7 @@
     <meta name="keywords" content="CSS垂直居中的几种方法, Jason">
     <meta name="description" content="CSS垂直居中的几种方法
 @TOC
-假设HTML如下:&amp;lt;body&gt;
-    &amp;lt;div id=&#34;box&#34;&gt;
-        &amp;lt;div id=&#34;content&#34;&gt;&amp;lt;/div&gt;
-    &amp;lt;/div&gt;
-&amp;lt;/bod">
+假设HTML如下:12345&amp;lt;body&amp;gt;    &amp;lt;div id=&#34;box&#34;&amp;gt;        &amp;lt;div id=&#34;content&#34;&amp;gt;&amp;lt;/div&amp;gt;    &amp;lt;">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -68,6 +64,8 @@
     <li class="hide-on-med-and-down">
         <a href="/coding" class="waves-effect waves-light">
             
+            <i class="fa fas fa-bookmark"></i>
+            
             <span>编程</span>
         </a>
     </li>
@@ -91,7 +89,7 @@
     </li>
     
     <li class="hide-on-med-and-down">
-        <a href="/about" class="waves-effect waves-light">
+        <a href class="waves-effect waves-light">
             
             <i class="fa fa-user-circle-o"></i>
             
@@ -137,7 +135,7 @@
         <li>
             <a href="/coding" class="waves-effect waves-light">
                 
-                <i class="fa fa-fw fa-link"></i>
+                <i class="fa fa-fw fas fa-bookmark"></i>
                 
                 编程
             </a>
@@ -162,7 +160,7 @@
         </li>
         
         <li>
-            <a href="/about" class="waves-effect waves-light">
+            <a href class="waves-effect waves-light">
                 
                 <i class="fa fa-fw fa-user-circle-o"></i>
                 
@@ -314,6 +312,20 @@
                                 </div>
 
                                 
+                                    
+                                    <div class="info-break-policy">
+                                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                                        315
+                                    </div>
+                                    
+
+                                    
+                                    <div class="info-break-policy">
+                                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                                        1 分
+                                    </div>
+                                    
+                                
 
                 								
                 														<div id="busuanzi_container_page_pv" class="info-break-policy">
@@ -331,89 +343,11 @@
             <div id="articleContent">
                 <p>CSS垂直居中的几种方法</p>
 <p>@<a href="CSS垂直居中的几种方法">TOC</a></p>
-<h3 id="假设HTML如下"><a href="#假设HTML如下" class="headerlink" title="假设HTML如下:"></a>假设HTML如下:</h3><pre class=" language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>box<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
-        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">id</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-
-</code></pre>
-<h3 id="1-兼容性最好的方法-IE7以上"><a href="#1-兼容性最好的方法-IE7以上" class="headerlink" title="1. 兼容性最好的方法 IE7以上"></a>1. 兼容性最好的方法 IE7以上</h3><pre class=" language-javascript"><code class="language-javascript">body<span class="token punctuation">,</span>html <span class="token punctuation">{</span> margin<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span> width<span class="token punctuation">:</span><span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span> height<span class="token punctuation">:</span><span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
-
-#box <span class="token punctuation">{</span>
-     width<span class="token punctuation">:</span><span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
-     height<span class="token punctuation">:</span><span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
-     background<span class="token punctuation">:</span><span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0.7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-     position<span class="token punctuation">:</span>relative<span class="token punctuation">;</span>
- <span class="token punctuation">}</span>
-#content <span class="token punctuation">{</span>
-    width<span class="token punctuation">:</span><span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">;</span>
-    height<span class="token punctuation">:</span><span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">;</span>
-    background<span class="token punctuation">:</span>pink<span class="token punctuation">;</span>
-    position<span class="token punctuation">:</span>absolute<span class="token punctuation">;</span>
-    top<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
-    right<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
-    bottom<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
-    left<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span>
-    margin<span class="token punctuation">:</span>auto<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<h3 id="2-transform进行元素偏移-IE8以上"><a href="#2-transform进行元素偏移-IE8以上" class="headerlink" title="2. transform进行元素偏移 IE8以上"></a>2. transform进行元素偏移 IE8以上</h3><pre class=" language-javascript"><code class="language-javascript">body<span class="token punctuation">,</span>html <span class="token punctuation">{</span> margin<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span> width<span class="token punctuation">:</span><span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span> height<span class="token punctuation">:</span><span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
-
-#box <span class="token punctuation">{</span>
-    width<span class="token punctuation">:</span><span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
-    height<span class="token punctuation">:</span><span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
-    background<span class="token punctuation">:</span><span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0.7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    position<span class="token punctuation">:</span>relative<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-#content<span class="token punctuation">{</span>
-    position<span class="token punctuation">:</span>absolute<span class="token punctuation">;</span>
-    width<span class="token punctuation">:</span><span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">;</span>
-    height<span class="token punctuation">:</span><span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">;</span>
-    background<span class="token punctuation">:</span>blue<span class="token punctuation">;</span>
-    left<span class="token punctuation">:</span><span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">;</span>
-    top<span class="token punctuation">:</span><span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">;</span>
-    transform<span class="token punctuation">:</span><span class="token function">translateX</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">)</span> <span class="token function">translateY</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token operator">-</span>webkit<span class="token operator">-</span>transform<span class="token punctuation">:</span><span class="token function">translateX</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">)</span> <span class="token function">translateY</span><span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<h3 id="3-弹性盒模型进行布局-IE兼容性差"><a href="#3-弹性盒模型进行布局-IE兼容性差" class="headerlink" title="3. 弹性盒模型进行布局 IE兼容性差"></a>3. 弹性盒模型进行布局 IE兼容性差</h3><pre class=" language-javascript"><code class="language-javascript">body<span class="token punctuation">,</span>html <span class="token punctuation">{</span> margin<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span> width<span class="token punctuation">:</span><span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span> height<span class="token punctuation">:</span><span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
-
-#box <span class="token punctuation">{</span>
-    width<span class="token punctuation">:</span><span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
-    height<span class="token punctuation">:</span><span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
-    background<span class="token punctuation">:</span><span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0.7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    display<span class="token punctuation">:</span>box<span class="token punctuation">;</span>
-    box<span class="token operator">-</span>pack<span class="token punctuation">:</span>center<span class="token punctuation">;</span>
-    box<span class="token operator">-</span>align<span class="token punctuation">:</span>center<span class="token punctuation">;</span>
-    display<span class="token punctuation">:</span><span class="token operator">-</span>webkit<span class="token operator">-</span>flexbox<span class="token punctuation">;</span>
-    <span class="token operator">-</span>webkit<span class="token operator">-</span>box<span class="token operator">-</span>pack<span class="token punctuation">:</span>center<span class="token punctuation">;</span>
-    <span class="token operator">-</span>webkit<span class="token operator">-</span>box<span class="token operator">-</span>align<span class="token punctuation">:</span>center<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-#content <span class="token punctuation">{</span>
-    width<span class="token punctuation">:</span><span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">;</span>
-    height<span class="token punctuation">:</span><span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">;</span>
-    background<span class="token punctuation">:</span>blue<span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<h3 id="4-flex布局-不兼容IE9以下"><a href="#4-flex布局-不兼容IE9以下" class="headerlink" title="4. flex布局 不兼容IE9以下"></a>4. flex布局 不兼容IE9以下</h3><pre class=" language-javascript"><code class="language-javascript">body<span class="token punctuation">,</span>html <span class="token punctuation">{</span> margin<span class="token punctuation">:</span><span class="token number">0</span><span class="token punctuation">;</span> width<span class="token punctuation">:</span><span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span> height<span class="token punctuation">:</span><span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
-
-#box <span class="token punctuation">{</span>
-    width<span class="token punctuation">:</span><span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
-    height<span class="token punctuation">:</span><span class="token number">100</span><span class="token operator">%</span><span class="token punctuation">;</span>
-    background<span class="token punctuation">:</span><span class="token function">rgba</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">0.7</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    display<span class="token punctuation">:</span>flex<span class="token punctuation">;</span>
-    display<span class="token punctuation">:</span><span class="token operator">-</span>webkit<span class="token operator">-</span>flex<span class="token punctuation">;</span>
-     justify<span class="token operator">-</span>content<span class="token punctuation">:</span>center<span class="token punctuation">;</span>
-     align<span class="token operator">-</span>items<span class="token punctuation">:</span>center<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-#content <span class="token punctuation">{</span>
-    position<span class="token punctuation">:</span>absolute<span class="token punctuation">;</span>
-    width<span class="token punctuation">:</span><span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">;</span>
-    height<span class="token punctuation">:</span><span class="token number">50</span><span class="token operator">%</span><span class="token punctuation">;</span>
-    background<span class="token punctuation">:</span>blue<span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
-</code></pre>
+<h3 id="假设HTML如下"><a href="#假设HTML如下" class="headerlink" title="假设HTML如下:"></a>假设HTML如下:</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"content"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="1-兼容性最好的方法-IE7以上"><a href="#1-兼容性最好的方法-IE7以上" class="headerlink" title="1. 兼容性最好的方法 IE7以上"></a>1. 兼容性最好的方法 IE7以上</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">body,html &#123; <span class="attr">margin</span>:<span class="number">0</span>; width:<span class="number">100</span>%; height:<span class="number">100</span>%; &#125;</span><br><span class="line"></span><br><span class="line">#box &#123;</span><br><span class="line">	 width:<span class="number">100</span>%;</span><br><span class="line">	 height:<span class="number">100</span>%;</span><br><span class="line">	 background:rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.7</span>);</span><br><span class="line">	 position:relative;</span><br><span class="line"> &#125;</span><br><span class="line">#content &#123;</span><br><span class="line">	width:<span class="number">50</span>%;</span><br><span class="line">	height:<span class="number">50</span>%;</span><br><span class="line">	background:pink;</span><br><span class="line">	position:absolute;</span><br><span class="line">	top:<span class="number">0</span>;</span><br><span class="line">	right:<span class="number">0</span>;</span><br><span class="line">	bottom:<span class="number">0</span>;</span><br><span class="line">	left:<span class="number">0</span>;</span><br><span class="line">	margin:auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-transform进行元素偏移-IE8以上"><a href="#2-transform进行元素偏移-IE8以上" class="headerlink" title="2. transform进行元素偏移 IE8以上"></a>2. transform进行元素偏移 IE8以上</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">body,html &#123; <span class="attr">margin</span>:<span class="number">0</span>; width:<span class="number">100</span>%; height:<span class="number">100</span>%; &#125;</span><br><span class="line"></span><br><span class="line">#box &#123;</span><br><span class="line">	width:<span class="number">100</span>%;</span><br><span class="line">	height:<span class="number">100</span>%;</span><br><span class="line">	background:rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.7</span>);</span><br><span class="line">	position:relative;</span><br><span class="line">&#125;</span><br><span class="line">#content&#123;</span><br><span class="line">	position:absolute;</span><br><span class="line">	width:<span class="number">50</span>%;</span><br><span class="line">	height:<span class="number">50</span>%;</span><br><span class="line">	background:blue;</span><br><span class="line">	left:<span class="number">50</span>%;</span><br><span class="line">	top:<span class="number">50</span>%;</span><br><span class="line">	transform:translateX(<span class="number">-50</span>%) translateY(<span class="number">-50</span>%);</span><br><span class="line">	-webkit-transform:translateX(<span class="number">-50</span>%) translateY(<span class="number">-50</span>%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-弹性盒模型进行布局-IE兼容性差"><a href="#3-弹性盒模型进行布局-IE兼容性差" class="headerlink" title="3. 弹性盒模型进行布局 IE兼容性差"></a>3. 弹性盒模型进行布局 IE兼容性差</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">body,html &#123; <span class="attr">margin</span>:<span class="number">0</span>; width:<span class="number">100</span>%; height:<span class="number">100</span>%; &#125;</span><br><span class="line"></span><br><span class="line">#box &#123;</span><br><span class="line">	width:<span class="number">100</span>%;</span><br><span class="line">	height:<span class="number">100</span>%;</span><br><span class="line">	background:rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.7</span>);</span><br><span class="line">	display:box;</span><br><span class="line">	box-pack:center;</span><br><span class="line">	box-align:center;</span><br><span class="line">	display:-webkit-flexbox;</span><br><span class="line">	-webkit-box-pack:center;</span><br><span class="line">	-webkit-box-align:center;</span><br><span class="line">&#125;</span><br><span class="line">#content &#123;</span><br><span class="line">	width:<span class="number">50</span>%;</span><br><span class="line">	height:<span class="number">50</span>%;</span><br><span class="line">	background:blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="4-flex布局-不兼容IE9以下"><a href="#4-flex布局-不兼容IE9以下" class="headerlink" title="4. flex布局 不兼容IE9以下"></a>4. flex布局 不兼容IE9以下</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">body,html &#123; <span class="attr">margin</span>:<span class="number">0</span>; width:<span class="number">100</span>%; height:<span class="number">100</span>%; &#125;</span><br><span class="line"></span><br><span class="line">#box &#123;</span><br><span class="line">	width:<span class="number">100</span>%;</span><br><span class="line">	height:<span class="number">100</span>%;</span><br><span class="line">	background:rgba(<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0.7</span>);</span><br><span class="line">	display:flex;</span><br><span class="line">	display:-webkit-flex;</span><br><span class="line">	 justify-content:center;</span><br><span class="line">	 align-items:center;</span><br><span class="line">  &#125;</span><br><span class="line">#content &#123;</span><br><span class="line">	position:absolute;</span><br><span class="line">	width:<span class="number">50</span>%;</span><br><span class="line">	height:<span class="number">50</span>%;</span><br><span class="line">	background:blue;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 <h5 id="言-以上就是博主目前用的比较多的方法啦，如果有什么更好的方法，可以多多交流喔"><a href="#言-以上就是博主目前用的比较多的方法啦，如果有什么更好的方法，可以多多交流喔" class="headerlink" title="言: 以上就是博主目前用的比较多的方法啦，如果有什么更好的方法，可以多多交流喔"></a>言: 以上就是博主目前用的比较多的方法啦，如果有什么更好的方法，可以多多交流喔</h5>
             </div>
             <hr>
@@ -836,30 +770,26 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/14/coding-1/">
+                <a href="/2020/05/14/coding-2/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/8.jpg" class="responsive-img" alt="CSS垂直居中的几种方法">
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/13.jpg" class="responsive-img" alt="vue中watch不触发、不生效的解决办法及原理">
                         
-                        <span class="card-title">CSS垂直居中的几种方法</span>
+                        <span class="card-title">vue中watch不触发、不生效的解决办法及原理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">CSS垂直居中的几种方法
+                    <div class="summary">vue中watch不触发、不生效的解决办法及原理@TOC
+遇到的问题vue中watch不触发、不生效的解决办法及原理
 @TOC
-假设HTML如下:&lt;body>
-    &lt;div id="box">
-        &lt;div id="content">&lt;/div>
-    &lt;/div>
-&lt;/bod</div>
+遇到的问题 在深层props过程中，props的数据传到了目标文件 但却没有触发数据更新及页面更新； watch</div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-14
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-14
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -872,12 +802,11 @@
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CSS/" target="_blank">
-                        <span class="chip bg-color">CSS</span>
+                    <a href="/tags/Vue/" target="_blank">
+                        <span class="chip bg-color">Vue</span>
                     </a>
                     
                 </div>
@@ -1109,6 +1038,27 @@ some():方法用于检测数组中的元素是否有满足指定条件的，若�
 <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
 <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="/js/matery.js"></script>
+<style>
+    #tp-weather-widget>div{
+        z-index: 99;
+        top:100px;
+    }
+</style>
+<div id="tp-weather-widget"></div>
+<script>
+    (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
+    window.SeniverseWeatherWidget('show', {
+        flavor: "bubble",
+        location: "WTMKQ069CCJ7",
+        geolocation: true,
+        language: "zh-Hans",
+        unit: "c",
+        theme: "dark",
+        token: "7fb00a61-4997-4de9-86ed-0b1794a2c353",
+        hover: "enabled",
+        container: "tp-weather-widget"
+    })
+</script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
@@ -1120,10 +1070,10 @@ some():方法用于检测数组中的元素是否有满足指定条件的，若�
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
 
 
-<script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"left","width":260,"height":500},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"tagMode":false});</script><script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"right","width":260,"height":500},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"tagMode":false});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>

@@ -67,6 +67,8 @@
     <li class="hide-on-med-and-down">
         <a href="/coding" class="waves-effect waves-light">
             
+            <i class="fa fas fa-bookmark"></i>
+            
             <span>编程</span>
         </a>
     </li>
@@ -90,7 +92,7 @@
     </li>
     
     <li class="hide-on-med-and-down">
-        <a href="/about" class="waves-effect waves-light">
+        <a href class="waves-effect waves-light">
             
             <i class="fa fa-user-circle-o"></i>
             
@@ -136,7 +138,7 @@
         <li>
             <a href="/coding" class="waves-effect waves-light">
                 
-                <i class="fa fa-fw fa-link"></i>
+                <i class="fa fa-fw fas fa-bookmark"></i>
                 
                 编程
             </a>
@@ -161,7 +163,7 @@
         </li>
         
         <li>
-            <a href="/about" class="waves-effect waves-light">
+            <a href class="waves-effect waves-light">
                 
                 <i class="fa fa-fw fa-user-circle-o"></i>
                 
@@ -313,6 +315,20 @@
                                 </div>
 
                                 
+                                    
+                                    <div class="info-break-policy">
+                                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                                        1.4k
+                                    </div>
+                                    
+
+                                    
+                                    <div class="info-break-policy">
+                                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                                        5 分
+                                    </div>
+                                    
+                                
 
                 								
                 														<div id="busuanzi_container_page_pv" class="info-break-policy">
@@ -341,36 +357,10 @@
 <li>thisArg 在 <em><code>fun</code></em> 函数运行时指定的 <code>this</code> 值<em>。</em>需要注意的是，指定的 <code>this</code> 值并不一定是该函数执行时真正的 <code>this</code> 值，如果这个函数在<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode" title="如果你想改变你的代码，让其工作在具有限制性JavaScript环境中，请参阅转换成严格模式。" target="_blank" rel="noopener"><code>非严格模式</code></a>下运行，则指定为 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/null" title="值 null 特指对象的值未设置。它是 JavaScript 基本类型 之一。" target="_blank" rel="noopener"><code>null</code></a> 和 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined" title="undefined是全局对象的一个属性。也就是说，它是全局作用域的一个变量。undefined的最初值就是原始数据类型undefined。" target="_blank" rel="noopener"><code>undefined</code></a>的 <code>this</code> 值会自动指向全局对象（浏览器中就是 window 对象），同时值为原始值（数字，字符串，布尔值）的 <code>this</code> 会指向该原始值的自动包装对象。（ps:严格模式下 我们对函数的的调用必须严格的写出被调用的函数的对象）；</li>
 <li>arg1, arg2, … 指定的参数列表</li>
 </ul>
-<p>先举个例子:</p>
-<pre class=" language-javaScript"><code class="language-javaScript">// main.js
-  const foo={
-      name:'foo',
-      getFoo(...args){
-        console.log('this===',this,'this.name==',this.name)
-        console.log('-----------------------------------')
-        console.log('...args=====',...args)
-      }
-    }
-    const bar={
-      name:'bar',
-      getBar(...args){
-        console.log('this===',this,'this.name==',this.name)
-        console.log('-----------------------------------')
-        console.log('...args=====',...args)
-      }
-    }
-    foo.getFoo() //this=== {name: "foo", getFoo: ƒ} this.name== foo  ----------------------------------- ...args=====
-    bar.getBar() //this=== {name: "bar", getBar: ƒ} this.name== bar  ----------------------------------- ...args=====
-
-</code></pre>
-<p>假如我们想在getFoo去借bar里面的东西用用，该怎么办呢?<br>也许有同学想到的是这样:</p>
-<pre class=" language-javaScript"><code class="language-javaScript">    foo.getFoo(bar.name) // this=== {name: "foo", getFoo: ƒ} this.name== foo -----------------------------------  ...args===== bar
-
-</code></pre>
-<p>毫无疑问，这是没问题的，但此时只是正常的传参，能否干脆点把this.name也改成bar呢；根据call的定义:</p>
-<pre><code>foo.getFoo.call(bar,&#39;测试传参&#39;,&#39;测试call&#39;) //his=== {name: &quot;bar&quot;, getBar: ƒ} this.name== bar ----------------------------------- ...args===== 测试传参 测试call
-//使用call后，我们可以看到foo.getFoo的this此时指向了bar对象，此时的name拿到的bar的对象的name；
-</code></pre><h4 id="apply"><a href="#apply" class="headerlink" title="apply()"></a>apply()</h4><p>从<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/apply" target="_blank" rel="noopener">MDN 文档 apply</a>我们可以了解到:<br><strong><code>apply()</code></strong> 方法调用一个具有给定<code>this</code>值的函数，以及作为一个数组（或<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Indexed_collections#Working_with_array-like_objects" target="_blank" rel="noopener">类似数组对象</a>）提供的参数。</p>
+<p>先举个例子:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// main.js</span></span><br><span class="line">  <span class="keyword">const</span> foo=&#123;</span><br><span class="line">      name:<span class="string">'foo'</span>,</span><br><span class="line">      getFoo(...args)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'this==='</span>,<span class="keyword">this</span>,<span class="string">'this.name=='</span>,<span class="keyword">this</span>.name)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'-----------------------------------'</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'...args====='</span>,...args)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">const</span> bar=&#123;</span><br><span class="line">      name:<span class="string">'bar'</span>,</span><br><span class="line">      getBar(...args)&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'this==='</span>,<span class="keyword">this</span>,<span class="string">'this.name=='</span>,<span class="keyword">this</span>.name)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'-----------------------------------'</span>)</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'...args====='</span>,...args)</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    foo.getFoo() <span class="comment">//this=== &#123;name: "foo", getFoo: ƒ&#125; this.name== foo  ----------------------------------- ...args=====</span></span><br><span class="line">    bar.getBar() <span class="comment">//this=== &#123;name: "bar", getBar: ƒ&#125; this.name== bar  ----------------------------------- ...args=====</span></span><br></pre></td></tr></table></figure></p>
+<p>假如我们想在getFoo去借bar里面的东西用用，该怎么办呢?<br>也许有同学想到的是这样:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">foo.getFoo(bar.name) <span class="comment">// this=== &#123;name: "foo", getFoo: ƒ&#125; this.name== foo -----------------------------------  ...args===== bar</span></span><br></pre></td></tr></table></figure></p>
+<p>毫无疑问，这是没问题的，但此时只是正常的传参，能否干脆点把this.name也改成bar呢；根据call的定义:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">foo.getFoo.call(bar,&apos;测试传参&apos;,&apos;测试call&apos;) //his=== &#123;name: &quot;bar&quot;, getBar: ƒ&#125; this.name== bar ----------------------------------- ...args===== 测试传参 测试call</span><br><span class="line">//使用call后，我们可以看到foo.getFoo的this此时指向了bar对象，此时的name拿到的bar的对象的name；</span><br></pre></td></tr></table></figure></p>
+<h4 id="apply"><a href="#apply" class="headerlink" title="apply()"></a>apply()</h4><p>从<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/apply" target="_blank" rel="noopener">MDN 文档 apply</a>我们可以了解到:<br><strong><code>apply()</code></strong> 方法调用一个具有给定<code>this</code>值的函数，以及作为一个数组（或<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Indexed_collections#Working_with_array-like_objects" target="_blank" rel="noopener">类似数组对象</a>）提供的参数。</p>
 <ul>
 <li>func.apply(thisArg, [argsArray])</li>
 <li><p>thisArg：可选的。在 <em><code>func</code></em> 函数运行时使用的 <code>this</code> 值。请注意，<code>this</code>可能不是该方法看到的实际值：如果这个函数处于<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode" title="如果你想改变你的代码，让其工作在具有限制性JavaScript环境中，请参阅转换成严格模式。" target="_blank" rel="noopener">非严格模式</a>下，则指定为 <code>null</code> 或 <code>undefined</code> 时会自动替换为指向全局对象，原始值会被包装。</p>
@@ -378,10 +368,7 @@
 <li><p>argsArray：可选的。一个数组或者类数组对象，其中的数组元素将作为单独的参数传给 <code>func</code> 函数。如果该参数的值为 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/null" title="值 null 特指对象的值未设置。它是 JavaScript 基本类型 之一。" target="_blank" rel="noopener"><code>null</code></a> 或  <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/undefined" title="undefined是全局对象的一个属性。也就是说，它是全局作用域的一个变量。undefined的最初值就是原始数据类型undefined。" target="_blank" rel="noopener"><code>undefined</code></a>，则表示不需要传入任何参数。从ECMAScript 5 开始可以使用类数组对象。 <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/apply#Browser_compatibility" target="_blank" rel="noopener">浏览器兼容性</a> 请参阅本文底部内容。</p>
 </li>
 </ul>
-<p>继续使用刚才的foo和bar</p>
-<pre class=" language-javaScript"><code class="language-javaScript">foo.getFoo.apply(bar,['测试传参','测试apply']) //his=== {name: "bar", getBar: ƒ} this.name== bar ----------------------------------- ...args===== 测试传参 测试apply
-
-</code></pre>
+<p>继续使用刚才的foo和bar<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">foo.getFoo.apply(bar,[<span class="string">'测试传参'</span>,<span class="string">'测试apply'</span>]) <span class="comment">//his=== &#123;name: "bar", getBar: ƒ&#125; this.name== bar ----------------------------------- ...args===== 测试传参 测试apply</span></span><br></pre></td></tr></table></figure></p>
 <p>总结 <strong>call方法和apply方法两者极度相似，区别就是call()方法接受的是参数列表，而apply()方法接受的是一个参数数组。</strong></p>
 <h4 id="bind"><a href="#bind" class="headerlink" title="bind()"></a>bind()</h4><p>从<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Function/bind" target="_blank" rel="noopener">MDN 文档 bind</a>我们可以了解到:</p>
 <p>bind()方法创建一个新的函数，在调用时设置this关键字为提供的值。并在调用新函数时，将给定参数列表作为原函数的参数序列的前若干项。</p>
@@ -393,40 +380,11 @@
 </li>
 </ul>
 <p>emmmm…继续最最上面的那个foo和bar</p>
-<pre class=" language-javascript"><code class="language-javascript">foo<span class="token punctuation">.</span>getFoo<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>bar<span class="token punctuation">,</span><span class="token string">'测试传参'</span><span class="token punctuation">,</span><span class="token string">'测试bind'</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">// 此时是无输出，因为bind()方法创建一个新的函数，当前函数并没有执行</span>
-
-
-</code></pre>
-<p>修改如下：</p>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">const</span> foobindbar <span class="token operator">=</span> foo<span class="token punctuation">.</span>getFoo<span class="token punctuation">.</span><span class="token function">bind</span><span class="token punctuation">(</span>bar<span class="token punctuation">,</span><span class="token string">'测试传参'</span><span class="token punctuation">,</span><span class="token string">'测试bind'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>foobindbar<span class="token punctuation">)</span>
-    <span class="token comment" spellcheck="true">// ƒ getFoo(...args){</span>
-    <span class="token comment" spellcheck="true">//   console.log('this===',this,'this.name==',this.name)</span>
-    <span class="token comment" spellcheck="true">//   console.log('-----------------------------------')</span>
-    <span class="token comment" spellcheck="true">//   console.log('...args=====',...args)</span>
-    <span class="token comment" spellcheck="true">// }</span>
-
-<span class="token function">foobindbar</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">//this=== {name: "bar", getBar: ƒ} this.name== bar ----------------------------------- ...args===== 测试传参 测试apply</span>
-
-
-</code></pre>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">foo.getFoo.bind(bar,<span class="string">'测试传参'</span>,<span class="string">'测试bind'</span>) <span class="comment">// 此时是无输出，因为bind()方法创建一个新的函数，当前函数并没有执行</span></span><br></pre></td></tr></table></figure>
+<p>修改如下：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> foobindbar = foo.getFoo.bind(bar,<span class="string">'测试传参'</span>,<span class="string">'测试bind'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(foobindbar)</span><br><span class="line">    <span class="comment">// ƒ getFoo(...args)&#123;</span></span><br><span class="line">    <span class="comment">//   console.log('this===',this,'this.name==',this.name)</span></span><br><span class="line">    <span class="comment">//   console.log('-----------------------------------')</span></span><br><span class="line">    <span class="comment">//   console.log('...args=====',...args)</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line">foobindbar() <span class="comment">//this=== &#123;name: "bar", getBar: ƒ&#125; this.name== bar ----------------------------------- ...args===== 测试传参 测试apply</span></span><br></pre></td></tr></table></figure></p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><h4 id="call和apply的区别"><a href="#call和apply的区别" class="headerlink" title="call和apply的区别"></a>call和apply的区别</h4><p>call方法和apply方法两者极度相似，区别就是call()方法接受的是参数列表，而apply()方法接受的是一个参数数组。用apply时，即使传入的参数只有一个，也必须定义为数组才行；</p>
-<h4 id="call与apply-和-bind的区别"><a href="#call与apply-和-bind的区别" class="headerlink" title="call与apply 和 bind的区别"></a>call与apply 和 bind的区别</h4><p>call与apply改变this的指向时，会直接触发函数;而bind会创建一个新的函数，在调用时设置this关键字为提供的值，使用bind时，会优先使用bind绑定的几个值；<br>如下：</p>
-<pre><code>foo.getFoo.bind(bar,&#39;测试传参&#39;,&#39;测试bind&#39;)
-const foobindbar = foo.getFoo.bind(bar,&#39;测试传参&#39;,&#39;测试bind&#39;);
+<h4 id="call与apply-和-bind的区别"><a href="#call与apply-和-bind的区别" class="headerlink" title="call与apply 和 bind的区别"></a>call与apply 和 bind的区别</h4><p>call与apply改变this的指向时，会直接触发函数;而bind会创建一个新的函数，在调用时设置this关键字为提供的值，使用bind时，会优先使用bind绑定的几个值；<br>如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">foo.getFoo.bind(bar,&apos;测试传参&apos;,&apos;测试bind&apos;)</span><br><span class="line">const foobindbar = foo.getFoo.bind(bar,&apos;测试传参&apos;,&apos;测试bind&apos;);</span><br><span class="line"></span><br><span class="line">console.log(foobindbar)</span><br><span class="line">    // ƒ getFoo(...args)&#123;</span><br><span class="line">    //   console.log(&apos;this===&apos;,this,&apos;this.name==&apos;,this.name)</span><br><span class="line">    //   console.log(&apos;-----------------------------------&apos;)</span><br><span class="line">    //   console.log(&apos;...args=====&apos;,...args)</span><br><span class="line">    // &#125;</span><br><span class="line"></span><br><span class="line">foobindbar(&apos;参数1&apos;, &apos;参数2&apos;) //this=== &#123;name: &quot;bar&quot;, getBar: ƒ&#125; this.name== bar ----------------------------------- ...args=====  测试传参 测试apply 参数1 参数2</span><br><span class="line">// ...args=====  测试传参 测试apply 参数1 参数2</span><br></pre></td></tr></table></figure></p>
 
-console.log(foobindbar)
-    // ƒ getFoo(...args){
-    //   console.log(&#39;this===&#39;,this,&#39;this.name==&#39;,this.name)
-    //   console.log(&#39;-----------------------------------&#39;)
-    //   console.log(&#39;...args=====&#39;,...args)
-    // }
-
-foobindbar(&#39;参数1&#39;, &#39;参数2&#39;) //this=== {name: &quot;bar&quot;, getBar: ƒ} this.name== bar ----------------------------------- ...args=====  测试传参 测试apply 参数1 参数2
-// ...args=====  测试传参 测试apply 参数1 参数2
-
-</code></pre>
             </div>
             <hr>
 
@@ -850,24 +808,27 @@ foobindbar(&#39;参数1&#39;, &#39;参数2&#39;) //this=== {name: &quot;bar&quot
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/13/coding-20190916/">
+                <a href="/2020/05/13/codding-20190825/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/18.jpg" class="responsive-img" alt="css实现超出几行省略并...">
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/4.jpg" class="responsive-img" alt="javascript函数防抖和函数节流~">
                         
-                        <span class="card-title">css实现超出几行省略并...</span>
+                        <span class="card-title">javascript函数防抖和函数节流~</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">@TOC
+                    <div class="summary">
 
 
-单行
-word-break: break-all;
-overflow:hidden; // 超出的文本隐藏
-text-overflow:ellipsis; // 溢出用省略号显示
-white-space:nowrap; // </div>
+写在前面
+函数防抖和函数节流都是为了优化事件处理程序，
+
+防抖 一个频繁触发的函数，在规定时间内，只让最后一次生效，前面的不生效。
+
+节流 一个频繁触发的函数，在规定时间内，函数执行一次后，只有大于设定的执行周期后才会执行第二次。
+
+</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-13
@@ -887,8 +848,8 @@ white-space:nowrap; // </div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/CSS/" target="_blank">
-                        <span class="chip bg-color">CSS</span>
+                    <a href="/tags/javaScript/" target="_blank">
+                        <span class="chip bg-color">javaScript</span>
                     </a>
                     
                 </div>
@@ -899,23 +860,25 @@ white-space:nowrap; // </div>
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/13/coding-2/">
+                <a href="/2020/05/13/codding-20190624/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/13.jpg" class="responsive-img" alt="vue中watch不触发、不生效的解决办法及原理">
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="javascript中call、bind、apply你知多少？">
                         
-                        <span class="card-title">vue中watch不触发、不生效的解决办法及原理</span>
+                        <span class="card-title">javascript中call、bind、apply你知多少？</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">vue中watch不触发、不生效的解决办法及原理@TOC
-遇到的问题vue中watch不触发、不生效的解决办法及原理
-@TOC
-遇到的问题 在深层props过程中，props的数据传到了目标文件 但却没有触发数据更新及页面更新； watch</div>
+                    <div class="summary">@TOC
+
+在我们日常开发过程中，js基础是用的最多的，也许很多人觉得熟悉框架就好了，不需要太深入原生js的原理及实现，其实这是一种舍本逐末的行为。。。很长一段时间，我的文章方向会在js基础上~
+
+
+在我们日常开发过程中call、bind、</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-13
@@ -932,11 +895,12 @@ white-space:nowrap; // </div>
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Vue/" target="_blank">
-                        <span class="chip bg-color">Vue</span>
+                    <a href="/tags/javaScript/" target="_blank">
+                        <span class="chip bg-color">javaScript</span>
                     </a>
                     
                 </div>
@@ -1120,6 +1084,27 @@ white-space:nowrap; // </div>
 <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
 <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="/js/matery.js"></script>
+<style>
+    #tp-weather-widget>div{
+        z-index: 99;
+        top:100px;
+    }
+</style>
+<div id="tp-weather-widget"></div>
+<script>
+    (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
+    window.SeniverseWeatherWidget('show', {
+        flavor: "bubble",
+        location: "WTMKQ069CCJ7",
+        geolocation: true,
+        language: "zh-Hans",
+        unit: "c",
+        theme: "dark",
+        token: "7fb00a61-4997-4de9-86ed-0b1794a2c353",
+        hover: "enabled",
+        container: "tp-weather-widget"
+    })
+</script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
@@ -1131,10 +1116,10 @@ white-space:nowrap; // </div>
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
 
 
-<script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"left","width":260,"height":500},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"tagMode":false});</script><script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"right","width":260,"height":500},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"tagMode":false});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>

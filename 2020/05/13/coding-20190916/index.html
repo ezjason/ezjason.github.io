@@ -9,10 +9,7 @@
 
 
 单行
-word-break: break-all;
-overflow:hidden; // 超出的文本隐藏
-text-overflow:ellipsis; // 溢出用省略号显示
-white-space:nowrap; // ">
+1234word-break: break-all;overflow:hidden; // 超出的文本隐藏text-overflow:ellipsis; // 溢出用省略号显示white-space:nowrap; //">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -69,6 +66,8 @@ white-space:nowrap; // ">
     <li class="hide-on-med-and-down">
         <a href="/coding" class="waves-effect waves-light">
             
+            <i class="fa fas fa-bookmark"></i>
+            
             <span>编程</span>
         </a>
     </li>
@@ -92,7 +91,7 @@ white-space:nowrap; // ">
     </li>
     
     <li class="hide-on-med-and-down">
-        <a href="/about" class="waves-effect waves-light">
+        <a href class="waves-effect waves-light">
             
             <i class="fa fa-user-circle-o"></i>
             
@@ -138,7 +137,7 @@ white-space:nowrap; // ">
         <li>
             <a href="/coding" class="waves-effect waves-light">
                 
-                <i class="fa fa-fw fa-link"></i>
+                <i class="fa fa-fw fas fa-bookmark"></i>
                 
                 编程
             </a>
@@ -163,7 +162,7 @@ white-space:nowrap; // ">
         </li>
         
         <li>
-            <a href="/about" class="waves-effect waves-light">
+            <a href class="waves-effect waves-light">
                 
                 <i class="fa fa-fw fa-user-circle-o"></i>
                 
@@ -315,6 +314,20 @@ white-space:nowrap; // ">
                                 </div>
 
                                 
+                                    
+                                    <div class="info-break-policy">
+                                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                                        310
+                                    </div>
+                                    
+
+                                    
+                                    <div class="info-break-policy">
+                                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                                        1 分
+                                    </div>
+                                    
+                                
 
                 								
                 														<div id="busuanzi_container_page_pv" class="info-break-policy">
@@ -334,43 +347,20 @@ white-space:nowrap; // ">
 <p><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://user-gold-cdn.xitu.io/2019/9/16/16d38ce4d49c371b?w=7157&amp;h=1717&amp;f=jpeg&amp;s=510219" alt="杀生丸"></p>
 <ul>
 <li><p>单行</p>
-<pre class=" language-css"><code class="language-css"><span class="token property">word-break</span><span class="token punctuation">:</span> break-all<span class="token punctuation">;</span>
-<span class="token property">overflow</span><span class="token punctuation">:</span>hidden<span class="token punctuation">;</span> // 超出的文本隐藏
-<span class="token property">text-overflow</span><span class="token punctuation">:</span>ellipsis<span class="token punctuation">;</span> // 溢出用省略号显示
-<span class="token property">white-space</span><span class="token punctuation">:</span>nowrap<span class="token punctuation">;</span> // 溢出不换行
-</code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">word-break</span>: <span class="selector-tag">break-all</span>;</span><br><span class="line">overflow:hidden; // 超出的文本隐藏</span><br><span class="line">text-overflow:ellipsis; // 溢出用省略号显示</span><br><span class="line">white-space:nowrap; // 溢出不换行</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>两行或多行</p>
-<pre class=" language-css"><code class="language-css"><span class="token property">word-break</span><span class="token punctuation">:</span> break-all<span class="token punctuation">;</span>
-<span class="token property">overflow</span><span class="token punctuation">:</span>hidden<span class="token punctuation">;</span> // 超出的文本隐藏
-<span class="token property">text-overflow</span><span class="token punctuation">:</span>ellipsis<span class="token punctuation">;</span>
-<span class="token property">display</span><span class="token punctuation">:</span>-webkit-box<span class="token punctuation">;</span> // 将对象作为弹性伸缩盒子模型显示。
-<span class="token property">-webkit-box-orient</span><span class="token punctuation">:</span>vertical<span class="token punctuation">;</span>  //从上到下垂直排列子元素（设置伸缩盒子的子元素排列方式）
-<span class="token property">-webkit-line-clamp</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">;</span> // 结合上面两个属性，表示显示的行数。
-</code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">word-break</span>: <span class="selector-tag">break-all</span>;</span><br><span class="line">overflow:hidden; // 超出的文本隐藏</span><br><span class="line"><span class="selector-tag">text-overflow</span><span class="selector-pseudo">:ellipsis</span>;</span><br><span class="line">display:-webkit-box; // 将对象作为弹性伸缩盒子模型显示。</span><br><span class="line"> -webkit-box-orient:vertical;  //从上到下垂直排列子元素（设置伸缩盒子的子元素排列方式）</span><br><span class="line">-webkit-line-clamp:2; // 结合上面两个属性，表示显示的行数。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <blockquote>
 <p>如果用上了autoprefixer的话，由于它自动补全css前缀，或者删除过时的前缀，导致-webkit-box-orient:vertical; 失效；这时候需要改成如下；</p>
 </blockquote>
-</li>
-</ul>
-<pre class=" language-css"><code class="language-css"><span class="token property">word-break</span><span class="token punctuation">:</span> break-all<span class="token punctuation">;</span>
-<span class="token property">overflow</span><span class="token punctuation">:</span>hidden<span class="token punctuation">;</span> // 超出的文本隐藏
-<span class="token property">text-overflow</span><span class="token punctuation">:</span>ellipsis<span class="token punctuation">;</span>
-<span class="token property">display</span><span class="token punctuation">:</span>-webkit-box<span class="token punctuation">;</span> // 将对象作为弹性伸缩盒子模型显示。
- <span class="token comment" spellcheck="true">/* autoprefixer: off */</span>
- <span class="token property">-webkit-box-orient</span><span class="token punctuation">:</span>vertical<span class="token punctuation">;</span>  //从上到下垂直排列子元素（设置伸缩盒子的子元素排列方式）
-<span class="token comment" spellcheck="true">/* autoprefixer: on */</span>
-<span class="token property">-webkit-line-clamp</span><span class="token punctuation">:</span><span class="token number">2</span><span class="token punctuation">;</span> // 结合上面两个属性，表示显示的行数。
-</code></pre>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">word-break</span>: <span class="selector-tag">break-all</span>;</span><br><span class="line">overflow:hidden; // 超出的文本隐藏</span><br><span class="line"><span class="selector-tag">text-overflow</span><span class="selector-pseudo">:ellipsis</span>;</span><br><span class="line">display:-webkit-box; // 将对象作为弹性伸缩盒子模型显示。</span><br><span class="line"> <span class="comment">/* autoprefixer: off */</span></span><br><span class="line"> -webkit-box-orient:vertical;  //从上到下垂直排列子元素（设置伸缩盒子的子元素排列方式）</span><br><span class="line"><span class="comment">/* autoprefixer: on */</span></span><br><span class="line">-webkit-line-clamp:2; // 结合上面两个属性，表示显示的行数。</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p> 如果用上了autoprefixer的话，也可以在使用autoprefixer的时候进行配置如下:</p>
 </blockquote>
-<pre class=" language-javascript"><code class="language-javascript"><span class="token comment" spellcheck="true">// webpack.config.js</span>
-
-<span class="token function">postcss</span><span class="token punctuation">(</span><span class="token punctuation">[</span> <span class="token function">autoprefixer</span><span class="token punctuation">(</span><span class="token punctuation">{</span> remove<span class="token punctuation">:</span> <span class="token boolean">false</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 关闭autoprefixer的删除前缀功能；</span>
-
-
-</code></pre>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// webpack.config.js</span></span><br><span class="line"></span><br><span class="line">postcss([ autoprefixer(&#123; <span class="attr">remove</span>: <span class="literal">false</span> &#125;) ]); <span class="comment">// 关闭autoprefixer的删除前缀功能；</span></span><br></pre></td></tr></table></figure>
 <p>更多关于的配置请转<a href="https://www.npmjs.com/package/autoprefixer" target="_blank" rel="noopener">autoprefixer</a></p>
 <p>作者博客:<a href="https://wlove-c.github.io/" target="_blank" rel="noopener">Eno</a></p>
 
@@ -797,60 +787,26 @@ white-space:nowrap; // ">
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/13/coding-3/">
+                <a href="/2020/05/13/coding-20190612/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/13.jpg" class="responsive-img" alt="vue前端代码规范">
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/8.jpg" class="responsive-img" alt="webpack4.0+加vue2.0+从零开始搭设vue项目">
                         
-                        <span class="card-title">vue前端代码规范</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">使用vue的这两年中，除了部分公司有比较好的代码规范外，也形成了一套自己的编程习惯；持续更新
-            一、JavaScript命名规范1､命名统一使用语义化的驼峰命名法，能表达出该命名的用义例：主页的头部命名组件为heade</div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-13
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-user fa-fw"></i>
-                            Jason
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/05/13/codding-20190624/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/6.jpg" class="responsive-img" alt="javascript中call、bind、apply你知多少？">
-                        
-                        <span class="card-title">javascript中call、bind、apply你知多少？</span>
+                        <span class="card-title">webpack4.0+加vue2.0+从零开始搭设vue项目</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary">@TOC
+本地环境
 
-在我们日常开发过程中，js基础是用的最多的，也许很多人觉得熟悉框架就好了，不需要太深入原生js的原理及实现，其实这是一种舍本逐末的行为。。。很长一段时间，我的文章方向会在js基础上~
+node -v    // v9.1.0npm -v  // 6.5.0webpack -v   // 4.32.2webpack-cli -v // 3.3.2
 
-
-在我们日常开发过程中call、bind、</div>
+这里需要注意的是webpack4+以后需要单独安装w</div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-13
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-13
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -866,10 +822,44 @@ white-space:nowrap; // ">
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/javaScript/" target="_blank">
-                        <span class="chip bg-color">javaScript</span>
+                    <a href="/tags/vue/" target="_blank">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/05/13/coding-3/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/13.jpg" class="responsive-img" alt="vue前端代码规范">
+                        
+                        <span class="card-title">vue前端代码规范</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">使用vue的这两年中，除了部分公司有比较好的代码规范外，也形成了一套自己的编程习惯；持续更新
+            一、JavaScript命名规范1､命名统一使用语义化的驼峰命名法，能表达出该命名的用义例：主页的头部命名组件为heade</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-user fa-fw"></i>
+                            Jason
+                            
+                        </span>
+                    </div>
                 </div>
                 
             </div>
@@ -1051,6 +1041,27 @@ white-space:nowrap; // ">
 <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
 <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="/js/matery.js"></script>
+<style>
+    #tp-weather-widget>div{
+        z-index: 99;
+        top:100px;
+    }
+</style>
+<div id="tp-weather-widget"></div>
+<script>
+    (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
+    window.SeniverseWeatherWidget('show', {
+        flavor: "bubble",
+        location: "WTMKQ069CCJ7",
+        geolocation: true,
+        language: "zh-Hans",
+        unit: "c",
+        theme: "dark",
+        token: "7fb00a61-4997-4de9-86ed-0b1794a2c353",
+        hover: "enabled",
+        container: "tp-weather-widget"
+    })
+</script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
@@ -1062,10 +1073,10 @@ white-space:nowrap; // ">
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
 
 
-<script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"left","width":260,"height":500},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"tagMode":false});</script><script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"right","width":260,"height":500},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"tagMode":false});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>

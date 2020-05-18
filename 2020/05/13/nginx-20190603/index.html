@@ -68,6 +68,8 @@ nginx负载均衡
     <li class="hide-on-med-and-down">
         <a href="/coding" class="waves-effect waves-light">
             
+            <i class="fa fas fa-bookmark"></i>
+            
             <span>编程</span>
         </a>
     </li>
@@ -91,7 +93,7 @@ nginx负载均衡
     </li>
     
     <li class="hide-on-med-and-down">
-        <a href="/about" class="waves-effect waves-light">
+        <a href class="waves-effect waves-light">
             
             <i class="fa fa-user-circle-o"></i>
             
@@ -137,7 +139,7 @@ nginx负载均衡
         <li>
             <a href="/coding" class="waves-effect waves-light">
                 
-                <i class="fa fa-fw fa-link"></i>
+                <i class="fa fa-fw fas fa-bookmark"></i>
                 
                 编程
             </a>
@@ -162,7 +164,7 @@ nginx负载均衡
         </li>
         
         <li>
-            <a href="/about" class="waves-effect waves-light">
+            <a href class="waves-effect waves-light">
                 
                 <i class="fa fa-fw fa-user-circle-o"></i>
                 
@@ -314,6 +316,20 @@ nginx负载均衡
                                 </div>
 
                                 
+                                    
+                                    <div class="info-break-policy">
+                                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                                        1.2k
+                                    </div>
+                                    
+
+                                    
+                                    <div class="info-break-policy">
+                                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                                        4 分
+                                    </div>
+                                    
+                                
 
                 								
                 														<div id="busuanzi_container_page_pv" class="info-break-policy">
@@ -346,48 +362,15 @@ nginx负载均衡
 <ul>
 <li>常见的跨域场景如下：</li>
 </ul>
-<pre><code>
-URL                                      说明                    是否允许通信
-
-http://www.baidu.com/hello.js
-http://www.baidu.com/world.js         同一域名，不同文件或路径               允许（无跨域）
-http://www.baidu.com/hello/world.js
-
-
-http://www.baidu.com:8000/hello.js
-http://www.baidu.com/hello.js         同一域名，不同端口                不允许（有跨域）
-
-http://www.baidu.com/hello.js
-https://www.baidu.com/world.js        同一域名，不同协议                不允许（有跨域）
-
-http://www.baidu.com/hello.js
-http://192.168.22.128/world.js        域名和域名对应ip                 不允许（有跨域）
-
-http://baidu.com/hello.js
-http://x.baidu.com/hello.js           主域相同，子域不同                不允许（有跨域）
-http://www.baidu.com/hello.js
-
-http://www.baidu.com/hello.js
-http://www.bai.com/world.js           不同域名                        不允许（有跨域）
-
-</code></pre><h5 id="常见的跨域解决方案有如下"><a href="#常见的跨域解决方案有如下" class="headerlink" title="常见的跨域解决方案有如下:"></a>常见的跨域解决方案有如下:</h5><ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">URL                                      说明                    是否允许通信</span><br><span class="line"></span><br><span class="line">http://www.baidu.com/hello.js</span><br><span class="line">http://www.baidu.com/world.js         同一域名，不同文件或路径           	允许（无跨域）</span><br><span class="line">http://www.baidu.com/hello/world.js</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http://www.baidu.com:8000/hello.js</span><br><span class="line">http://www.baidu.com/hello.js         同一域名，不同端口                不允许（有跨域）</span><br><span class="line"></span><br><span class="line">http://www.baidu.com/hello.js</span><br><span class="line">https://www.baidu.com/world.js        同一域名，不同协议                不允许（有跨域）</span><br><span class="line"></span><br><span class="line">http://www.baidu.com/hello.js</span><br><span class="line">http://192.168.22.128/world.js        域名和域名对应ip                 不允许（有跨域）</span><br><span class="line"></span><br><span class="line">http://baidu.com/hello.js</span><br><span class="line">http://x.baidu.com/hello.js           主域相同，子域不同                不允许（有跨域）</span><br><span class="line">http://www.baidu.com/hello.js</span><br><span class="line"></span><br><span class="line">http://www.baidu.com/hello.js</span><br><span class="line">http://www.bai.com/world.js           不同域名                        不允许（有跨域）</span><br></pre></td></tr></table></figure>
+<h5 id="常见的跨域解决方案有如下"><a href="#常见的跨域解决方案有如下" class="headerlink" title="常见的跨域解决方案有如下:"></a>常见的跨域解决方案有如下:</h5><ol>
 <li>jsonp解决跨域</li>
 <li>document.domain + iframe解决跨域</li>
 <li>nginx代理解决跨域</li>
 <li>nodejs中间件代理解决跨域</li>
 </ol>
-<h3 id="重点来了-nginx代理解决跨域；"><a href="#重点来了-nginx代理解决跨域；" class="headerlink" title="重点来了 nginx代理解决跨域；"></a>重点来了 nginx代理解决跨域；</h3><pre><code>
-server {
-        listen       80;
-        server_name  localhost; //前端域名 具体原理解释在下方
-
-        location / {  // location / 代理所有请求 而如果是 location /api 则匹配到有/api 前缀的请求才会代理
-                        proxy_pass www.baidu.com; // 服务端域名
-        }
-}
-
-
-</code></pre><ol>
+<h3 id="重点来了-nginx代理解决跨域；"><a href="#重点来了-nginx代理解决跨域；" class="headerlink" title="重点来了 nginx代理解决跨域；"></a>重点来了 nginx代理解决跨域；</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">		listen       80;</span><br><span class="line">		server_name  localhost; //前端域名 具体原理解释在下方</span><br><span class="line"></span><br><span class="line">		location / &#123;  // location / 代理所有请求 而如果是 location /api 则匹配到有/api 前缀的请求才会代理</span><br><span class="line">						proxy_pass www.baidu.com; // 服务端域名</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol>
 <li>前端server域名是localhost</li>
 <li>服务器server域名是<a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a><blockquote>
 <p>根据浏览器的SOP/同源策略 localhost对<a href="http://www.baidu.com发起请求一定会出现跨域问题；但现在只要我们启动nginx服务器把server_name设置成前端的域名，" target="_blank" rel="noopener">www.baidu.com发起请求一定会出现跨域问题；但现在只要我们启动nginx服务器把server_name设置成前端的域名，</a><br>此时前端发起的请求相当于是localhost对localhost发起，这样是不会引起跨域的；但真实情况是，nginx对localhost的请求代理回 <a href="http://www.baidu.com" target="_blank" rel="noopener">www.baidu.com</a></p>
@@ -402,83 +385,44 @@ server {
 <p>代理分为正向代理和反向代理:具体区别自行百度…</p>
 <hr>
 <h3 id="nginx负载均衡"><a href="#nginx负载均衡" class="headerlink" title="nginx负载均衡"></a>nginx负载均衡</h3><p>nginx是通过把请求分发到服务器列表来实现负载均衡的；具体实现如下:</p>
-<pre><code>upstream balance.com{
-             server 192.168.2.100:42000;
-             server 192.168.2.101:42000;
-             server 192.168.2.102:42000;
-}
-
-
-
-server {
-        server_name  fe.server.com;
-        listen 80;
-        location /api {
-                proxy_pass http://balance.com;
-        }
-}
-
-
-</code></pre><p>上面的配置只是指定了nginx需要转发的服务端列表，并没有指定分配策略。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">upstream balance.com&#123;</span><br><span class="line">			 server 192.168.2.100:42000;</span><br><span class="line">			 server 192.168.2.101:42000;</span><br><span class="line">			 server 192.168.2.102:42000;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">server &#123;</span><br><span class="line">		server_name  fe.server.com;</span><br><span class="line">		listen 80;</span><br><span class="line">		location /api &#123;</span><br><span class="line">				proxy_pass http://balance.com;</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的配置只是指定了nginx需要转发的服务端列表，并没有指定分配策略。</p>
 <h4 id="nginx负载均衡策略"><a href="#nginx负载均衡策略" class="headerlink" title="nginx负载均衡策略"></a>nginx负载均衡策略</h4><ol>
 <li>轮询策略</li>
 </ol>
 <blockquote>
 <p>轮询策略是默认的策略，把每个请求按顺序逐一分配到不同的server，如果server挂掉，能自动剔除</p>
 </blockquote>
-<pre><code>upstream balance.com{
-                 server 192.168.2.100:42000;
-                 server 192.168.2.101:42000;
-                 server 192.168.2.102:42000;
-        }
-</code></pre><ol start="2">
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">upstream balance.com&#123;</span><br><span class="line">				 server 192.168.2.100:42000;</span><br><span class="line">				 server 192.168.2.101:42000;</span><br><span class="line">				 server 192.168.2.102:42000;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<ol start="2">
 <li>最少连接数策略</li>
 </ol>
 <blockquote>
 <p>把请求优先分配给连接数最少的server,可以平衡每个队列的长度;</p>
 </blockquote>
-<pre><code>    upstream balance.com{
-                     least_conn;
-                     server 192.168.2.100:42000;
-                     server 192.168.2.101:42000;
-                     server 192.168.2.102:42000;
-        }
-</code></pre><ol start="3">
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">upstream balance.com&#123;</span><br><span class="line">				 least_conn;</span><br><span class="line">				 server 192.168.2.100:42000;</span><br><span class="line">				 server 192.168.2.101:42000;</span><br><span class="line">				 server 192.168.2.102:42000;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<ol start="3">
 <li>最快响应时间策略</li>
 </ol>
 <blockquote>
 <p>优先分配给响应时间最短的服务器。</p>
 </blockquote>
-<pre><code>    upstream balance.com{
-                     fair;
-                     server 192.168.2.100:42000;
-                     server 192.168.2.101:42000;
-                     server 192.168.2.102:42000;
-        }
-</code></pre><ol start="4">
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">upstream balance.com&#123;</span><br><span class="line">				 fair;</span><br><span class="line">				 server 192.168.2.100:42000;</span><br><span class="line">				 server 192.168.2.101:42000;</span><br><span class="line">				 server 192.168.2.102:42000;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
 <li>权重策略<blockquote>
 <p>使用weight来指定server访问比率，weight默认是1。访问率比例等于权重比例；</p>
 </blockquote>
 </li>
 </ol>
-<pre><code>    upstream balance.com{
-                     server 192.168.2.100:42000 weight=1;
-                     server 192.168.2.101:42000 weight=2;
-                     server 192.168.2.102:42000 weight=3;
-        }
-</code></pre><ol start="5">
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">upstream balance.com&#123;</span><br><span class="line">				 server 192.168.2.100:42000 weight=1;</span><br><span class="line">				 server 192.168.2.101:42000 weight=2;</span><br><span class="line">				 server 192.168.2.102:42000 weight=3;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<ol start="5">
 <li>客户端ip绑定 ip_hash<blockquote>
 <p>每个请求会按照访问ip的hash值分配，这样同一客户端连续的Web请求都会被分发到同一server进行处理，可以解决session的问题。如果server挂掉，能自动剔除。</p>
 </blockquote>
 </li>
 </ol>
-<pre><code>    upstream balance.com{
-                    ip_hash;
-                     server 192.168.2.100:42000 weight=1;
-                     server 192.168.2.101:42000 weight=2;
-                     server 192.168.2.102:42000 weight=3;
-        }
-</code></pre><p>以上是博主目前了解和使用到的一些技巧和知识啦，至于关于nginx部署后404问题请看@<a href="https://www.jianshu.com/p/42dcccc2f991" target="_blank" rel="noopener">vue框架下部署上线后刷新报404问题解决方案</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">upstream balance.com&#123;</span><br><span class="line">				ip_hash;</span><br><span class="line">				 server 192.168.2.100:42000 weight=1;</span><br><span class="line">				 server 192.168.2.101:42000 weight=2;</span><br><span class="line">				 server 192.168.2.102:42000 weight=3;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>以上是博主目前了解和使用到的一些技巧和知识啦，至于关于nginx部署后404问题请看@<a href="https://www.jianshu.com/p/42dcccc2f991" target="_blank" rel="noopener">vue框架下部署上线后刷新报404问题解决方案</a></p>
 <p>最后，如果文章对您有帮助，别忘记点赞喔，创作不易，转载请注明出处</p>
 
             </div>
@@ -904,55 +848,6 @@ server {
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/13/gulp-20190618/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/7.jpg" class="responsive-img" alt="前端构建工具Gulp.js 知多少">
-                        
-                        <span class="card-title">前端构建工具Gulp.js 知多少</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary">@TOC
-写在前面
-前几天在更新webpack知识的时候，想起来三年前用过的前端构建工具gulp/grunt,遂写个笔记总结一下，出来混总是要还的，忘得七七八八了…
-
-阅读本文章之前，相信你已经对前端构建工具(webpack、gulp、gr</div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-13
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/编程/" class="post-category" target="_blank">
-                                    编程
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/gulp/" target="_blank">
-                        <span class="chip bg-color">gulp</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2020/05/13/macnginx-20190603/">
                     <div class="card-image">
                         
@@ -973,6 +868,52 @@ server {
 
 ruby -e “$(curl -fsSL https://</div>
                     <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-13
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/编程/" class="post-category" target="_blank">
+                                    编程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/代理/" target="_blank">
+                        <span class="chip bg-color">代理</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/05/13/coding-5/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/23.jpg" class="responsive-img" alt="干货学习">
+                        
+                        <span class="card-title">干货学习</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">websocket/JS的类型/S中的typeof能得到的那些类型/js中有哪些内置函数 9 种
+websocketWebsocket同http一样都是是基于tcp的,可靠性的双向通信协议，是建立在tcp之上的，并且是持久化的协议。webs</div>
+                    <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-13
                             </span>
@@ -991,8 +932,8 @@ ruby -e “$(curl -fsSL https://</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/代理/" target="_blank">
-                        <span class="chip bg-color">代理</span>
+                    <a href="/tags/javaScript/" target="_blank">
+                        <span class="chip bg-color">javaScript</span>
                     </a>
                     
                 </div>
@@ -1176,6 +1117,27 @@ ruby -e “$(curl -fsSL https://</div>
 <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
 <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
 <script src="/js/matery.js"></script>
+<style>
+    #tp-weather-widget>div{
+        z-index: 99;
+        top:100px;
+    }
+</style>
+<div id="tp-weather-widget"></div>
+<script>
+    (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
+    window.SeniverseWeatherWidget('show', {
+        flavor: "bubble",
+        location: "WTMKQ069CCJ7",
+        geolocation: true,
+        language: "zh-Hans",
+        unit: "c",
+        theme: "dark",
+        token: "7fb00a61-4997-4de9-86ed-0b1794a2c353",
+        hover: "enabled",
+        container: "tp-weather-widget"
+    })
+</script>
 
 <!-- Global site tag (gtag.js) - Google Analytics -->
 
@@ -1187,10 +1149,10 @@ ruby -e “$(curl -fsSL https://</div>
     <script async src="/libs/others/busuanzi.pure.mini.js"></script>
 
 
-<script>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"left","width":260,"height":500},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"tagMode":false});</script><script>
             window.imageLazyLoadSetting = {
                 isSPA: false,
                 processImages: null,
             };
-        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"right","width":260,"height":500},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"tagMode":false});</script></body>
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
 </html>
