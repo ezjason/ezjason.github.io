@@ -1,0 +1,1180 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="js基础数组Array的一些特性及方法, Jason">
+    <meta name="description" content="@toc
+
+前言: 工作业务数据乱，数据转换用得繁，对接交流竟无语，全靠数组方法换；
+
+数据的了解js数据类型
+在js基础中，我都们知道数据类型有两大类:原始类型(基本类型)、引用类型
+
+基本类型js有5 种原始类型，即 Undefined">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>js基础数组Array的一些特性及方法 | Jason</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/custom.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+
+<header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="container">
+            <div class="nav-wrapper">
+                <div class="brand-logo">
+                    <a href="/" class="waves-effect waves-light">
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/avatar.jpg" class="logo-img hide-on-small-only">
+                        
+                        <span class="logo-span">Jason</span>
+                    </a>
+                </div>
+                
+
+<a href="#" data-activates="mobile-nav" class="button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/coding" class="waves-effect waves-light">
+            
+            <i class="fa fas fa-bookmark"></i>
+            
+            <span>编程</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>时间轴</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li>
+        <a id="toggleSearch" class="waves-effect waves-light">
+            <i id="searchIcon" class="mdi-action-search" title="搜索"></i>
+        </a>
+    </li>
+
+</ul>
+
+<div class="side-nav" id="mobile-nav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/avatar.jpg" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Jason</div>
+        <div class="logo-desc">
+            
+            哪有什么岁月静好，只是有人为你负重前行zzZ
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/coding" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fas fa-bookmark"></i>
+                
+                编程
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                时间轴
+            </a>
+        </li>
+        
+        <li>
+            <a href class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+    </ul>
+
+    <div class="social-link">
+
+     <a href="https://github.com/wLove-c" class="tooltipped" target="_blank" data-tooltip="GitHub" data-position="top" data-delay="50">
+                    <i class="fa fa-github fa-lg"></i>
+                </a>
+                <a href="mailto:wLove_c@163.com" class="tooltipped" target="_blank" data-tooltip="邮件call我" data-position="top" data-delay="50">
+                    <i class="fa fa-envelope fa-lg"></i>
+                </a>
+                <a href="https://blog.csdn.net/weixin_40755688" class="tooltipped" target="_blank" data-tooltip="CSDN" data-position="top" data-delay="50">
+                    <i class="fa fa-lg fa-lg">博</i>
+                </a>
+                <a href="https://www.jianshu.com/u/486396b2fbdf" class="tooltipped" target="_blank" data-tooltip="简书主页" data-position="top" data-delay="50">
+                    <i class="fa fa-lg">简</i>
+                </a>
+                <a href="https://juejin.im/user/5a3b55205188251fbd33cac0" class="tooltipped" target="_blank" data-tooltip="掘金主页" data-position="top" data-delay="50">
+                    <i class="fa fa-lg">掘</i>
+                </a>
+    </div>
+</div>
+
+
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+
+
+
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        js基础数组Array的一些特性及方法
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+</style>
+<div class="row">
+    <div class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/javaScript/" target="_blank">
+                                <span class="chip bg-color">javaScript</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="post-info">
+                                <div class="post-date info-break-policy">
+                                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                                    2020-05-18
+                                </div>
+
+                                
+                                    
+                                    <div class="info-break-policy">
+                                        <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                                        3k
+                                    </div>
+                                    
+
+                                    
+                                    <div class="info-break-policy">
+                                        <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                                        12 分
+                                    </div>
+                                    
+                                
+
+                								
+                														<div id="busuanzi_container_page_pv" class="info-break-policy">
+                																<i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                																<span id="busuanzi_value_page_pv"></span>
+                														</div>
+                								
+                            </div>
+            </div>
+
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>@<a href="js基础数组Array的一些特性及方法">toc</a></p>
+<blockquote>
+<p>前言: 工作业务数据乱，数据转换用得繁，对接交流竟无语，全靠数组方法换；</p>
+</blockquote>
+<h2 id="数据的了解"><a href="#数据的了解" class="headerlink" title="数据的了解"></a>数据的了解</h2><h3 id="js数据类型"><a href="#js数据类型" class="headerlink" title="js数据类型"></a>js数据类型</h3><ul>
+<li>在js基础中，我都们知道数据类型有两大类:原始类型(基本类型)、引用类型</li>
+</ul>
+<h3 id="基本类型"><a href="#基本类型" class="headerlink" title="基本类型"></a>基本类型</h3><p>js有5 种原始类型，即 Undefined、Null、Boolean、Number 和 String。其中Undefined和Null也称作<strong>特殊类型</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="literal">undefined</span>) <span class="comment">// undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="literal">null</span>)   <span class="comment">// object</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="literal">true</span>)  <span class="comment">// boolean</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="number">1</span>)     <span class="comment">// number</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> <span class="string">'1'</span>)   <span class="comment">// string</span></span><br></pre></td></tr></table></figure>
+<p><strong>总结</strong>:基本类型，笔者就不作过多介绍具体详情可以查阅<a href="http://www.w3school.com.cn/js/pro_js_primitivetypes.asp" target="_blank" rel="noopener">w3school</a>，这里解释一下为何typeof null得出来的是object类型而不是null，因为null是一个只有一个值的特殊类型，它被认为是对象的占位符，表示一个空对象引用。</p>
+<ul>
+<li>在js中null == undefined 得到是真(true)，尽管这两个值相等，但它们的含义不同。 undefined 是声明了变量但未对其初始化时赋予该变量的值，null 则用于表示尚未存在的对象（在讨论 typeof 运算符时，简单地介绍过这一点）。如果函数或方法要返回的是对象，那么找不到该对象时，返回的通常是 null。</li>
+</ul>
+<h3 id="引用类型"><a href="#引用类型" class="headerlink" title="引用类型"></a>引用类型</h3><p>js中 基本类型的值基本是不可变的，但引用类型的值是动态可变的；基本类型的变量是存放在栈内存中，而引用类型的值是同时保存在栈内存和堆内存中的对象；</p>
+<ul>
+<li>引用类型一般指的是对象和方法;</li>
+<li>引用类型其实是在栈内存中存储了一个指针，这个指针指向堆内存中相应的存储地址</li>
+</ul>
+<p><strong>举例说明:</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"> <span class="keyword">let</span> arr1 = arr;</span><br><span class="line"> arr1.push(<span class="number">1</span>)</span><br><span class="line"> <span class="built_in">console</span>.log(arr,arr1)</span><br></pre></td></tr></table></figure></p>
+<p>如上代码：按照我们常规的想法是 arr =  [1,2,3,4,5,6]，arr1 = [1,2,3,4,5,6,1]的；</p>
+<p>但实际输出如下:<br><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://upload-images.jianshu.io/upload_images/11447772-d32a6fa877fa7dfe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="实际输出"></p>
+<p>解释: 上面对引用类型的定义<strong>引用类型其实是在栈内存中存储了一个指针，这个指针指向堆内存中相应的存储地址</strong>有讲到指针的这个词，实际上上面代码的操作 let arr1 = arr;并不是把arr重新拷贝了一份给arr1,而是把arr存储在堆内存的存储地址给了arr1, 对arr1的修改，会对该地址指向的堆内存的数据进行修改，而arr和arr1指向堆内存的地址是相同的，所以打印结果一致；并且都改变了；</p>
+<p>上述换成Object对象依然是一致的，不相信的同学可以私下试试~</p>
+<h2 id="数组的方法"><a href="#数组的方法" class="headerlink" title="数组的方法"></a>数组的方法</h2><p>从<a href="http://www.w3school.com.cn/jsref/jsref_obj_array.asp" target="_blank" rel="noopener">w3school</a>中我们可以知道数组有许多的方法，并且有些是我们经常用到且混淆不清的，接下来我们将对数组的方法进行详解；</p>
+<h3 id="1-Array-concat"><a href="#1-Array-concat" class="headerlink" title="1. Array.concat()"></a>1. Array.concat()</h3><p>Array.concat() 的作用是连接两个或更多的数组，并返回结果。<br>使用<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">let</span>	arrNum = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="keyword">let</span>	arrStr = [<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>,<span class="string">'4'</span>,<span class="string">'5'</span>,<span class="string">'6'</span>]</span><br><span class="line"><span class="keyword">let</span>	arrObj = [&#123;<span class="attr">a</span>:<span class="number">1</span>&#125;,&#123;<span class="attr">b</span>:<span class="string">'2'</span>&#125;]</span><br><span class="line">	<span class="keyword">let</span> arrAll =  arrNum.concat(arrStr).concat(arrObj)</span><br><span class="line"><span class="built_in">console</span>.log(arrAll)</span><br></pre></td></tr></table></figure></p>
+<p>输出结果如下:<br><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://upload-images.jianshu.io/upload_images/11447772-7e9d6ba651065b12.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Array.concat()"></p>
+<p>此时因为concat()返回的是一个新的实例对象，对原数组操作(arrNum、arrStr)并不会影响到arrAll的值变化，<strong>但假如对arrObj进行改变,由于arrObj里面的对象属于引用类型，arrAll相应的值的地址指针依然是同一个堆内存，假如对arrObj进行改变，arrAll也会相应改变；而arrNum、arrStr里面的值是基本类型，则不影响</strong>；</p>
+<h3 id="2-Array-join"><a href="#2-Array-join" class="headerlink" title="2. Array.join()"></a>2. Array.join()</h3><p>Array.join() 把数组的所有元素放入一个字符串并返回。元素通过指定的分隔符进行分隔。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span>	arrNum = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="keyword">let</span>	arrStr = [<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>,<span class="string">'4'</span>,<span class="string">'5'</span>,<span class="string">'6'</span>]</span><br><span class="line"><span class="keyword">let</span>	arrObj = [&#123;<span class="attr">a</span>:<span class="number">1</span>&#125;,&#123;<span class="attr">b</span>:<span class="string">'2'</span>&#125;]</span><br><span class="line"><span class="keyword">let</span>	arrArr = [[<span class="number">1</span>,<span class="number">2</span>],[<span class="string">'1'</span>,<span class="string">'2'</span>]]</span><br><span class="line"><span class="built_in">console</span>.log(arrNum.join(<span class="string">'|'</span>))</span><br><span class="line"><span class="built_in">console</span>.log(arrStr.join(<span class="string">','</span>))</span><br><span class="line"><span class="built_in">console</span>.log(arrObj.join(<span class="string">'-'</span>))</span><br><span class="line"><span class="built_in">console</span>.log(arrArr.join(<span class="string">'='</span>))</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://upload-images.jianshu.io/upload_images/11447772-c7c1b9eaa1684919.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Array.join()"></p>
+<ul>
+<li>返回的字符串均没问题，但假如数组里面是object，则返回[object Object] 字符串；</li>
+</ul>
+<h3 id="3-Array-pop"><a href="#3-Array-pop" class="headerlink" title="3. Array.pop()"></a>3. Array.pop()</h3><p>Array.pop() 向数组的末尾添加一个或更多元素，并返回新的长度。<strong>注意！！！文档上没写明会改变原数组; 但实际上会改变</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span>	arrNum = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="keyword">let</span>	arrStr = [<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>,<span class="string">'4'</span>,<span class="string">'5'</span>,<span class="string">'6'</span>]</span><br><span class="line"><span class="keyword">let</span>	arrObj = [&#123;<span class="attr">a</span>:<span class="number">1</span>&#125;,&#123;<span class="attr">b</span>:<span class="string">'2'</span>&#125;]</span><br><span class="line"><span class="keyword">let</span>	arrArr = [[<span class="number">1</span>,<span class="number">2</span>],[<span class="string">'1'</span>,<span class="string">'2'</span>]]</span><br><span class="line"><span class="built_in">console</span>.log(arrNum.pop())</span><br><span class="line"><span class="built_in">console</span>.log(arrStr.pop())</span><br><span class="line"><span class="built_in">console</span>.log(arrObj.pop())</span><br><span class="line"><span class="built_in">console</span>.log(arrArr.pop())</span><br><span class="line"><span class="built_in">console</span>.log(arrObj,arrArr)</span><br></pre></td></tr></table></figure></p>
+<p>输出结果:<br><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://upload-images.jianshu.io/upload_images/11447772-e1f62d561c5f05cd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Array.pop()"></p>
+<h3 id="4-Array-push"><a href="#4-Array-push" class="headerlink" title="4. Array.push()"></a>4. Array.push()</h3><p> Array.push() 向数组的末尾添加一个或更多元素，并返回新的长度。</p>
+<p>本来觉得<strong>用的最多，不想作介绍了</strong>但为了加以证明引用类型引用是的存储地址，修改原数组会导致引用相应地址的值也改变；<br>代码如下:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span>	arrNum = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="keyword">let</span>	arrStr = [<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>,<span class="string">'4'</span>,<span class="string">'5'</span>,<span class="string">'6'</span>]</span><br><span class="line"><span class="keyword">let</span>	arrObj = [&#123;<span class="attr">a</span>:<span class="number">1</span>&#125;,&#123;<span class="attr">b</span>:<span class="string">'2'</span>&#125;]</span><br><span class="line"><span class="keyword">let</span>	arrArr = [[<span class="number">1</span>,<span class="number">2</span>],[<span class="string">'1'</span>,<span class="string">'2'</span>]]</span><br><span class="line"><span class="keyword">let</span>  arrAll = []</span><br><span class="line"><span class="built_in">console</span>.log(arrAll.push(arrNum))</span><br><span class="line"><span class="built_in">console</span>.log(arrAll.push(arrStr))</span><br><span class="line"><span class="built_in">console</span>.log(arrAll.push(arrObj))</span><br><span class="line"><span class="built_in">console</span>.log(arrAll.push(arrArr))</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'改变前==='</span>,arrAll)</span><br><span class="line">arrNum[<span class="number">0</span>] = <span class="number">10000</span></span><br><span class="line">arrStr[<span class="number">0</span>] = <span class="number">10000</span></span><br><span class="line">arrObj[<span class="number">0</span>] = <span class="number">10000</span></span><br><span class="line">arrArr[<span class="number">0</span>] = <span class="number">10000</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'改变后==='</span>,arrAll)</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://upload-images.jianshu.io/upload_images/11447772-a30f2def5468e0c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Array.push()"></p>
+<p>总结:再次证明引用类型的特点；</p>
+<h3 id="5-Array-reverse"><a href="#5-Array-reverse" class="headerlink" title="5. Array.reverse()"></a>5. Array.reverse()</h3><p>Array.reverse() 颠倒数组中元素的顺序。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span>	arrNum = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="keyword">let</span>	arrStr = [<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>,<span class="string">'4'</span>,<span class="string">'5'</span>,<span class="string">'6'</span>]</span><br><span class="line"><span class="keyword">let</span>	arrObj = [&#123;<span class="attr">a</span>:<span class="number">1</span>&#125;,&#123;<span class="attr">b</span>:<span class="string">'2'</span>&#125;]</span><br><span class="line"><span class="keyword">let</span>	arrArr = [[<span class="number">1</span>,<span class="number">2</span>],[<span class="string">'1'</span>,<span class="string">'2'</span>]]</span><br><span class="line"><span class="built_in">console</span>.log(arrNum.reverse())</span><br><span class="line"><span class="built_in">console</span>.log(arrStr.reverse())</span><br><span class="line"><span class="built_in">console</span>.log(arrObj.reverse())</span><br><span class="line"><span class="built_in">console</span>.log(arrArr.reverse())</span><br></pre></td></tr></table></figure></p>
+<p>常规使用，毫无问题<br><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://upload-images.jianshu.io/upload_images/11447772-4ab849432cb505fe.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Array.reverse() "></p>
+<h3 id="6-Array-shift"><a href="#6-Array-shift" class="headerlink" title="6. Array.shift()"></a>6. Array.shift()</h3><p> Array.shift() 删除并返回数组的第一个元素,具体表现和上面的 3. Array.pop() 完全类似，同样会改变原数组，不作过多介绍；</p>
+<h3 id="7-Array-unshift"><a href="#7-Array-unshift" class="headerlink" title="7. Array.unshift()"></a>7. Array.unshift()</h3><p>Array.unshift()向数组的开头添加一个或更多元素，并返回新的长度。</p>
+<p>用法:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arrayObject.unshift(val1,val2,....,valn)</span><br></pre></td></tr></table></figure></p>
+<p>参数解释:</p>
+<ul>
+<li>val1 必需。向数组添加的第一个元素。</li>
+<li>val2 可选。向数组添加的第二个元素。</li>
+<li>valn 可选。向数组添加的第n个元素。</li>
+</ul>
+<p><strong>注意</strong>：unshift() 方法将把它的参数插入 arrayObject 的头部，并将已经存在的元素顺次地移到较高的下标处，以便留出空间。该方法的第一个参数将成为数组的新元素 0，如果还有第二个参数，它将成为新的元素 1，以此类推。并且 <strong>unshift() 方法不创建新的创建，而是直接修改原有的数组。</strong><br>使用如下:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span>	arrNum = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="keyword">let</span>	arrStr = [<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>,<span class="string">'4'</span>,<span class="string">'5'</span>,<span class="string">'6'</span>]</span><br><span class="line"><span class="keyword">let</span>	arrObj = [&#123;<span class="attr">a</span>:<span class="number">1</span>&#125;,&#123;<span class="attr">b</span>:<span class="string">'2'</span>&#125;]</span><br><span class="line"><span class="keyword">let</span>	arrArr = [[<span class="number">1</span>,<span class="number">2</span>],[<span class="string">'1'</span>,<span class="string">'2'</span>]]</span><br><span class="line"><span class="built_in">console</span>.log(arrNum.unshift(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>))</span><br><span class="line"><span class="built_in">console</span>.log(arrStr.unshift(<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>,<span class="string">'4'</span>,<span class="string">'5'</span>,<span class="string">'6'</span>))</span><br><span class="line"><span class="built_in">console</span>.log(arrObj.unshift(&#123;<span class="attr">a</span>:<span class="number">1</span>&#125;,&#123;<span class="attr">b</span>:<span class="string">'2'</span>&#125;))</span><br><span class="line"><span class="built_in">console</span>.log(arrArr.unshift([<span class="number">1</span>,<span class="number">2</span>],[<span class="string">'1'</span>,<span class="string">'2'</span>]))</span><br><span class="line"><span class="built_in">console</span>.log(arrNum,arrStr,arrObj,arrArr)</span><br></pre></td></tr></table></figure></p>
+<p>输出:<br><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://upload-images.jianshu.io/upload_images/11447772-b32872e6a9c00302.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Array.unshift()"></p>
+<h3 id="8-Array-slice"><a href="#8-Array-slice" class="headerlink" title="8. Array.slice()"></a>8. Array.slice()</h3><p>Array.slice() 方法可从已有的数组中返回选定的元素。</p>
+<p>用法:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arrayObject.slice(start,end)</span><br></pre></td></tr></table></figure></p>
+<p>参数解释:</p>
+<ul>
+<li><strong>start</strong> ： 必需。规定从何处开始选取。如果是负数，那么它规定从数组尾部开始算起的位置。也就是说，-1 指最后一个元素，-2 指倒数第二个元素，以此类推。</li>
+<li><strong>end</strong> ： 可选。规定从何处结束选取。该参数是数组片断结束处的数组下标。如果没有指定该参数，那么切分的数组包含从 start 到数组结束的所有元素。如果这个参数是负数，那么它规定的是从数组尾部开始算起的元素。</li>
+<li><strong>返回值</strong> ：返回一个新的数组，包含从 start 到 end （不包括该元素）的 arrayObject 中的元素。<br>使用<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span>	arrNum = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="keyword">let</span>	arrStr = [<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>,<span class="string">'4'</span>,<span class="string">'5'</span>,<span class="string">'6'</span>]</span><br><span class="line"><span class="keyword">let</span>	arrObj = [&#123;<span class="attr">a</span>:<span class="number">1</span>&#125;,&#123;<span class="attr">b</span>:<span class="string">'2'</span>&#125;]</span><br><span class="line"><span class="keyword">let</span>	arrArr = [[<span class="number">1</span>,<span class="number">2</span>],[<span class="string">'1'</span>,<span class="string">'2'</span>]]</span><br><span class="line"><span class="built_in">console</span>.log(arrNum.slice(<span class="number">0</span>,<span class="number">1</span>))</span><br><span class="line"><span class="built_in">console</span>.log(arrStr.slice(<span class="number">0</span>,<span class="number">1</span>))</span><br><span class="line"><span class="built_in">console</span>.log(arrObj.slice(<span class="number">0</span>,<span class="number">1</span>))</span><br><span class="line"><span class="built_in">console</span>.log(arrArr.slice(<span class="number">0</span>,<span class="number">1</span>))</span><br><span class="line"><span class="built_in">console</span>.log(arrNum,arrStr,arrObj,arrArr)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>输出如下：<br><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://upload-images.jianshu.io/upload_images/11447772-d1d7ebaf8674671f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Array.slice()"></p>
+<p><strong>注意:</strong> 该方法并不会修改原数组，而是返回一个子数组</p>
+<h3 id="9-Array-splice"><a href="#9-Array-splice" class="headerlink" title="9. Array.splice()"></a>9. Array.splice()</h3><p>Array.splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。</p>
+<p>用法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">arrayObject.splice(index,delLong,item1,.....,itemN)</span><br></pre></td></tr></table></figure></p>
+<p>参数解释:</p>
+<ul>
+<li><strong>index</strong> ： 必需。整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置。</li>
+<li><strong>delLong</strong> ：必需。要删除的项目数量。如果设置为 0，则不会删除项目。</li>
+<li><strong>item1, …, itemN</strong> ：可选。向数组添加的新项目。</li>
+</ul>
+<p><strong>注意：</strong> splice() 方法可删除从 index 处开始的零个或多个元素，并且用参数列表中声明的一个或多个值来替换那些被删除的元素。</p>
+<p>如果从 arrayObject 中删除了元素，则返回的是含有被删除的元素的数组。</p>
+<p>使用:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span>	arrNum = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br><span class="line"><span class="keyword">let</span>	arrStr = [<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>,<span class="string">'4'</span>,<span class="string">'5'</span>,<span class="string">'6'</span>]</span><br><span class="line"><span class="keyword">let</span>	arrObj = [&#123;<span class="attr">a</span>:<span class="number">1</span>&#125;,&#123;<span class="attr">b</span>:<span class="string">'2'</span>&#125;]</span><br><span class="line"><span class="keyword">let</span>	arrArr = [[<span class="number">1</span>,<span class="number">2</span>],[<span class="string">'1'</span>,<span class="string">'2'</span>]]</span><br><span class="line"><span class="built_in">console</span>.log(arrNum.splice(<span class="number">-1</span>,<span class="number">1</span>,<span class="number">10000</span>))</span><br><span class="line"><span class="built_in">console</span>.log(arrStr.splice(<span class="number">0</span>,<span class="number">0</span>,<span class="string">'10000'</span>))</span><br><span class="line"><span class="built_in">console</span>.log(arrObj.splice(<span class="number">0</span>,<span class="number">1</span>))</span><br><span class="line"><span class="built_in">console</span>.log(arrArr.splice(<span class="number">0</span>,<span class="number">1</span>))</span><br><span class="line"><span class="built_in">console</span>.log(arrNum,arrStr,arrObj,arrArr)</span><br></pre></td></tr></table></figure></p>
+<p>结果如下:<br><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://upload-images.jianshu.io/upload_images/11447772-eaa4505b10375907.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p><strong>注意:</strong> 该方法会修改原数组，而是返回一个子数组。如果从 arrayObject 中删除了元素，则返回的是含有被删除的元素的数组。如果未删除，则返回空数组；</p>
+<p>总结: slice()和splice()容易混淆，不过这样记就好:<strong>单词长的参数也长，参数长的功能大，可加可减可改变</strong></p>
+<h3 id="9-Array-sort"><a href="#9-Array-sort" class="headerlink" title="9. Array.sort()"></a>9. Array.sort()</h3><p>Array.sort() 方法用于对数组的元素进行排序。</p>
+<p>用法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arrayObject.sort(sortby)</span><br></pre></td></tr></table></figure></p>
+<p>参数解释:</p>
+<ul>
+<li><strong>sortby</strong> ： 可选。规定排序顺序。必须是函数。</li>
+</ul>
+<p>使用:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span>	arrNum = [<span class="number">6</span>,<span class="number">2</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line">  <span class="keyword">let</span>	arrStr = [<span class="string">'6'</span>,<span class="string">'2'</span>,<span class="string">'1'</span>,<span class="string">'3'</span>,<span class="string">'4'</span>,<span class="string">'5'</span>]</span><br><span class="line">  <span class="keyword">let</span>	arrObj = [&#123;<span class="attr">b</span>:<span class="string">'2'</span>&#125;,&#123;<span class="attr">a</span>:<span class="number">1</span>&#125;]</span><br><span class="line">  <span class="keyword">let</span>	arrArr = [[<span class="string">'2'</span>,<span class="string">'1'</span>],[<span class="number">2</span>,<span class="number">1</span>]]</span><br><span class="line">  <span class="built_in">console</span>.log(arrNum.sort())</span><br><span class="line">  <span class="built_in">console</span>.log(arrStr.sort())</span><br><span class="line">  <span class="built_in">console</span>.log(arrObj.sort())</span><br><span class="line">  <span class="built_in">console</span>.log(arrArr.sort())</span><br><span class="line">  <span class="built_in">console</span>.log(arrNum,arrStr,arrObj,arrArr)</span><br><span class="line">	<span class="keyword">var</span> arr = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">	<span class="built_in">console</span>.log(arr.sort(<span class="function"><span class="keyword">function</span> (<span class="params">m,n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (m &lt; n) <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">   	<span class="keyword">if</span> (m &gt; n) <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> (m == n)<span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">  &#125;))</span><br></pre></td></tr></table></figure></p>
+<p>结果如下：<br><img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="https://upload-images.jianshu.io/upload_images/11447772-3eba223c168616ba.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Array.sort()"></p>
+<p><strong>总结</strong>：实际上上面代码写的方法就是sort()默认的方法；方法可以自定义；</p>
+<h3 id="最后数组方法的扩展"><a href="#最后数组方法的扩展" class="headerlink" title="最后数组方法的扩展"></a>最后数组方法的扩展</h3><p>从字面认知:every是每一个都，some是都有一些就~~<br>即:</p>
+<ol>
+<li>every():方法用于检测数组中所有元素是否都符合指定条件，若符合返回true，否则返回false；</li>
+<li>some():方法用于检测数组中的元素是否有满足指定条件的，若满足返回true，否则返回false；</li>
+</ol>
+<h4 id="every"><a href="#every" class="headerlink" title="every()"></a>every()</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// every():方法用于检测数组中所有元素是否都符合指定条件，若符合返回true，否则返回false,且程序不会继续往下执行；</span></span><br><span class="line">array.every(<span class="function"><span class="keyword">function</span>(<span class="params">item,index,array）&#123;</span></span></span><br><span class="line"><span class="function"><span class="params">                 <span class="regexp">//</span> item:当前元素的值；</span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">                 <span class="regexp">//</span> index:当前元素的索引；</span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">                 <span class="regexp">//</span> array:当前元素的数组对象；</span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">         &#125;</span>)</span></span><br></pre></td></tr></table></figure>
+<h5 id="例子"><a href="#例子" class="headerlink" title="例子:"></a>例子:</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//es6</span></span><br><span class="line"><span class="keyword">let</span> age = [<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>,<span class="number">50</span>,<span class="number">22</span>,<span class="number">26</span>]</span><br><span class="line"> <span class="comment">// 所有都满足才会返回true,否则返回false;</span></span><br><span class="line"> <span class="keyword">let</span> result = age.every(<span class="function">(<span class="params">item,index,array</span>)=&gt;</span>&#123;</span><br><span class="line"> <span class="built_in">console</span>.log(item) <span class="comment">// 10</span></span><br><span class="line"> <span class="built_in">console</span>.log(index) <span class="comment">// 0</span></span><br><span class="line"> <span class="built_in">console</span>.log(array) <span class="comment">//[10,20,30,40,50,22,26]</span></span><br><span class="line"></span><br><span class="line">     <span class="keyword">return</span> item &gt; <span class="number">22</span>;</span><br><span class="line"> 	&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// es5</span></span><br><span class="line"><span class="comment">// let result = age.every(function(item,index,array)&#123;</span></span><br><span class="line"><span class="comment">//     return item &gt; 22;</span></span><br><span class="line"><span class="comment">// 	&#125;)</span></span><br><span class="line"> 	<span class="built_in">console</span>.log(result) <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h4 id="some"><a href="#some" class="headerlink" title="some()"></a>some()</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// some():方法用于检测数组中是否有元素符合指定条件，若有符合的返回true，且程序不会继续往下执行；否则返回false；</span></span><br><span class="line">array.some(<span class="function"><span class="keyword">function</span>(<span class="params">item,index,array）&#123;</span></span></span><br><span class="line"><span class="function"><span class="params">                 <span class="regexp">//</span> item:当前元素的值；</span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">                 <span class="regexp">//</span> index:当前元素的索引；</span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">                 <span class="regexp">//</span> array:当前元素的数组对象；</span></span></span><br><span class="line"><span class="function"><span class="params"></span></span></span><br><span class="line"><span class="function"><span class="params">         &#125;</span>)</span></span><br></pre></td></tr></table></figure>
+<h5 id="例子-1"><a href="#例子-1" class="headerlink" title="例子:"></a>例子:</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//es6</span></span><br><span class="line"><span class="keyword">let</span> age = [<span class="number">10</span>,<span class="number">20</span>,<span class="number">30</span>,<span class="number">40</span>,<span class="number">50</span>,<span class="number">22</span>,<span class="number">26</span>]</span><br><span class="line"> <span class="comment">// 所有都满足才会返回true,否则返回false;</span></span><br><span class="line"> <span class="keyword">let</span> result = age.some(<span class="function">(<span class="params">item,index,array</span>)=&gt;</span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(item) <span class="comment">// 10 20 30</span></span><br><span class="line">  <span class="built_in">console</span>.log(index) <span class="comment">// 0 1 2</span></span><br><span class="line">  <span class="built_in">console</span>.log(array) <span class="comment">//[10,20,30,40,50,22,26]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">     <span class="keyword">return</span> item &gt; <span class="number">22</span>;</span><br><span class="line"> 	&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// es5</span></span><br><span class="line"><span class="comment">// let result = age.some(function(item,index,array)&#123;</span></span><br><span class="line"><span class="comment">//     return item &gt; 22;</span></span><br><span class="line"><span class="comment">// 	&#125;)</span></span><br><span class="line"> 	<span class="built_in">console</span>.log(result) <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>以上就是js基础中 数组常用的方法，特别要注意的是splice和slice容易混淆，其他的话，用过几次就基本没有问题了，此次代码已经上传到github，有兴趣可以去下载实现一波喔@<a href="https://github.com/wLove-c/JavaScript-demo" target="_blank" rel="noopener">王一诺wLove-c/JavaScript-demo</a>，如果对你有帮助，请点个赞吧；</p>
+</blockquote>
+<blockquote>
+<p>更多内容请转作者博客@<a href="https://wlove-c.github.io/" target="_blank" rel="noopener">王一诺的博客</a>，多多交流~</p>
+</blockquote>
+
+            </div>
+            <hr>
+
+            
+            <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.88rem;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff;
+        background-color: #22AB38;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff;
+        background-color: #019FE8;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a class="reward-link btn-floating btn-large waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close"><i class="fa fa-close"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs">
+                        <li class="tab wechat-tab waves-effect waves-light"><a class="active" href="#wechat">微信</a></li>
+                        <li class="tab alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                    </ul>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#reward .reward-link').on('click', function () {
+            $('#rewardModal').openModal();
+        });
+
+        $('#rewardModal .close').on('click', function () {
+            $('#rewardModal').closeModal();
+        });
+    });
+</script>
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            <div class="reprint">
+                <p>
+                    <span class="reprint-tip">
+                        <i class="fa fa-exclamation-circle"></i>&nbsp;&nbsp;转载请注明:
+                    </span>
+                    <a href="http:/ezjason.github.io" class="b-link-green">Jason</a>
+                    <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
+                    <a href="/2020/05/18/coding-20190629/" class="b-link-green">js基础数组Array的一些特性及方法</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+        <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '0RRQs3jYloHs0Y6sgwNbDJay-gzGzoHsz',
+        appKey: 'chrGtlTHYCWv13KJAgD0e8s7',
+        notify: 'true 新留言是否需要通知 https://github.com/xCss/Valine/wiki' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'true' === 'true',
+        avatar: 'mm',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '请输入您的留言'
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/2020/05/18/coding-20190612/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/8.jpg" class="responsive-img" alt="webpack4.0+加vue2.0+从零开始搭设vue项目">
+                        
+                        <span class="card-title">webpack4.0+加vue2.0+从零开始搭设vue项目</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">@TOC
+本地环境
+
+node -v    // v9.1.0npm -v  // 6.5.0webpack -v   // 4.32.2webpack-cli -v // 3.3.2
+
+这里需要注意的是webpack4+以后需要单独安装w</div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-18
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/编程/" class="post-category" target="_blank">
+                                    编程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/vue/" target="_blank">
+                        <span class="chip bg-color">vue</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2020/05/18/coding-20190916/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/18.jpg" class="responsive-img" alt="css实现超出几行省略并...">
+                        
+                        <span class="card-title">css实现超出几行省略并...</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary">@TOC
+
+
+单行
+1234word-break: break-all;overflow:hidden; // 超出的文本隐藏text-overflow:ellipsis; // 溢出用省略号显示white-space:nowrap; //</div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/编程/" class="post-category" target="_blank">
+                                    编程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/CSS/" target="_blank">
+                        <span class="chip bg-color">CSS</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('20')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: Jason<br />'
+            + '作者: Jason<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+    </div>
+    <div class="col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="fa fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            // headingsOffset: -205,
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+    });
+</script>
+    
+
+</main>
+
+
+
+<footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m12 l8 copy-right">
+            本站由 &copy;<a href="http://blinkfox.com" target="_blank">Blinkfox </a>基于
+            <a href="https://hexo.io/" target="_blank">Hexo</a> 搭建
+        </div>
+        <div class="col s12 m12 l4 social-link hide-on-med-and-down">
+            <a href="https://github.com/ezjason" class="tooltipped" target="_blank" data-tooltip="GitHub" data-position="top" data-delay="50">
+                <i class="fa fa-github fa-lg"></i>
+            </a>
+<!--            <a href="mailto:wLove_c@163.com" class="tooltipped" target="_blank" data-tooltip="邮件call我" data-position="top" data-delay="50">-->
+<!--                <i class="fa fa-envelope fa-lg"></i>-->
+<!--            </a>-->
+<!--            <a href="https://blog.csdn.net/weixin_40755688" class="tooltipped" target="_blank" data-tooltip="CSDN" data-position="top" data-delay="50">-->
+<!--                <i class="fa fa-lg fa-lg">博</i>-->
+<!--            </a>-->
+<!--            <a href="https://www.jianshu.com/u/486396b2fbdf" class="tooltipped" target="_blank" data-tooltip="简书主页" data-position="top" data-delay="50">-->
+<!--                <i class="fa fa-lg">简</i>-->
+<!--            </a>-->
+<!--            <a href="https://juejin.im/user/5a3b55205188251fbd33cac0" class="tooltipped" target="_blank" data-tooltip="掘金主页" data-position="top" data-delay="50">-->
+<!--                <i class="fa fa-lg">掘</i>-->
+<!--            </a>-->
+        </div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/search.js"></script>
+
+<script type="text/javascript">
+  (function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+      bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    } else {
+      bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+  })();
+</script>
+
+
+
+<!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字" class="search-input" autofocus>
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+</script>
+<!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+<script src="/libs/materialize/js/materialize.min.js"></script>
+<script src="/libs/masonry/masonry.pkgd.min.js"></script>
+<script src="/libs/aos/aos.js"></script>
+<script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+<script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+<script src="/js/matery.js"></script>
+<style>
+    #tp-weather-widget>div{
+        z-index: 99;
+        top:100px;
+    }
+</style>
+<div id="tp-weather-widget"></div>
+<script>
+    (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
+    window.SeniverseWeatherWidget('show', {
+        flavor: "bubble",
+        location: "WTMKQ069CCJ7",
+        geolocation: true,
+        language: "zh-Hans",
+        unit: "c",
+        theme: "dark",
+        token: "7fb00a61-4997-4de9-86ed-0b1794a2c353",
+        hover: "enabled",
+        container: "tp-weather-widget"
+    })
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+
+    <script src="/libs/others/clicklove.js"></script>
+
+
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"left","width":260,"height":500},"mobile":{"show":true,"scale":0.3},"react":{"opacity":0.7},"log":false,"tagMode":false});</script><script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(e.href.match(t)||e.href.match(r))&&(e.href=a.dataset.original)})});</script><script>!function(n){n.imageLazyLoadSetting.processImages=o;var i=n.imageLazyLoadSetting.isSPA,r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function o(){i&&(r=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")));for(var t,e,a=0;a<r.length;a++)t=r[a],0<=(e=t.getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(n.innerHeight||document.documentElement.clientHeight)&&function(){var t,e,n,i,o=r[a];t=o,e=function(){r=r.filter(function(t){return o!==t})},n=new Image,i=t.getAttribute("data-original"),n.onload=function(){t.src=i,e&&e()},n.src=i}()}o(),n.addEventListener("scroll",function(){var t,e;t=o,e=n,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(e)},500)})}(this);</script></body>
+</html>
