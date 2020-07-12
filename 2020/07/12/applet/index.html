@@ -4,16 +4,11 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="mac/nginx/nginx部署/代理/跨域, Jason">
-    <meta name="description" content="上篇文章我们说到了nginx的一些入门功能使用，但Mac book下的nginx如何配置呢？这将是本篇文章的重点；
-安装nginx
-打开终端Terminal
-
-安装brew
-
-
-
-ruby -e “$(curl -fsSL https://">
+    <meta name="keywords" content="代码片段 之 小程序授权, Jason">
+    <meta name="description" content="html内容
+    Click me
+    获取授权码
+微信授权12345678910clickHandle() &amp;#123;    wx.getSetting(&amp;#123;        success(res) &amp;#123;    ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +16,7 @@ ruby -e “$(curl -fsSL https://">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>mac/nginx/nginx部署/代理/跨域 | Jason</title>
+    <title>代码片段 之 小程序授权 | Jason</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -206,13 +201,13 @@ ruby -e “$(curl -fsSL https://">
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/3.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        mac/nginx/nginx部署/代理/跨域
+                        代码片段 之 小程序授权
                     </div>
                 </div>
             </div>
@@ -304,8 +299,8 @@ ruby -e “$(curl -fsSL https://">
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/代理/" target="_blank">
-                                <span class="chip bg-color">代理</span>
+                            <a href="/tags/nodejs/" target="_blank">
+                                <span class="chip bg-color">nodejs</span>
                             </a>
                         
                     </div>
@@ -314,14 +309,14 @@ ruby -e “$(curl -fsSL https://">
                 <div class="post-info">
                                 <div class="post-date info-break-policy">
                                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                                    2020-05-18
+                                    2020-07-12
                                 </div>
 
                                 
                                     
                                     <div class="info-break-policy">
                                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                                        299
+                                        263
                                     </div>
                                     
 
@@ -347,48 +342,12 @@ ruby -e “$(curl -fsSL https://">
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>上篇文章我们说到了nginx的一些入门功能使用，但Mac book下的nginx如何配置呢？这将是本篇文章的重点；</p>
-<h3 id="安装nginx"><a href="#安装nginx" class="headerlink" title="安装nginx"></a>安装nginx</h3><ol>
-<li><p>打开终端Terminal</p>
-</li>
-<li><p>安装brew</p>
-</li>
-</ol>
-<blockquote>
-<p>ruby -e “$(curl -fsSL <a href="https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;" target="_blank" rel="noopener">https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</a></p>
-</blockquote>
-<p>3.安装nginx</p>
-<blockquote>
-<p>brew install nginx</p>
-</blockquote>
-<ol start="4">
-<li>检查是否安装成功</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx -v</span><br></pre></td></tr></table></figure>
-<p>输出版本</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nginx version: nginx/1.15.6  //我的是这个</span><br></pre></td></tr></table></figure>
-<p>如上输出 则安装成功</p>
-<ol start="5">
-<li>nginx默认下载路径</li>
-</ol>
-<blockquote>
-<p>/usr/local/etc/nginx/nginx.conf （配置文件路径）<br>/usr/local/var/www （服务器默认路径）<br>/usr/local/Cellar/nginx/1.12.0 （安装路径）</p>
-</blockquote>
-<p>修改配置文件 推荐使用vim<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install vim // 安装</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>vim使用方法 转<a href="https://www.runoob.com/linux/linux-vim.html" target="_blank" rel="noopener">菜鸟教程vim/vi</a></p>
-</blockquote>
-<ol start="6">
-<li>启动nginx</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 在终端输入</span><br><span class="line"></span><br><span class="line">nginx // 启动</span><br><span class="line"></span><br><span class="line">// 如果报无权限 则加上管理权限启动</span><br><span class="line"></span><br><span class="line">sudo nginx</span><br></pre></td></tr></table></figure>
-<p>启动成功之后访问 localhost:8080 如果网页输出Welcome to nginx! 则启动成功</p>
-<ol start="7">
-<li>nginx的 常用命令</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">nginx -s quit    // 退出</span><br><span class="line">nginx -s reload  // 重新加载</span><br><span class="line">nginx -t         //测试nginx.conf配置</span><br></pre></td></tr></table></figure>
-<p>关于nginx的配置 可以查看<a href="https://wlove-c.github.io/2019/06/03/nginx-20190603/" target="_blank" rel="noopener">安静Eno | nginx配置/部署/代理</a></p>
-<p>最后，如果文章对您有帮助，别忘记点赞喔，创作不易，转载请注明出处</p>
+                <h3 id="html内容"><a href="#html内容" class="headerlink" title="html内容"></a>html内容</h3><!-- #ifdef MP-WEIXIN -->
+<p><button open-type="getUserInfo" bindgetuserinfo="userInfoHandler" @click="clickHandle"><br>    Click me<br></button><br><!-- #endif --><br><!-- #ifdef MP-ALIPAY --></p>
+<p><button @click="getAuthCode"><br>    获取授权码<br></button><br><!-- #endif --></p>
+<h3 id="微信授权"><a href="#微信授权" class="headerlink" title="微信授权"></a>微信授权</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">clickHandle() &#123;</span><br><span class="line">    wx.getSetting(&#123;</span><br><span class="line">        success(res) &#123;</span><br><span class="line">            <span class="keyword">if</span> (res.authSetting[<span class="string">'scope.userInfo'</span>]) &#123;</span><br><span class="line">                <span class="comment">// 微信已授权回调</span></span><br><span class="line">                <span class="keyword">this</span>.$emit(<span class="string">'click'</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="支付宝授权"><a href="#支付宝授权" class="headerlink" title="支付宝授权"></a>支付宝授权</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">getAuthCode() &#123;</span><br><span class="line">    <span class="comment">// todo 判断支付宝是否已授权，触发点击事件</span></span><br><span class="line">    my.getAuthCode(&#123;</span><br><span class="line">        scopes: <span class="string">'auth_user'</span>, <span class="comment">// 主动授权：auth_user，静默授权：auth_base。或者其它scope</span></span><br><span class="line">        success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (res.authCode) &#123;</span><br><span class="line">                <span class="comment">// 认证成功</span></span><br><span class="line">                <span class="comment">// 调用自己的服务端接口，让服务端进行后端的授权认证，并且利用session，需要解决跨域问题</span></span><br><span class="line">                my.getAuthUserInfo(&#123;</span><br><span class="line">                    success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">                        <span class="built_in">console</span>.log(res)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="获取openId"><a href="#获取openId" class="headerlink" title="获取openId"></a>获取openId</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// todo 更新全局属性 wx-appid，ali-appid</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 微信</span></span><br><span class="line"><span class="comment">// #ifdef MP-WEIXIN</span></span><br><span class="line">wx.login(&#123;</span><br><span class="line">    success (res) &#123;</span><br><span class="line">        <span class="keyword">if</span> (res.code) &#123;</span><br><span class="line">            <span class="comment">//发起网络请求</span></span><br><span class="line">            <span class="comment">// 携带 res.code 发送 请求 获取 微信 openId</span></span><br><span class="line">            wx.request(&#123;</span><br><span class="line">                url: <span class="string">''</span>,</span><br><span class="line">                data: &#123;</span><br><span class="line">                    code: res.code</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">// #endif</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 支付宝</span></span><br><span class="line"><span class="comment">// #ifdef MP-ALIPAY</span></span><br><span class="line">my.getAuthCode(&#123;</span><br><span class="line">    scopes: <span class="string">'auth_base'</span>, <span class="comment">// 主动授权：auth_user，静默授权：auth_base。或者其它scope</span></span><br><span class="line">    success: <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (res.authCode) &#123;</span><br><span class="line">            <span class="comment">// 携带 res.authCode 发送 请求 获取 支付宝 openId</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// #endif</span></span><br></pre></td></tr></table></figure>
 
             </div>
             <hr>
@@ -529,7 +488,7 @@ ruby -e “$(curl -fsSL https://">
                     </span>
                     <a href="http:/ezjason.github.io" class="b-link-green">Jason</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/2020/05/18/macnginx-20190603/" class="b-link-green">mac/nginx/nginx部署/代理/跨域</a>
+                    <a href="/2020/07/12/applet/" class="b-link-green">代码片段 之 小程序授权</a>
                 </p>
             </div>
         </div>
@@ -811,24 +770,27 @@ ruby -e “$(curl -fsSL https://">
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/05/18/hello-world/">
+                <a href="/2020/07/12/applet/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/5.jpg" class="responsive-img" alt="hexo 的介绍和使用">
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/3.jpg" class="responsive-img" alt="代码片段 之 小程序授权">
                         
-                        <span class="card-title">hexo 的介绍和使用</span>
+                        <span class="card-title">代码片段 之 小程序授权</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">欢迎来到 Hexo! 这是我的第一个发布. 通过观看 hexo文档 获取更多信息. 如果你在使用hexo的过程中遇到什么问题, 你可以从这里找到一些答案 问题解决 或者你也可以在github寻求帮助 GitHub.
-Quick StartC</div>
+                    <div class="summary">html内容
+    Click me
+    获取授权码
+微信授权12345678910clickHandle() &#123;    wx.getSetting(&#123;        success(res) &#123;    </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-18
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-07-12
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-user fa-fw"></i>
@@ -836,6 +798,15 @@ Quick StartC</div>
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/nodejs/" target="_blank">
+                        <span class="chip bg-color">nodejs</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -847,26 +818,22 @@ Quick StartC</div>
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/18/nginx-20190603/">
+                <a href="/2020/05/19/actions/">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/4.jpg" class="responsive-img" alt="nginx部署/代理的基础">
+                        <img src="https://cdn.jsdelivr.net/gh/skyls03/skyls03.github.io/medias/loading.gif" data-original="/medias/featureimages/23.jpg" class="responsive-img" alt="Github actions 部署vue项目">
                         
-                        <span class="card-title">nginx部署/代理的基础</span>
+                        <span class="card-title">Github actions 部署vue项目</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">关于nginx,咱们先了解nginx在开发过程中的主要作用
-nginx解决跨域
-nginx负载均衡
-
-一、nginx解决跨域如果要理解什么是跨域
-
-广义上的跨域是指一个域下的文档或脚本试图去请求另一个域下的资源。即浏览器的同源策略/SOP限</div>
+                    <div class="summary">关于 actionsactions是个什么东西呢，其实他就是github的CI/CD工具，如果你用过gitlab的runner那你对CI/CD这个概念肯定不会陌生。
+如果你对CI/CD没啥概念，那我推荐你百度一下有个大概的了解就行。
+wor</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-18
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2020-05-19
                             </span>
                         <span class="publish-author">
                             
@@ -883,8 +850,16 @@ nginx负载均衡
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/代理/" target="_blank">
-                        <span class="chip bg-color">代理</span>
+                    <a href="/tags/github/" target="_blank">
+                        <span class="chip bg-color">github</span>
+                    </a>
+                    
+                    <a href="/tags/node/" target="_blank">
+                        <span class="chip bg-color">node</span>
+                    </a>
+                    
+                    <a href="/tags/vue/" target="_blank">
+                        <span class="chip bg-color">vue</span>
                     </a>
                     
                 </div>
