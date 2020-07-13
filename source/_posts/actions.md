@@ -1,9 +1,6 @@
 ---
 title: Github actions 部署vue项目
-tags: - node
-      - webpack
-      - vue
-      ---
+tags:  [github,node,vue]
 categories: 编程
 ---
 
